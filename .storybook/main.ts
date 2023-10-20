@@ -1,4 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-vite'
+const viteTsconfig = require('vite-tsconfig-paths')
+import { mergeConfig } from 'vite'
+const tsconfigPaths = viteTsconfig.default
 
 const config: StorybookConfig = {
   stories: [
@@ -13,16 +16,17 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        postCss: true,
-      },
-    },
+    '@storybook/addon-styling',
   ],
   framework: {
     name: '@storybook/react-vite',
     options: {},
+  },
+  // This allows us to use tsconfig paths in our stories - eg. '#/lib/classnames'
+  async viteFinal(config) {
+    return mergeConfig(config, {
+      plugins: [tsconfigPaths()],
+    })
   },
   docs: {
     autodocs: 'tag',
