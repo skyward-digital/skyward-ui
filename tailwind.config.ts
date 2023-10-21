@@ -29,6 +29,9 @@ module.exports = {
         1.5: '1.5',
         2.5: '2.5',
       },
+      animation: {
+        spin: 'spin 10s linear infinite',
+      },
     },
   },
   plugins: [

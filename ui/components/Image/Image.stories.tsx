@@ -1,5 +1,5 @@
-import type { Meta } from '@storybook/react';
-import { Image } from './Image';
+import type { Meta } from '@storybook/react'
+import { Image } from './Image'
 
 const meta: Meta<typeof Image> = {
   title: 'Components/Image',
@@ -12,9 +12,9 @@ const meta: Meta<typeof Image> = {
     },
   },
   tags: ['autodocs'],
-};
+}
 
-export default meta;
+export default meta
 
 // type Story = StoryObj<CustomImageProps>;
 
@@ -26,7 +26,7 @@ export const Default = {
     width: 890,
     height: 557,
   },
-};
+}
 
 export const Logo = {
   args: {
@@ -35,7 +35,7 @@ export const Logo = {
     width: 200,
     height: 120,
   },
-};
+}
 
 export const Avatar = {
   args: {
@@ -44,7 +44,7 @@ export const Avatar = {
     width: 120,
     height: 120,
   },
-};
+}
 
 export const FullWidth = {
   args: {
@@ -55,9 +55,9 @@ export const FullWidth = {
   },
   decorators: [
     (Story: any) => (
-      <div className="relative h-80 w-full md:h-[50rem]">
+      <div className='relative h-80 w-full md:h-[50rem]'>
         <Story />
       </div>
     ),
   ],
-};
+}

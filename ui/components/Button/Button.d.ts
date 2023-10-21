@@ -1,8 +1,6 @@
 export interface ButtonBaseProps {
-  variant?: 'primary' | 'outline' | 'link'
+  variant?: 'primary' | 'outline' | 'ghost' | 'text' | 'destructive'
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
-  icon?: any
-  iconStyle?: 'leading' | 'trailing' | 'icon-only' | 'both' // both is just used for testing
   className?: string
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
 }
