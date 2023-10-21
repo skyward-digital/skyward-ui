@@ -16,7 +16,6 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@astrojs/image": "^0.18.0",
     "@astrojs/partytown": "^2.0.1",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/react": "^3.0.3",

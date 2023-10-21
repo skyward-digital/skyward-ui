@@ -1,4 +1,4 @@
-import cn from '#/utils/classnames'
+import { cn } from '#/utils'
 import type { ButtonElementProps, ButtonLinkProps, ButtonProps } from './Button.d'
 
 export const Button = ({

@@ -2,6 +2,6 @@ import clsx, { type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 // context: https://www.youtube.com/watch?v=re2JFITR7TI
-export default function cn(...classes: ClassValue[]) {
+export function cn(...classes: ClassValue[]) {
   return twMerge(clsx(...classes))
 }
