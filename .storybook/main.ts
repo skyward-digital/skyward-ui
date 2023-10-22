@@ -4,12 +4,7 @@ import { mergeConfig } from 'vite'
 const tsconfigPaths = viteTsconfig.default
 
 const config: StorybookConfig = {
-  stories: [
-    '../src/**/*.mdx',
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
-    '../ui/**/*.mdx',
-    '../ui/**/*.stories.@(js|jsx|ts|tsx)',
-  ],
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)', '../ui/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   staticDirs: ['../public'],
   addons: [
     '@storybook/addon-links',

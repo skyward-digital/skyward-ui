@@ -1,0 +1,56 @@
+---
+import { getLanguageFromURL } from '../../languages'
+import { SIDEBAR } from '../../consts'
+import { cn } from '#/utils'
+
+type Props = {
+  currentPage: string
+}
+
+const { currentPage } = Astro.props
+const linkMatch = (link: string) => link.replace('/', '')
+const langCode = getLanguageFromURL(currentPage)
+const sidebar = SIDEBAR[langCode]
+---
+
+<nav aria-labelledby='grid-left'>
+  <ul class='text-sm space-y-3'>
+    {
+      Object.entries(sidebar).map(([header, children]) => (
+        <li>
+          <div>
+            <h2 class='font-semibold text-gray-900 mb-1'>{header}</h2>
+            <ul>
+              {children.map(child => {
+                return (
+                  <li>
+                    <a
+                      href={child.link}
+                      aria-current={linkMatch(currentPage) === linkMatch(child.link) ? 'page' : false}
+                      class={cn(
+                        'block py-1 text-gray-600 transition duration-100 ease-out hover:underline focus:underline',
+                        linkMatch(currentPage) === linkMatch(child.link) ? 'font-bold' : ''
+                      )}
+                    >
+                      {child.text}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<!--
+<script is:inline>
+window.addEventListener('DOMContentLoaded', () => {
+  var target = document.querySelector('[aria-current="page"]')
+  if (target && target.offsetTop > window.innerHeight - 100) {
+    document.querySelector('.nav-groups').scrollTop = target.offsetTop
+  }
+})
+</script> -->

@@ -1,0 +1,175 @@
+---
+title: Button
+description: Buttons are components that allow users to take actions within your website or app.
+---
+
+import { ArrowRightIcon, ArrowLeftIcon, Trash01Icon } from '@untitledui-icons/react/line'
+import { Button } from '#/ui/components/Button'
+
+They are used in a variety of places where you want users to do something like submitting a form, confirming a notificaiton or changing a setting.
+
+{/* Storybook, Github */}
+
+<div className='not-prose flex gap-2'>
+  <Button variant='outline' size='xs'>
+    Storybook
+  </Button>
+  <Button variant='outline' size='xs'>
+    Github
+  </Button>
+</div>
+
+## Variants
+
+The basic button comes with 5 variants
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='primary'>Primary</Button>
+  <Button variant='outline'>Outline</Button>
+  <Button variant='ghost'>Ghost</Button>
+  <Button variant='text'>Text</Button>
+  <Button variant='destructive'>Destructive</Button>
+</div>
+
+## Size
+
+Each button has 6 different size options to choose between
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='primary' size='xs'>
+    xs
+  </Button>
+  <Button variant='primary' size='sm'>
+    sm
+  </Button>
+  <Button variant='primary' size='md'>
+    md
+  </Button>
+  <Button variant='primary' size='lg'>
+    lg
+  </Button>
+  <Button variant='primary' size='xl'>
+    xl
+  </Button>
+  <Button variant='primary' size='2xl'>
+    2xl
+  </Button>
+</div>
+
+All of these different sizes are available for each variant
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='primary' size='xs'>
+    Button
+  </Button>
+  <Button variant='ghost' size='md'>
+    Button
+  </Button>
+  <Button variant='destructive' size='xl'>
+    Button
+  </Button>
+</div>
+
+## Icons
+
+You can place icons within a button by passing it as a child
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='primary'>
+    <ArrowLeftIcon /> Previous
+  </Button>
+  <Button variant='primary'>
+    Next <ArrowRightIcon />
+  </Button>
+</div>
+
+If you use an icon without text, make sure to include a hidden label for accessibility purposes
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='destructive'>
+    <span className='sr-only'>Delete</span>
+    <Trash01Icon />
+  </Button>
+</div>
+
+SVG Icons will automatically be resized based on the button size
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='destructive' size='xs'>
+    <span className='sr-only'>Delete</span>
+    <Trash01Icon />
+  </Button>
+  <Button variant='destructive' size='sm'>
+    <span className='sr-only'>Delete</span>
+    <Trash01Icon />
+  </Button>
+  <Button variant='destructive' size='md'>
+    <span className='sr-only'>Delete</span>
+    <Trash01Icon />
+  </Button>
+  <Button variant='destructive' size='lg'>
+    <span className='sr-only'>Delete</span>
+    <Trash01Icon />
+  </Button>
+  <Button variant='destructive' size='xl'>
+    <span className='sr-only'>Delete</span>
+    <Trash01Icon />
+  </Button>
+  <Button variant='destructive' size='2xl'>
+    <span className='sr-only'>Delete</span>
+    <Trash01Icon />
+  </Button>
+</div>
+
+## Links
+
+You can use buttons as links by passing an href prop
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='primary' href='#icons'>
+    Previous
+  </Button>
+  <Button variant='primary' href='#onclick'>
+    Next
+  </Button>
+</div>
+
+## Customisation
+
+### Classes and styles
+
+You can customize individual buttons by passing a `className` prop. If this clashes with the default styles, the `className` will take precedence.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='destructive' className='bg-amber-500 hover:bg-amber-400 focus:bg-amber-400 border-amber-500'>
+    Destructive
+  </Button>
+</div>
+
+Due to how `tailwind-merge` works, you won't need to worry about conflicting styles when using the `className` prop.
+
+Make sure you override all the states to ensure a consistent experience, or you'll end up with something like this
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='destructive' className='bg-amber-500'>
+    Destructive
+  </Button>
+</div>
+
+While tailwind classes are preferred, you can also use the style prop if you need to do something more complex, like passing JS values
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='destructive' style={{ width: '16rem' }}>
+    Destructive
+  </Button>
+</div>
+
+### onClick
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='primary'>Primary</Button>
+  <Button variant='outline'>Outline</Button>
+  <Button variant='ghost'>Ghost</Button>
+  <Button variant='text'>Text</Button>
+  <Button variant='destructive'>Destructive</Button>
+</div>
