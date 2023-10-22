@@ -14,3 +14,10 @@ export const testButtonClick = async ({ canvasElement }: any) => {
   // Checks button can be clicked
   await userEvent.click(canvas.getByRole('button'))
 }
+
+export const testButtonLink = async ({ canvasElement }: any) => {
+  const canvas = within(canvasElement)
+
+  // Checks Button is a link
+  await expect(canvas.getByRole('link')).toBeInTheDocument()
+}

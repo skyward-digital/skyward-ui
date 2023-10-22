@@ -1,8 +1,8 @@
 import type { Meta } from '@storybook/react'
-import { CircleIcon, Loading01Icon } from '@untitledui-icons/react/line'
+import { CircleIcon } from '@untitledui-icons/react/line'
 import { Button } from './Button'
 import type { ButtonProps } from './Button.d'
-import { testButtonClick } from './Button.test'
+import { testButtonClick, testButtonLink } from './Button.test'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<ButtonProps> = {
@@ -11,7 +11,8 @@ const meta: Meta<ButtonProps> = {
   parameters: {
     docs: {
       description: {
-        component: 'Buttons are our standard call-to-actions, used for links and form submissions.',
+        component:
+          'Buttons are components that allow users to take actions within your website or app. They are used in a variety of places where you want users to do something like submitting a form, confirming a notificaiton or changing a setting',
       },
     },
     // disable a11y checks for this story - WARNING this is not recommended unless you know what you are doing
@@ -35,13 +36,10 @@ const meta: Meta<ButtonProps> = {
 export default meta
 
 const args = {
-  children: (
-    <>
-      <CircleIcon /> Button CTA <CircleIcon />
-    </>
-  ),
+  children: 'Button CTA',
   variant: 'primary',
-  size: 'md',
+  onClick: undefined,
+  // size: 'md',
 }
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
@@ -68,14 +66,28 @@ export const Ghost = {
 export const Text = {
   args: {
     ...args,
+    href: '#',
     variant: 'text',
   },
+  play: testButtonLink,
 }
 
 export const Destructive = {
   args: {
     ...args,
     variant: 'destructive',
+  },
+}
+
+export const Icon = {
+  args: {
+    ...args,
+    children: (
+      <>
+        <CircleIcon />
+        <span className='sr-only'>Button CTA</span>
+      </>
+    ),
   },
 }
 
@@ -97,18 +109,6 @@ export const IconTrailing = {
       <>
         Button CTA
         <CircleIcon />
-      </>
-    ),
-  },
-}
-
-export const IconOnly = {
-  args: {
-    ...args,
-    children: (
-      <>
-        <CircleIcon />
-        <span className='sr-only'>Button CTA</span>
       </>
     ),
   },
