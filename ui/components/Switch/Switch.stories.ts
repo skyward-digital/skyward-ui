@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Switch } from '.'
+import { testSwitchClick } from './Switch.test'
 
 const meta: Meta<typeof Switch> = {
   title: 'Components/Switch',
@@ -35,6 +36,7 @@ export const Label = {
   args: {
     label: 'Dark Mode',
   },
+  play: testSwitchClick,
 }
 
 export const Detail = {
