@@ -37,7 +37,7 @@ export const SIDEBAR: Sidebar = {
       { text: 'Author', link: '/components/author' },
       { text: 'Avatar', link: '/components/avatar' },
       { text: 'Button', link: '/components/button' },
-      // { text: 'Page 3', link: '/page-3' },
+      { text: 'Switch', link: '/components/switch' },
     ],
     'Page Sections': [{ text: 'Hero Section', link: '/page-sections/hero-section' }],
   },
