@@ -1,38 +1,49 @@
 ---
-import { getLanguageFromURL } from '../../languages'
-import { SIDEBAR } from '../../consts'
+import { getCollection } from 'astro:content'
 import { cn } from '#/utils'
 
 type Props = {
   currentPage: string
 }
 
+const collectionLinks = await (async () => {
+  const componentEntries = await getCollection('components')
+
+  return [
+    {
+      title: 'Components',
+      items: componentEntries.map(entry => ({
+        title: entry.data.title,
+        path: `/${entry.collection}/${entry.slug}`,
+      })),
+    },
+  ]
+})()
+
 const { currentPage } = Astro.props
 const linkMatch = (link: string) => link.replace('/', '')
-const langCode = getLanguageFromURL(currentPage)
-const sidebar = SIDEBAR[langCode]
 ---
 
 <nav aria-labelledby='grid-left'>
   <ul class='text-sm space-y-3'>
     {
-      Object.entries(sidebar).map(([header, children]) => (
+      collectionLinks.map(({ title, items }) => (
         <li>
           <div>
-            <h2 class='font-semibold text-gray-900 mb-1'>{header}</h2>
+            <h2 class='font-semibold text-gray-900 mb-1'>{title}</h2>
             <ul>
-              {children.map(child => {
+              {items.map(child => {
                 return (
                   <li>
                     <a
-                      href={child.link}
-                      aria-current={linkMatch(currentPage) === linkMatch(child.link) ? 'page' : false}
+                      href={child.path}
+                      aria-current={linkMatch(currentPage) === linkMatch(child.path) ? 'page' : false}
                       class={cn(
                         'block py-1 text-gray-600 transition duration-100 ease-out hover:underline focus:underline',
-                        linkMatch(currentPage) === linkMatch(child.link) ? 'font-bold' : ''
+                        linkMatch(currentPage) === linkMatch(child.path) ? 'font-bold' : ''
                       )}
                     >
-                      {child.text}
+                      {child.title}
                     </a>
                   </li>
                 )

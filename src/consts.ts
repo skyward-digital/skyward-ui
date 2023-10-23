@@ -28,17 +28,3 @@ export const ALGOLIA = {
   appId: 'XXXXXXXXXX',
   apiKey: 'XXXXXXXXXX',
 }
-
-export type Sidebar = Record<(typeof KNOWN_LANGUAGE_CODES)[number], Record<string, { text: string; link: string }[]>>
-export const SIDEBAR: Sidebar = {
-  en: {
-    Components: [
-      { text: 'Introduction', link: '/components' },
-      { text: 'Author', link: '/components/author' },
-      { text: 'Avatar', link: '/components/avatar' },
-      { text: 'Button', link: '/components/button' },
-      { text: 'Switch', link: '/components/switch' },
-    ],
-    'Page Sections': [{ text: 'Hero Section', link: '/page-sections/hero-section' }],
-  },
-}
