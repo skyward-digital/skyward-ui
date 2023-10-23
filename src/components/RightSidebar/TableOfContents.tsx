@@ -82,7 +82,7 @@ const TableOfContents = ({ headings = [] }: { headings: MarkdownHeading[] }) => 
                 onClick={onLinkClick}
                 className={cn(
                   'block py-1 text-gray-600 transition duration-100 ease-out hover:underline focus:underline',
-                  heading.depth === 3 && 'pl-3 text-xs'
+                  heading.depth === 3 && 'pl-3 text-[0.825rem]'
                 )}
               >
                 {heading.text}

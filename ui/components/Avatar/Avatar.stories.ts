@@ -19,10 +19,8 @@ const meta: Meta<AvatarProps> = {
 export default meta
 
 const args = {
-  image: {
-    src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-    alt: 'Dan Spratling',
-  },
+  src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+  alt: 'Dan Spratling',
   size: 'md',
   fallback: 'Dan Spratling',
 }
@@ -38,42 +36,42 @@ export const Fallback = {
   },
 }
 
-export const xs = {
+export const XSmall = {
   args: {
     ...args,
     size: 'xs',
   },
 }
 
-export const sm = {
+export const Small = {
   args: {
     ...args,
     size: 'sm',
   },
 }
 
-export const md = {
+export const Medium = {
   args: {
     ...args,
     size: 'md',
   },
 }
 
-export const lg = {
+export const Large = {
   args: {
     ...args,
     size: 'lg',
   },
 }
 
-export const xl = {
+export const XLarge = {
   args: {
     ...args,
     size: 'xl',
   },
 }
 
-export const xxl = {
+export const XXLarge = {
   args: {
     ...args,
     size: '2xl',

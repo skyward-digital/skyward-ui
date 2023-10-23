@@ -1,0 +1,76 @@
+---
+title: Author
+description: The author component displays an authors name, avatar and optional detail and links.
+---
+
+import { Button } from '#/ui/components/Button'
+import { Author } from '#/ui/components/Author'
+
+<div className='not-prose flex gap-2'>
+  <Button variant='outline' size='xs'>
+    Storybook
+  </Button>
+  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Author' variant='outline' size='xs'>
+    Github
+  </Button>
+</div>
+
+<br />
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+  />
+</div>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Author } from '@/ui/components/Author'
+```
+
+```jsx
+<Author
+  avatar={{
+    src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+    alt: 'Dan Spratling',
+  }}
+  name='Dan Spratling'
+/>
+```
+
+## Link
+
+By passing a href prop the author will become a link, ideal for linking to author profiles.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+    href='#dan-spratling'
+  />
+</div>
+
+## Detail
+
+We can optionally pass additional detail which will appear under the authors name.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+    detail='Founder of Skyward Digital'
+  />
+</div>

@@ -34,6 +34,8 @@ export const SIDEBAR: Sidebar = {
   en: {
     Components: [
       { text: 'Introduction', link: '/components' },
+      { text: 'Author', link: '/components/author' },
+      { text: 'Avatar', link: '/components/avatar' },
       { text: 'Button', link: '/components/button' },
       // { text: 'Page 3', link: '/page-3' },
     ],

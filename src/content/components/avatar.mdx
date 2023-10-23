@@ -1,0 +1,156 @@
+---
+title: Avatar
+description: An image that displays a user avatar with a fallback to the user's initials.
+---
+
+import { Button } from '#/ui/components/Button'
+import { Avatar } from '#/ui/components/Avatar'
+
+<div className='not-prose flex gap-2'>
+  <Button variant='outline' size='xs'>
+    Storybook
+  </Button>
+  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Avatar' variant='outline' size='xs'>
+    Github
+  </Button>
+</div>
+
+<br />
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Avatar
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='Dan Spratling'
+  />
+</div>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Avatar } from '@/ui/components/Avatar'
+```
+
+```jsx
+<Avatar
+  src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+  alt='Dan Spratling'
+  fallback='Dan Spratling'
+/>
+```
+
+## Image & fallback
+
+The avatar component has a fallback option that will display the user's initials if no image is provided.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Avatar
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='Dan Spratling'
+  />
+  <Avatar fallback='Dan Spratling' />
+</div>
+
+Fallbacks are based on the fallback prop, automatically caulculating the best initials to display.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Avatar fallback='Dan Spratling' />
+  <Avatar fallback='Dan' />
+  <Avatar fallback='DS' />
+</div>
+
+## Size
+
+The avatar has a selection of sizes to choose between.
+
+<div className='not-prose border rounded-t-lg p-6 flex items-center justify-center gap-2'>
+  <Avatar
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='xs'
+    size='xs'
+  >
+    xs
+  </Avatar>
+  <Avatar
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='sm'
+    size='sm'
+  >
+    sm
+  </Avatar>
+  <Avatar
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='md'
+    size='md'
+  >
+    md
+  </Avatar>
+  <Avatar
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='lg'
+    size='lg'
+  >
+    lg
+  </Avatar>
+  <Avatar
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='xl'
+    size='xl'
+  >
+    xl
+  </Avatar>
+  <Avatar
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='2xl'
+    size='2xl'
+  >
+    2xl
+  </Avatar>
+</div>
+<div className='not-prose border border-t-0 rounded-b-lg p-6 flex items-center justify-center gap-2'>
+  <Avatar fallback='xs' size='xs'>
+    xs
+  </Avatar>
+  <Avatar fallback='sm' size='sm'>
+    sm
+  </Avatar>
+  <Avatar fallback='md' size='md'>
+    md
+  </Avatar>
+  <Avatar fallback='lg' size='lg'>
+    lg
+  </Avatar>
+  <Avatar fallback='xl' size='xl'>
+    xl
+  </Avatar>
+  <Avatar fallback='2xl' size='2xl'>
+    2xl
+  </Avatar>
+</div>
+
+{/* Color options */}
+
+## Customisation
+
+### Classes
+
+You can customize avatars by passing a `className` prop. If this clashes with the default styles, the `className` will take precedence.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Avatar
+    className='rounded-lg rounded-tl-none'
+    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
+    alt='Dan Spratling'
+    fallback='Dan Spratling'
+  />
+  <Avatar className='bg-orange-500 text-white' fallback='Dan Spratling' />
+</div>

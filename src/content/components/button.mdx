@@ -14,10 +14,28 @@ They are used in a variety of places where you want users to do something like s
   <Button variant='outline' size='xs'>
     Storybook
   </Button>
-  <Button variant='outline' size='xs'>
+  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Button' variant='outline' size='xs'>
     Github
   </Button>
 </div>
+
+<br />
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='primary'>Primary</Button>
+</div>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Button } from '@/ui/components/Button'
+```
+
+```jsx
+<Button variant='primary'>Primary</Button>
+```
 
 ## Variants
 
@@ -136,7 +154,7 @@ You can use buttons as links by passing an href prop
 
 ## Customisation
 
-### Classes and styles
+### Classes
 
 You can customize individual buttons by passing a `className` prop. If this clashes with the default styles, the `className` will take precedence.
 
@@ -156,13 +174,7 @@ Make sure you override all the states to ensure a consistent experience, or you'
   </Button>
 </div>
 
-While tailwind classes are preferred, you can also use the style prop if you need to do something more complex, like passing JS values
-
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Button variant='destructive' style={{ width: '16rem' }}>
-    Destructive
-  </Button>
-</div>
+{/* Any button/link prop can also be passed */}
 
 ### onClick
 
