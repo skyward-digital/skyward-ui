@@ -30,7 +30,7 @@ import { Avatar } from '#/ui/components/Avatar'
 ## Usage
 
 ```jsx
-import { Avatar } from '@/ui/components/Avatar'
+import { Avatar } from '#/ui/components/Avatar'
 ```
 
 ```jsx
@@ -41,9 +41,9 @@ import { Avatar } from '@/ui/components/Avatar'
 />
 ```
 
-## Image & fallback
+## Image
 
-The avatar component has a fallback option that will display the user's initials if no image is provided.
+The Avatar component functions like an image component, and takes `src` and `alt` props like an image would.
 
 <div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
   <Avatar
@@ -51,20 +51,30 @@ The avatar component has a fallback option that will display the user's initials
     alt='Dan Spratling'
     fallback='Dan Spratling'
   />
-  <Avatar fallback='Dan Spratling' />
 </div>
 
-Fallbacks are based on the fallback prop, automatically caulculating the best initials to display.
+## Fallback
+
+The avatar component has a fallback option that will display the user's initials if no image is provided.
 
 <div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
   <Avatar fallback='Dan Spratling' />
-  <Avatar fallback='Dan' />
+</div>
+
+Fallbacks are automatically calculate the best initials to display (see code for a breakdown how this works).
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  {/* Use 2 characters first, if you want to set your own */}
   <Avatar fallback='DS' />
+  {/* Use the first characters of the first 2 words if a space exists */}
+  <Avatar fallback='Dan Spratling' />
+  {/* Use the first 2 characters of the first word if no space exists */}
+  <Avatar fallback='Dan' />
 </div>
 
 ## Size
 
-The avatar has a selection of sizes to choose between.
+The avatar has a selection of sizes to choose between, from **xs** to **2xl**.
 
 <div className='not-prose border rounded-t-lg p-6 flex items-center justify-center gap-2'>
   <Avatar
@@ -113,26 +123,6 @@ The avatar has a selection of sizes to choose between.
     fallback='2xl'
     size='2xl'
   >
-    2xl
-  </Avatar>
-</div>
-<div className='not-prose border border-t-0 rounded-b-lg p-6 flex items-center justify-center gap-2'>
-  <Avatar fallback='xs' size='xs'>
-    xs
-  </Avatar>
-  <Avatar fallback='sm' size='sm'>
-    sm
-  </Avatar>
-  <Avatar fallback='md' size='md'>
-    md
-  </Avatar>
-  <Avatar fallback='lg' size='lg'>
-    lg
-  </Avatar>
-  <Avatar fallback='xl' size='xl'>
-    xl
-  </Avatar>
-  <Avatar fallback='2xl' size='2xl'>
     2xl
   </Avatar>
 </div>

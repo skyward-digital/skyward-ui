@@ -1,1 +1,2 @@
-export { Image, type CustomImageProps as ImageProps } from './Image';
+export { Image } from './Image'
+export type { ImageProps } from './Image.d'

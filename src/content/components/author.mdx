@@ -32,7 +32,7 @@ import { Author } from '#/ui/components/Author'
 ## Usage
 
 ```jsx
-import { Author } from '@/ui/components/Author'
+import { Author } from '#/ui/components/Author'
 ```
 
 ```jsx
@@ -72,5 +72,60 @@ We can optionally pass additional detail which will appear under the authors nam
     }}
     name='Dan Spratling'
     detail='Founder of Skyward Digital'
+  />
+</div>
+
+## Sizes
+
+In some situations you might want to adjust the size of the author component, which you can do using the size prop
+
+<div className='not-prose border rounded-lg px-6 flex flex-col items-center justify-center gap-8 py-12'>
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+    size='xs'
+  />
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+    size='sm'
+  />
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+    size='md'
+  />
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+    size='lg'
+  />
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+    size='xl'
+  />
+  <Author
+    avatar={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+    name='Dan Spratling'
+    size='2xl'
   />
 </div>

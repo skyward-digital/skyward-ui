@@ -3,19 +3,54 @@ import { Link } from '#/ui/components/Link'
 import { cn } from '#/utils'
 import type { AuthorProps } from './Author.d'
 
-export const Author = ({ href, avatar, name, detail, className }: AuthorProps) => {
+export const Author = ({ href, avatar, name, detail, size = 'md', className }: AuthorProps) => {
   return (
-    <div className={cn('flex items-center gap-3', href && 'group', className)}>
+    <div
+      className={cn(
+        'flex items-center',
+        href && 'group',
+        size === 'xs' && 'gap-1.5',
+        size === 'sm' && 'gap-2',
+        size === 'md' && 'gap-3',
+        size === 'lg' && 'gap-3',
+        size === 'xl' && 'gap-3',
+        size === '2xl' && 'gap-4',
+        className
+      )}
+    >
       <Link href={href}>
-        <Avatar src={avatar?.src} alt={avatar?.alt} fallback={name} />
+        <Avatar src={avatar?.src} alt={avatar?.alt} fallback={name} size={size} />
       </Link>
       <div className='grid gap-0.5'>
         <Link href={href}>
-          <p className='text-gray-800 dark:text-gray-200 font-semibold leading-tight underline-offset-2 group-hover:underline group-hover:text-gray-600 dark:group-hover:text-gray-400'>
+          <p
+            className={cn(
+              'text-gray-800 dark:text-gray-200 font-semibold underline-offset-2 group-hover:underline group-hover:text-gray-600 dark:group-hover:text-gray-400',
+              size === 'xs' && 'text-sm',
+              size === 'sm' && 'text-sm',
+              size === 'md' && 'text-base',
+              size === 'lg' && 'text-lg',
+              size === 'xl' && 'text-xl',
+              size === '2xl' && 'text-2xl',
+              'leading-none'
+            )}
+          >
             {name}
           </p>
         </Link>
-        <p className='text-gray-600 dark:text-gray-400 text-sm tracking-tight'>{detail}</p>
+        <p
+          className={cn(
+            'text-gray-600 dark:text-gray-400 tracking-tight',
+            size === 'xs' && 'text-xs',
+            size === 'sm' && 'text-xs',
+            size === 'md' && 'text-sm',
+            size === 'lg' && 'text-base',
+            size === 'xl' && 'text-base',
+            size === '2xl' && 'text-base'
+          )}
+        >
+          {detail}
+        </p>
       </div>
     </div>
   )
