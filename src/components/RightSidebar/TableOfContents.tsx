@@ -73,6 +73,7 @@ const TableOfContents = ({ headings = [] }: { headings: MarkdownHeading[] }) => 
           .filter(({ depth }) => depth > 1 && depth < 4)
           .map(heading => (
             <li
+              key={heading.slug}
               className={`header-link depth-${heading.depth} ${
                 currentID === heading.slug ? 'current-header-link' : ''
               }`.trim()}

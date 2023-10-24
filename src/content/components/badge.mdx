@@ -1,0 +1,247 @@
+---
+title: Badge
+description: Highlight important information, like a new feature or a notification.
+---
+
+{/* Imports */}
+import { ArrowLeftIcon, ArrowRightIcon,AlertTriangleIcon, Announcement01Icon, XCloseIcon } from '@untitledui-icons/react/line'
+import { Badge } from '#/ui/components/Badge'
+import { Button } from '#/ui/components/Button'
+
+{/* Intro */}
+
+{/* Buttons */}
+
+<div className='not-prose flex gap-2'>
+  <Button variant='outline' size='xs'>
+    Storybook
+  </Button>
+  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Tab' variant='outline' size='xs'>
+    Github
+  </Button>
+</div>
+
+<br />
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Badge size='sm' color='info'>
+    Badge
+  </Badge>
+  <Badge size='md' color='warning' dot>
+    Badge
+  </Badge>
+  <Badge
+    size='lg'
+    color='info'
+    image={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+  >
+    Badge
+  </Badge>
+</div>
+
+## Variants
+
+Each badge has 3 different variants to choose between
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Badge variant='pill' color='info'>
+    Pill
+  </Badge>
+  <Badge variant='rounded' color='info'>
+    Rounded
+  </Badge>
+  <Badge variant='square' color='info'>
+    Square
+  </Badge>
+</div>
+
+## Size
+
+Each badge has 3 different size options to choose between
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Badge size='sm' color='info'>
+    sm
+  </Badge>
+  <Badge size='md' color='info'>
+    md
+  </Badge>
+  <Badge size='lg' color='info'>
+    lg
+  </Badge>
+</div>
+
+## Color
+
+### Random
+
+By default, badges will randomly select a color from the color options
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Badge>Badge</Badge>
+</div>
+
+### Palette
+
+You can specify any color from the tailwind color palette
+
+<div className='not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2'>
+  <Badge color='gray'>Gray</Badge>
+  <Badge color='red'>Red</Badge>
+  <Badge color='orange'>Orange</Badge>
+  <Badge color='amber'>Amber</Badge>
+  <Badge color='yellow'>Yellow</Badge>
+  <Badge color='lime'>Lime</Badge>
+  <Badge color='green'>Green</Badge>
+  <Badge color='emerald'>Emerald</Badge>
+  <Badge color='teal'>Teal</Badge>
+  <Badge color='cyan'>Cyan</Badge>
+  <Badge color='sky'>Sky</Badge>
+  <Badge color='blue'>Blue</Badge>
+  <Badge color='indigo'>Indigo</Badge>
+  <Badge color='violet'>Violet</Badge>
+  <Badge color='purple'>Purple</Badge>
+  <Badge color='fuchsia'>Fuchsia</Badge>
+  <Badge color='pink'>Pink</Badge>
+  <Badge color='rose'>Rose</Badge>
+</div>
+
+### Context
+
+You can also specify a color based on its context
+
+<div className='not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2'>
+  <Badge color='info'>Info</Badge>
+  <Badge color='success'>Success</Badge>
+  <Badge color='warning'>Warning</Badge>
+  <Badge color='danger'>Danger</Badge>
+</div>
+
+## Transparent
+
+You can pass the transparent prop to remove the badge background color, while leaving the highlight colors
+
+<div className='not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2'>
+  <Badge color='info' transparent>
+    Info
+  </Badge>
+  <Badge color='success' transparent>
+    Success
+  </Badge>
+  <Badge color='warning' transparent>
+    Warning
+  </Badge>
+  <Badge color='danger' transparent>
+    Danger
+  </Badge>
+</div>
+
+## Dot
+
+You can pass the dot prop to add a dot to your badge
+
+<div className='not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2'>
+  <Badge color='info' dot>
+    Info
+  </Badge>
+  <Badge color='success' dot>
+    Success
+  </Badge>
+  <Badge color='warning' dot>
+    Warning
+  </Badge>
+  <Badge color='danger' dot>
+    Danger
+  </Badge>
+</div>
+
+## Image
+
+You can pass an image object to add an image to your badge (this will disable the dot)
+
+<div className='not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2'>
+  <Badge
+    color='info'
+    image={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+  >
+    Info
+  </Badge>
+  <Badge
+    color='success'
+    image={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+  >
+    Success
+  </Badge>
+  <Badge
+    color='warning'
+    image={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+  >
+    Warning
+  </Badge>
+  <Badge
+    color='danger'
+    image={{
+      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
+      alt: 'Dan Spratling',
+    }}
+  >
+    Danger
+  </Badge>
+</div>
+
+## Icons
+
+You can pass an icon as a child to add an icon to your badge
+
+<div className='not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2'>
+  <Badge color='info'>
+    <ArrowLeftIcon /> Info
+  </Badge>
+  <Badge color='success'>
+    Info <ArrowRightIcon />
+  </Badge>
+  <Badge color='warning'>
+    <AlertTriangleIcon /> Warning
+  </Badge>
+  <Badge>
+    Danger <Announcement01Icon />
+  </Badge>
+</div>
+
+## Interactivity
+
+By default, badges are not interactive but you can pass a prop with interactivity if you need it (don't forget to style it)
+
+<div className='not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2'>
+  <Badge color='info'>
+    Remove
+    <button className='-mx-1 inline-flex items-center justify-center rounded hover:bg-black/10 focus:bg-black/10 h-5 w-5'>
+      <XCloseIcon className='h-4 w-4' />
+      <span className='sr-only'>Close Example</span>
+    </button>
+  </Badge>
+</div>
+
+## Customization
+
+### Classes
+
+You can customize badges further by passing a className prop, which will override any styles already set.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Badge className='bg-slate-200 border-x-0 text-slate-800 border-slate-200 border-b-2 rounded-none border-b-slate-800'>
+    Destructive
+  </Badge>
+</div>

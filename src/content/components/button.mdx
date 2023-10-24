@@ -152,7 +152,21 @@ You can use buttons as links by passing an href prop
   </Button>
 </div>
 
-## Customisation
+{/* Any button/link prop can also be passed */}
+
+## Interactivity
+
+### onClick
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Button variant='primary'>Primary</Button>
+  <Button variant='outline'>Outline</Button>
+  <Button variant='ghost'>Ghost</Button>
+  <Button variant='text'>Text</Button>
+  <Button variant='destructive'>Destructive</Button>
+</div>
+
+## Customization
 
 ### Classes
 
@@ -172,16 +186,4 @@ Make sure you override all the states to ensure a consistent experience, or you'
   <Button variant='destructive' className='bg-amber-500'>
     Destructive
   </Button>
-</div>
-
-{/* Any button/link prop can also be passed */}
-
-### onClick
-
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Button variant='primary'>Primary</Button>
-  <Button variant='outline'>Outline</Button>
-  <Button variant='ghost'>Ghost</Button>
-  <Button variant='text'>Text</Button>
-  <Button variant='destructive'>Destructive</Button>
 </div>
