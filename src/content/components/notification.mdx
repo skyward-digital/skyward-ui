@@ -1,0 +1,154 @@
+---
+title: Notification
+description: A small indicator notifying users of an unread message or event.
+---
+
+{/* Imports */}
+import { Bell01Icon } from '@untitledui-icons/react/line'
+import { Notification } from '#/ui/components/Notification'
+import { Button } from '#/ui/components/Button'
+import { Badge } from '#/ui/components/Badge'
+
+{/* Default */}
+
+{/* Buttons */}
+
+<div className='not-prose flex gap-2'>
+  <Button variant='outline' size='xs'>
+    Storybook
+  </Button>
+  <Button
+    href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Notification'
+    variant='outline'
+    size='xs'
+  >
+    Github
+  </Button>
+</div>
+
+<br />
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={50}>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+  <Notification count={100}>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+  <Notification count={50} hideNumber>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+</div>
+
+## Usage
+
+```jsx
+import { Notification } from '#/ui/components/Notification'
+```
+
+```jsx
+<Notification count={42}>
+  <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+</Notification>
+```
+
+Notification acts as a wrapping component in order to position itself correctly. You can wrap any component in a Notification.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={50}>
+    <Bell01Icon className='w-6 h-6 text-gray-600' />
+  </Notification>
+  <Notification count={50}>
+    <Badge>Badge</Badge>
+  </Notification>
+  <Notification count={50}>
+    <Button>Button</Button>
+  </Notification>
+</div>
+
+## Props
+
+### Count
+
+The only required prop is `count`. This is the number of notifications you have to display.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={50}>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+</div>
+
+### Max
+
+By default you're limited to 99 notificatons, after which a + will be displayed.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={200}>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+</div>
+
+You can adjust this using the max prop, which will create your new upper limit. Counts that go over the max prop will display the max prop with a +.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={123} max={999}>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+  <Notification count={1000} max={999}>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+</div>
+
+### Hide Plus
+
+You can hide the plus if you prefer, while still limiting the max number displayed
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={200} hidePlus>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+</div>
+
+### Hide Number
+
+If you prefer not to show notification numbers, you can hide them.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={200} hideNumber>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+</div>
+
+### Show Zero
+
+By default, if you have 0 notifications, nothing will be displayed. You can override this by setting `showZero` to true.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={0} showZero>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+</div>
+
+## Interactivity
+
+Notifications are not interactive. If you wish to link to a notification page or open a menu, it is recommended you pass this as a child to the Notification component.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={50}>
+    <a href='#'>
+      <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+    </a>
+  </Notification>
+</div>
+
+## Customization
+
+### Classes
+
+You can customize notifications further by passing a className prop, which will override any styles already set. (this will style the notification indicator, not the wrapping container)
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-8'>
+  <Notification count={50} className='bg-indigo-500'>
+    <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+  </Notification>
+</div>
