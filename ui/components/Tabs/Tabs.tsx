@@ -28,11 +28,13 @@ export const Tabs = ({ tabs, panels }: TabsProps) => {
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className='w-full'>
-          {tabs.map((tab, index) => (
-            <Tab.Panel key={transformId(tab)}>{panels?.props?.children[index]}</Tab.Panel>
-          ))}
-        </Tab.Panels>
+        {panels && (
+          <Tab.Panels className='w-full'>
+            {tabs.map((tab, index) => (
+              <Tab.Panel key={transformId(tab)}>{panels?.props?.children?.[index]}</Tab.Panel>
+            ))}
+          </Tab.Panels>
+        )}
       </Tab.Group>
     </div>
   )
