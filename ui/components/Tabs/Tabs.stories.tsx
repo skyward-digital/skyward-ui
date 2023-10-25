@@ -1,14 +1,14 @@
 import type { Meta } from '@storybook/react'
-import { TabGroup, TabList, TabTrigger, TabPanel, TabPanels } from './Tabs'
+import { Tabs } from './Tabs'
+import { cn } from '#/utils'
 
-const meta: Meta<typeof TabGroup> = {
-  title: 'Components/TabGroup',
-  component: TabGroup,
+const meta: Meta<typeof Tabs> = {
+  title: 'Components/Tabs',
+  component: Tabs,
   parameters: {
     docs: {
       description: {
-        component:
-          'TabGroup is a wrapper component that provides a sticky navigation for TabGroup. It should be used with TabLink to provide full functionality',
+        component: '',
       },
     },
   },
@@ -17,25 +17,23 @@ const meta: Meta<typeof TabGroup> = {
 
 export default meta
 
+const Panel = ({ className, children }) => (
+  <div className={cn('w-full rounded-xl p-4 bg-gray-300 ring-inset ring-1 ring-gray-400/50', className)}>
+    {children}
+  </div>
+)
+
 export const Default = {
   render: () => (
-    <TabGroup>
-      <TabList>
-        <TabTrigger>Tab 1</TabTrigger>
-        <TabTrigger>Tab 2</TabTrigger>
-        <TabTrigger>Tab 3</TabTrigger>
-      </TabList>
-      <TabPanels>
-        <TabPanel>
-          <p>Tab 1 content</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Tab 2 content</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Tab 3 content</p>
-        </TabPanel>
-      </TabPanels>
-    </TabGroup>
+    <Tabs
+      tabs={['Tab 1', 'Tab 2', 'Tab 3']}
+      panels={
+        <>
+          <Panel className='bg-blue-800'>Tab 1</Panel>
+          <Panel className='bg-red-800'>Tab 2</Panel>
+          <Panel className='bg-green-800'>Tab 3</Panel>
+        </>
+      }
+    />
   ),
 }
