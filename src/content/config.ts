@@ -6,6 +6,7 @@ const componentsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    client: z.boolean().optional(),
     // pubDate: z.date(),
     // author: z.string(),
     // image: z.object({

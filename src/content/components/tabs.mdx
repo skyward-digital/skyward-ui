@@ -1,10 +1,10 @@
 ---
 title: Tab
 description: Tab are used to switch between different content within the same context
+client: true
 ---
 
-import { Tab } from '@headlessui/react'
-// import { TabGroup, TabList, TabTrigger, TabPanel, TabPanels } from '#/ui/components/Tabs'
+import { Tabs } from '#/ui/components/Tabs'
 import { Button } from '#/ui/components/Button'
 
 <div className='not-prose flex gap-2'>
@@ -19,24 +19,15 @@ import { Button } from '#/ui/components/Button'
 <br />
 
 <div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  {/* <Tab.Group> */}
-  {/* <Tab.List> */}
-  {/* <Tab>Tab 1</Tab> */}
-  {/* <Tab>Tab 2</Tab> */}
-  {/* <Tab>Tab 3</Tab> */}
-  {/* </Tab.List> */}
-  {/* <Tab.Panels> */}
-  {/* <Tab.Panel> */}
-  {/* <p>Tab 1 content</p> */}
-  {/* </Tab.Panel> */}
-  {/* <Tab.Panel> */}
-  {/* <p>Tab 2 content</p> */}
-  {/* </Tab.Panel> */}
-  {/* <Tab.Panel> */}
-  {/* <p>Tab 3 content</p> */}
-  {/* </Tab.Panel> */}
-  {/* </Tab.Panels> */}
-  {/* </Tab.Group> */}
+  <Tabs tabs={['Tab 1', 'Tab 2', 'Tab 3']} client:load />
 </div>
 
 {/* ## Installation */}
+
+<div>
+  <Tabs tabs={['Tab 1', 'Tab 2', 'Tab 3']} client:load>
+    <div className='w-full h-12 bg-red-400' slot='panels' />
+    <div className='w-full h-12 bg-blue-400' slot='panels' />
+    <div className='w-full h-12 bg-green-400' slot='panels' />
+  </Tabs>
+</div>

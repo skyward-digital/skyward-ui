@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
+import { Badge } from '#/ui/components/Badge'
 
 export async function getStaticPaths() {
   const componentEntries = await getCollection('components')
@@ -17,8 +18,20 @@ const { Content, headings } = await entry.render()
 
 <Layout headings={headings} {...entry.data}>
   <!-- Breadcrumbs here -->
-  <h1 class='text-4xl font-semibold mb-2'>{entry.data.title}</h1>
+  <div class='flex gap-2 mb-4 items-end'>
+    <h1 class='text-4xl font-semibold leading-none'>{entry.data.title}</h1>
+    {
+      entry.data.client && (
+        <>
+          <Badge size='sm' color='gray'>
+            Requires JS
+          </Badge>
+        </>
+      )
+    }
+  </div>
   <p class='text-xl text-gray-600 dark:text-gray-400 mb-4'>{entry.data.description}</p>
+
   <div class='prose dark:prose-invert max-w-none'>
     <Content />
   </div>

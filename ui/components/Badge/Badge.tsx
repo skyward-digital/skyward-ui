@@ -50,7 +50,7 @@ export const Badge = ({
     <div
       className={cn(
         // layout
-        'border inline-flex items-center justify-center overflow-hidden whitespace-nowrap font-semibold tracking-wide [&>*]:inline-flex [&>*]:items-center',
+        'border inline-flex items-center justify-center overflow-hidden whitespace-nowrap font-semibold tracking-snug [&>*]:inline-flex [&>*]:items-center',
 
         // variants
         variant === 'rounded' && 'rounded-lg',
