@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { cn } from '#/utils'
+import { cn, transformId } from '#/utils'
 import type { SwitchProps } from './Switch.d'
 
 export const Switch = ({
@@ -22,7 +22,7 @@ export const Switch = ({
     setEnabled(!enabled)
   }
 
-  const transformId = id ?? label?.replace(/\s+/g, '-')?.toLowerCase() ?? undefined
+  id = id ?? transformId(label) ?? undefined
 
   return (
     <div
@@ -34,7 +34,7 @@ export const Switch = ({
       )}
     >
       <button
-        id={transformId}
+        id={id}
         className={cn(
           'relative inline-flex flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:ring-4 focus:ring-indigo-500/40 focus:ring-offset-2 focus:outline-indigo-500',
           enabled ? 'bg-indigo-500' : 'bg-gray-200 dark:bg-gray-700',
@@ -67,7 +67,7 @@ export const Switch = ({
 
       {label && !hideLabel ? (
         <div className={cn('-my-1.5', !reverse ? 'text-left' : 'text-right')}>
-          <label htmlFor={transformId} className='font-semibold'>
+          <label htmlFor={id} className='font-semibold'>
             {label}
           </label>
           {detail ? <p className='text-sm text-gray-600 dark:text-gray-400'>{detail}</p> : null}

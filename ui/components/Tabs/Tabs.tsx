@@ -2,10 +2,9 @@
 
 import { Tab } from '@headlessui/react'
 import type { TabsProps } from './Tabs.d'
-import { cn } from '#/utils'
+import { cn, transformId } from '#/utils'
 
 export const Tabs = ({ tabs, panels }: TabsProps) => {
-  const transformId = (label: string) => label?.replace(/\s+/g, '-')?.toLowerCase()
   console.log(panels)
 
   return (
