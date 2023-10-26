@@ -1,0 +1,157 @@
+---
+title: Checkbox
+description: A toggle that allows users to choose between checked and unchecked states.
+client: true
+---
+
+{/* Imports */}
+import { MinusIcon, FaceHappyIcon } from '@untitledui-icons/react/line'
+import { Checkbox } from '#/ui/components/Checkbox'
+import { Button } from '#/ui/components/Button'
+
+{/* Buttons */}
+
+<div className='not-prose flex gap-2'>
+  <Button variant='outline' size='xs'>
+    Storybook
+  </Button>
+  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Checkbox' variant='outline' size='xs'>
+    Github
+  </Button>
+</div>
+
+<br />
+
+{/* Preview */}
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Checkbox client:load />
+  <Checkbox defaultChecked client:load />
+</div>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Checkbox } from '#/ui/components/Checkbox'
+```
+
+```jsx
+<Checkbox />
+```
+
+## Label
+
+You can pass a label to your checkbox to automatically associate it with the checkbox.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Checkbox label='Accept terms and conditions' defaultChecked client:load />
+</div>
+
+If you need a checkbox with accessible text that isn't visible, you can hide the label
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Checkbox label='Accept terms and conditions' hideLabel defaultChecked client:load />
+</div>
+
+Optionally, if you need your label separated from your checkbox, you can associate them by using the `id` and `aria-labelledby` props.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <div className='border rounded-lg p-6 justify-between w-full max-w-2xl flex'>
+    <div className='flex flex-col'>
+      <label htmlFor='card-example'>Newsletter</label>
+      <span className='text-sm text-gray-600'>Join 1500+ subscribers for a free weekly newsletter</span>
+    </div>
+    <Checkbox id='card-example' defaultChecked client:load />
+  </div>
+</div>
+
+## Size
+
+You can change the size of your checkbox by passing the `size` prop.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Checkbox size='sm' label='size sm' hideLabel defaultChecked client:load />
+  <Checkbox size='md' label='size md' hideLabel defaultChecked client:load />
+  <Checkbox size='lg' label='size lg' hideLabel defaultChecked client:load />
+</div>
+
+## Icon
+
+You can pass a custom icon if you want to change the default check
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  {/* Show usestate code here for code preview only */}
+  <Checkbox label='custom icon example' hideLabel defaultChecked client:load>
+    <FaceHappyIcon slot='icon' />
+  </Checkbox>
+</div>
+
+You may need to adjust the size of your icon to fit the checkbox (this isn't done for you for custom icons)
+
+## Controlled
+
+You can control the state of the checkbox from outside of the component by passing the `checked` and `onChange` props.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  {/* Show usestate code here for code preview only */}
+  <Checkbox label='controlled example' defaultChecked client:load />
+</div>
+
+## Indeterminate
+
+While a checkbox can only accept 2 states in a form, checked or unchecked, there may be other situations where showing an indeterminate (or partially selected) state might make sense.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  {/* Show usestate code here for code preview only */}
+  <Checkbox label='indeterminate example' hideLabel defaultChecked client:load>
+    <MinusIcon slot='icon' strokeWidth={3} />
+  </Checkbox>
+</div>
+
+## Customisation
+
+### Classes
+
+All custom classes will be passed down to the checkbox, so you can style it however you want.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <Checkbox
+    className='data-[state=checked]:bg-red-500'
+    label='custom class example'
+    hideLabel
+    defaultChecked
+    client:load
+  />
+</div>
+
+### Wrappers
+
+By default the checkbox does not have any wrappers, the button, input (which is hidden) and label are all at the same DOM heirarchy. This means you can wrap the checkbox however you want if you'd like to style it differently.
+
+<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+  <div className='flex flex-col justify-center items-center'>
+    <Checkbox label='The checkbox is above this text' defaultChecked client:load />
+  </div>
+</div>
+
+This may mean that styles don't inherit like you'd expect on the label, so you may want to adjust the label or create your own
+
+<div className='not-prose border rounded-lg p-6 flex flex-col items-center justify-center gap-4'>
+  <div className='text-2xl'>
+    <Checkbox label='2xl text class is not used by this label' defaultChecked client:load />
+  </div>
+
+  <div className='text-2xl space-x-2'>
+    <Checkbox id="2xl-example" defaultChecked client:load /><label htmlFor="2xl-example">But is is used here!</label>
+  </div>
+</div>
+
+You may also notice that the text jumps around a little if you're using the built in label (like above), this is why. It's recommended you wrap the checkbox yourself.
+
+<div className='not-prose border rounded-lg p-6 flex flex-col items-center justify-center gap-4'>
+  <div className='flex items-center'>
+    <Checkbox label='2xl text class is not used by this label' defaultChecked client:load />
+  </div>
+</div>

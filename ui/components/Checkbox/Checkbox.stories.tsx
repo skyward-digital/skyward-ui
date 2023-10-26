@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 import { useState } from 'react'
 import { Checkbox } from './Checkbox'
-import { CheckIcon, MinusIcon } from '@untitledui-icons/react/line'
+import { CheckIcon, FaceHappyIcon, MinusIcon } from '@untitledui-icons/react/line'
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
@@ -11,19 +11,6 @@ const meta: Meta<typeof Checkbox> = {
       description: {
         component: 'Checkbox component',
       },
-    },
-    a11y: {
-      element: '#storybook-root',
-      config: {
-        rules: [
-          {
-            // Buttons can be labelled using for/htmlFor, but this is not included in the tests here
-            id: 'text',
-            enabled: false,
-          },
-        ],
-      },
-      options: {},
     },
   },
   tags: ['autodocs'],
@@ -54,12 +41,20 @@ export const Indeterminate = {
         id='email'
         label='Accept terms and conditions'
         checked={checked}
-        icon={checked === 'indeterminate' ? MinusIcon : checked ? CheckIcon : undefined}
+        icon={checked === 'indeterminate' ? <MinusIcon /> : checked ? <CheckIcon /> : undefined}
         onChange={() =>
           checked === 'indeterminate' ? setChecked(true) : checked ? setChecked(false) : setChecked('indeterminate')
         }
       />
     )
+  },
+}
+
+export const CustomIcon = {
+  args: {
+    id: 'text',
+    label: 'Accept terms and conditions',
+    icon: <FaceHappyIcon />,
   },
 }
 

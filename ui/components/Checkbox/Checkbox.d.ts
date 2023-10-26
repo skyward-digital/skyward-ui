@@ -1,6 +1,6 @@
 export type CheckboxProps = {
-  id: string
   label: string
+  hideLabel?: boolean
   checked?: 'indeterminate' | boolean
   defaultChecked?: boolean
   icon?: any

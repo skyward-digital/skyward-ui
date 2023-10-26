@@ -1,34 +1,33 @@
-import { Fragment, useState } from 'react'
-import { cn } from '#/utils'
+'use client'
+import { useState } from 'react'
+import { cn, transformId } from '#/utils'
 import { CheckIcon } from '@untitledui-icons/react/line'
 import type { CheckboxProps } from './Checkbox.d'
 
 export const Checkbox = ({
   id,
   label,
+  hideLabel,
   checked,
   defaultChecked,
   icon,
-  className,
   size = 'md',
+  className,
   ...props
 }: CheckboxProps) => {
   // Uncontrolled (internal) component state - see "checked" for controlled component state
   const [checkedState, setCheckedState] = useState(defaultChecked || false)
 
+  const formattedId = id ? id : label ? transformId(label) : undefined
   const isChecked = checked !== undefined ? checked : checkedState
-  const Icon = icon || CheckIcon
-
-  const Wrapper = label ? 'div' : Fragment
 
   return (
-    <Wrapper className='flex items-center'>
+    <>
       <button
-        id={id}
+        id={formattedId}
         type='button'
         role='checkbox'
         aria-checked={isChecked === 'indeterminate' ? 'mixed' : isChecked}
-        aria-labelledBy={`for-${id}`}
         data-state={isChecked ? 'checked' : ''}
         value={isChecked ? 'on' : 'off'}
         className={cn(
@@ -53,17 +52,21 @@ export const Checkbox = ({
         }}
         {...props}
       >
-        {isChecked && (
-          <Icon
-            className={cn(
-              'pointer-events-none text-inherit',
-              size === 'sm' && 'w-3 h-3',
-              size === 'md' && 'w-4 h-4',
-              size === 'lg' && 'w-5 h-5'
-            )}
-            strokeWidth={3}
-          />
-        )}
+        {isChecked &&
+          (icon ? (
+            icon
+          ) : (
+            <CheckIcon
+              className={cn(
+                'pointer-events-none text-inherit',
+                size === 'sm' && 'w-3 h-3',
+                size === 'md' && 'w-4 h-4',
+                size === 'lg' && 'w-5 h-5'
+              )}
+              strokeWidth={3}
+            />
+          ))}
+        <span className='sr-only'>{label}</span>
       </button>
       <input
         type='checkbox'
@@ -76,11 +79,11 @@ export const Checkbox = ({
           props.onChange ? props.onChange(event) : setCheckedState(!isChecked)
         }}
       />
-      {label && (
+      {!hideLabel && label && (
         <label
-          htmlFor={id}
+          htmlFor={formattedId}
           className={cn(
-            'ml-2 text-gray-800 dark:text-gray-200 cursor-pointer', // size
+            'inline-block ml-2 text-gray-800 dark:text-gray-200 cursor-pointer', // size
             size === 'sm' && 'text-xs',
             size === 'md' && 'text-sm',
             size === 'lg' && 'text-md'
@@ -89,6 +92,6 @@ export const Checkbox = ({
           {label}
         </label>
       )}
-    </Wrapper>
+    </>
   )
 }
