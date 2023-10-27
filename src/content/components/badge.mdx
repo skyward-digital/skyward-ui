@@ -3,14 +3,16 @@ title: Badge
 description: Highlight important information, like a new feature or a notification.
 ---
 
-{/* Imports */}
-import { ArrowLeftIcon, ArrowRightIcon,AlertTriangleIcon, Announcement01Icon, XCloseIcon } from '@untitledui-icons/react/line'
-import { Badge } from '#/ui/components/Badge'
-import { Button } from '#/ui/components/Button'
-
-{/* Intro */}
-
-{/* Buttons */}
+import {
+  AlertTriangleIcon,
+  Announcement01Icon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  XCloseIcon,
+} from "@untitledui-icons/react/line"
+import { CodePreview } from "#/src/components/Tabs"
+import { Badge } from "#/ui/components/Badge"
+import { Button } from "#/ui/components/Button"
 
 <div className="not-prose flex gap-2">
   <Button variant="outline" size="xs">
@@ -27,7 +29,7 @@ import { Button } from '#/ui/components/Button'
 
 <br />
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge size="sm" color="info">
     Badge
   </Badge>
@@ -44,13 +46,25 @@ import { Button } from '#/ui/components/Button'
   >
     Badge
   </Badge>
-</div>
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Badge } from "#/ui/components/Badge"
+```
+
+```jsx
+<Badge>Badge</Badge>
+```
 
 ## Variants
 
 Each badge has 3 different variants to choose between
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge variant="pill" color="info">
     Pill
   </Badge>
@@ -60,13 +74,23 @@ Each badge has 3 different variants to choose between
   <Badge variant="square" color="info">
     Square
   </Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge
+      variant="pill" // or "rounded" or "square"
+      color="info"
+    >
+      Pill
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ## Size
 
 Each badge has 3 different size options to choose between
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge size="sm" color="info">
     sm
   </Badge>
@@ -76,7 +100,17 @@ Each badge has 3 different size options to choose between
   <Badge size="lg" color="info">
     lg
   </Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge
+      size="sm" // or "md" or "lg"
+      color="info"
+    >
+      sm
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ## Color
 
@@ -84,15 +118,24 @@ Each badge has 3 different size options to choose between
 
 By default, badges will randomly select a color from the color options
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge>Badge</Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge
+      color="random" // or don't pass a color prop
+    >
+      Random
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ### Palette
 
 You can specify any color from the tailwind color palette
 
-<div className="not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge color="gray">Gray</Badge>
   <Badge color="red">Red</Badge>
   <Badge color="orange">Orange</Badge>
@@ -111,24 +154,42 @@ You can specify any color from the tailwind color palette
   <Badge color="fuchsia">Fuchsia</Badge>
   <Badge color="pink">Pink</Badge>
   <Badge color="rose">Rose</Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge
+      color="amber" // or any tailwind color name
+    >
+      Palette
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ### Context
 
 You can also specify a color based on its context
 
-<div className="not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge color="info">Info</Badge>
   <Badge color="success">Success</Badge>
   <Badge color="warning">Warning</Badge>
   <Badge color="danger">Danger</Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge
+      color="info" // or "success" or "warning" or "danger"
+    >
+      Context
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ## Transparent
 
 You can pass the transparent prop to remove the badge background color, while leaving the highlight colors
 
-<div className="not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge color="info" transparent>
     Info
   </Badge>
@@ -141,13 +202,23 @@ You can pass the transparent prop to remove the badge background color, while le
   <Badge color="danger" transparent>
     Danger
   </Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge
+      color="info" // any color from above
+      transparent
+    >
+      Transparent
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ## Dot
 
 You can pass the dot prop to add a dot to your badge
 
-<div className="not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge color="info" dot>
     Info
   </Badge>
@@ -160,13 +231,20 @@ You can pass the dot prop to add a dot to your badge
   <Badge color="danger" dot>
     Danger
   </Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge color="info" dot>
+      Dot
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ## Image
 
 You can pass an image object to add an image to your badge (this will disable the dot)
 
-<div className="not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge
     color="info"
     image={{
@@ -203,13 +281,26 @@ You can pass an image object to add an image to your badge (this will disable th
   >
     Danger
   </Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge
+      color="info"
+      image={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+    >
+      Info
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ## Icons
 
 You can pass an icon as a child to add an icon to your badge
 
-<div className="not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge color="info">
     <ArrowLeftIcon /> Info
   </Badge>
@@ -222,13 +313,20 @@ You can pass an icon as a child to add an icon to your badge
   <Badge>
     Danger <Announcement01Icon />
   </Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge color="warning">
+      <AlertTriangleIcon /> Warning
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ## Interactivity
 
 By default, badges are not interactive but you can pass a prop with interactivity if you need it (don't forget to style it)
 
-<div className="not-prose border rounded-lg p-6 flex flex-wrap items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge color="info">
     Remove
     <button className="-mx-1 inline-flex items-center justify-center rounded hover:bg-black/10 focus:bg-black/10 h-5 w-5">
@@ -236,7 +334,21 @@ By default, badges are not interactive but you can pass a prop with interactivit
       <span className="sr-only">Close Example</span>
     </button>
   </Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge color="info">
+      Remove
+      <button
+        onClick={() => alert("Clicked")} // or whatever functionality you need
+        className="-mx-1 inline-flex items-center justify-center rounded hover:bg-black/10 focus:bg-black/10 h-5 w-5"
+      >
+        <XCloseIcon className="h-4 w-4" />
+        <span className="sr-only">Close Example</span>
+      </button>
+    </Badge>
+    ```
+  </div>
+</CodePreview>
 
 ## Customization
 
@@ -244,8 +356,15 @@ By default, badges are not interactive but you can pass a prop with interactivit
 
 You can customize badges further by passing a className prop, which will override any styles already set.
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview client:load>
   <Badge className="bg-slate-200 border-x-0 text-slate-800 border-slate-200 border-b-2 rounded-none border-b-slate-800">
     Destructive
   </Badge>
-</div>
+  <div slot="code">
+    ```jsx
+    <Badge className="bg-slate-200 border-x-0 text-slate-800 border-slate-200 border-b-2 rounded-none border-b-slate-800">
+      Destructive
+    </Badge>
+    ```
+  </div>
+</CodePreview>

@@ -4,7 +4,7 @@ description: Tab are used to switch between different content within the same co
 client: true
 ---
 
-import { Tabs, TabsGranular, CodePreview } from "#/src/components/Tabs"
+import { CodePreview, Tabs, TabsGranular } from "#/src/components/Tabs"
 import { Button } from "#/ui/components/Button"
 
 <div className="not-prose flex gap-2">
@@ -23,7 +23,7 @@ import { Button } from "#/ui/components/Button"
 <br />
 
 <CodePreview client:load>
-  <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} slot="preview" client:load>
+  <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load>
     <div className="py-1.5 px-2" slot="1">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci
@@ -93,7 +93,7 @@ import { Tabs } from "#/ui/components/Switch"
 The tabs component does not provide any styling for the panels, but you can pass your own.
 
 <CodePreview client:load>
-  <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load slot="preview">
+  <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load>
     <div
       className="w-full h-full bg-red-100 rounded border border-red-400 p-4"
       slot="1"
@@ -139,8 +139,22 @@ The tabs component does not provide any styling for the panels, but you can pass
 
 If you need more fine-grain control you can access each layer of the tabs component individually.
 
+First, update your import
+
+```jsx
+import {
+  TabGroup,
+  TabList,
+  TabPanel,
+  TabPanels,
+  TabTrigger,
+} from "#/ui/components/Tabs"
+```
+
+Then you can build your tabs out with the individual tab components
+
 <CodePreview client:load>
-  <TabsGranular tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load slot="preview">
+  <TabsGranular tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load>
     <div
       className="w-full h-full bg-red-100 rounded border border-red-400 p-4"
       slot="1"
@@ -161,8 +175,7 @@ If you need more fine-grain control you can access each layer of the tabs compon
     </div>
   </TabsGranular>
   <div slot="code">
-    ```jsx import {(TabGroup, TabList, TabTrigger, TabPanels, TabPanel)} from
-    '#/ui/components/Tabs' //...
+    ```jsx
     <div className="flex w-full space-x-2">
       <TabGroup>
         <TabList className="flex flex-col w-40">

@@ -3,10 +3,8 @@ title: Component Name
 description: Lorem ipsum dolor sit amet
 ---
 
-{/* Imports */}
-import { Button } from '#/ui/components/Button'
-
-{/* Buttons */}
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
 
 <div className="not-prose flex gap-2">
   <Button variant="outline" size="xs">
@@ -25,9 +23,9 @@ import { Button } from '#/ui/components/Button'
 
 {/* Preview */}
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview>
   <Button href="#">Button</Button>
-</div>
+</CodePreview>
 
 {/* ## Installation */}
 
@@ -40,5 +38,14 @@ import { Button } from "#/ui/components/Button"
 ```jsx
 <Button href="#">Button</Button>
 ```
+
+<CodePreview>
+  <Button href="#">Button</Button>
+  <div slot="code">
+    ```jsx
+    <Button href="#">Button</Button>
+    ```
+  </div>
+</CodePreview>
 
 Your content here

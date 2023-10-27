@@ -3,8 +3,9 @@ title: Author
 description: The author component displays an authors name, avatar and optional detail and links.
 ---
 
-import { Button } from "#/ui/components/Button"
+import { CodePreview } from "#/src/components/Tabs"
 import { Author } from "#/ui/components/Author"
+import { Button } from "#/ui/components/Button"
 
 <div className="not-prose flex gap-2">
   <Button variant="outline" size="xs">
@@ -21,7 +22,7 @@ import { Author } from "#/ui/components/Author"
 
 <br />
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview>
   <Author
     avatar={{
       src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
@@ -29,7 +30,7 @@ import { Author } from "#/ui/components/Author"
     }}
     name="Dan Spratling"
   />
-</div>
+</CodePreview>
 
 {/* ## Installation */}
 
@@ -53,7 +54,7 @@ import { Author } from "#/ui/components/Author"
 
 By passing a href prop the author will become a link, ideal for linking to author profiles.
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview client:load>
   <Author
     avatar={{
       src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
@@ -61,14 +62,28 @@ By passing a href prop the author will become a link, ideal for linking to autho
     }}
     name="Dan Spratling"
     href="#dan-spratling"
-  />
-</div>
+
+/>
+
+  <div slot="code">
+    ```jsx
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      href="/team/dan-spratling"
+    />
+    ```
+  </div>
+</CodePreview>
 
 ## Detail
 
 We can optionally pass additional detail which will appear under the authors name.
 
-<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+<CodePreview client:load>
   <Author
     avatar={{
       src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
@@ -76,60 +91,93 @@ We can optionally pass additional detail which will appear under the authors nam
     }}
     name="Dan Spratling"
     detail="Founder of Skyward Digital"
-  />
-</div>
+
+/>
+
+  <div slot="code">
+    ```jsx
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      detail="Founder of Skyward Digital"
+    />
+    ```
+  </div>
+</CodePreview>
 
 ## Sizes
 
 In some situations you might want to adjust the size of the author component, which you can do using the size prop
 
-<div className="not-prose border rounded-lg px-6 flex flex-col items-center justify-center gap-8 py-12">
-  <Author
-    avatar={{
-      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
-      alt: "Dan Spratling",
-    }}
-    name="Dan Spratling"
-    size="xs"
-  />
-  <Author
-    avatar={{
-      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
-      alt: "Dan Spratling",
-    }}
-    name="Dan Spratling"
-    size="sm"
-  />
-  <Author
-    avatar={{
-      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
-      alt: "Dan Spratling",
-    }}
-    name="Dan Spratling"
-    size="md"
-  />
-  <Author
-    avatar={{
-      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
-      alt: "Dan Spratling",
-    }}
-    name="Dan Spratling"
-    size="lg"
-  />
-  <Author
-    avatar={{
-      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
-      alt: "Dan Spratling",
-    }}
-    name="Dan Spratling"
-    size="xl"
-  />
-  <Author
-    avatar={{
-      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
-      alt: "Dan Spratling",
-    }}
-    name="Dan Spratling"
-    size="2xl"
-  />
-</div>
+<CodePreview client:load>
+  <div
+    className="flex flex-col gap-4 justify-center items-center"
+
+>
+
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      size="xs"
+    />
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      size="sm"
+    />
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      size="md"
+    />
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      size="lg"
+    />
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      size="xl"
+    />
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      size="2xl"
+    />
+
+  </div>
+  <div slot="code">
+    ```jsx
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+      size="xs" // or sm, md, lg, xl, 2xl
+    />
+    ```
+  </div>
+</CodePreview>
