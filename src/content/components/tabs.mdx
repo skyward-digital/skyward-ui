@@ -125,6 +125,8 @@ If you need more fine-grain control you can access each layer of the tabs compon
   </TabsGranular>
   <div slot='code'>
     ```jsx
+    import { TabGroup, TabList, TabTrigger, TabPanels, TabPanel } from '#/ui/components/Tabs'
+    //...
     <div className='flex w-full space-x-2'>
       <TabGroup>
         <TabList className='flex flex-col w-40'>
@@ -133,15 +135,15 @@ If you need more fine-grain control you can access each layer of the tabs compon
           <TabTrigger>Tab 3</TabTrigger>
         </TabList>
         <TabPanels className='flex flex-1'>
-          <div className='w-full h-full bg-red-100 rounded border border-red-400 p-4' slot='1'>
+          <TabPanel className='w-full h-full bg-red-100 rounded border border-red-400 p-4' slot='1'>
             Tab 1
-          </div>
-          <div className='w-full h-full bg-blue-100 rounded border border-blue-400 p-4' slot='2'>
+          </TabPanel>
+          <TabPanel className='w-full h-full bg-blue-100 rounded border border-blue-400 p-4' slot='2'>
             Tab 2
-          </div>
-          <div className='w-full h-full bg-green-100 rounded border border-green-400 p-4' slot='3'>
+          </TabPanel>
+          <TabPanel className='w-full h-full bg-green-100 rounded border border-green-400 p-4' slot='3'>
             Tab 3
-          </div>
+          </TabPanel>
         </TabPanels>
       </TabGroup>
     </div>
