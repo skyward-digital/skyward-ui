@@ -1,19 +1,29 @@
 ---
-import { getCollection } from "astro:content"
-import Layout from "../../layouts/Layout.astro"
+import { ArrowLeftIcon, ArrowRightIcon } from "@untitledui-icons/react/line"
 import { Badge } from "#/ui/components/Badge"
+import { Button } from "#/ui/components/Button"
+import { getCollection } from "astro:content"
+
+import Layout from "../../layouts/Layout.astro"
 
 export async function getStaticPaths() {
   const componentEntries = await getCollection("components")
 
-  return componentEntries.map((entry) => ({
+  // get next/prev posts
+
+  return componentEntries.map((entry, index) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: {
+      entry,
+      next: componentEntries[index + 1] || undefined,
+      prev: componentEntries[index - 1] || undefined,
+    },
   }))
 }
 
-const { entry } = Astro.props
+const { entry, next, prev } = Astro.props
 const { Content, headings } = await entry.render()
+console.log({ next, prev })
 ---
 
 <Layout headings={headings} {...entry.data}>
@@ -36,5 +46,36 @@ const { Content, headings } = await entry.render()
 
   <div class="prose dark:prose-invert max-w-none">
     <Content />
+  </div>
+
+  <div class="flex justify-between items-center gap-4 mt-12">
+    {
+      prev ? (
+        <Button
+          href={`/${prev.collection}/${prev.slug}`}
+          variant="ghost"
+          size="sm"
+        >
+          <ArrowLeftIcon />
+          {prev.data.title}
+        </Button>
+      ) : (
+        <div />
+      )
+    }
+    {
+      next ? (
+        <Button
+          href={`/${next.collection}/${next.slug}`}
+          variant="ghost"
+          size="sm"
+        >
+          {next.data.title}
+          <ArrowRightIcon />
+        </Button>
+      ) : (
+        <div />
+      )
+    }
   </div>
 </Layout>
