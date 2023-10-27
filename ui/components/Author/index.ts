@@ -1,2 +1,2 @@
-export { Author } from './Author'
-export { type AuthorProps } from './Author.d'
+export { Author } from "./Author"
+export { type AuthorProps } from "./Author.d"

@@ -1,2 +1,2 @@
-export { Notification } from './Notification'
-export type { NotificationProps } from './Notification.d'
+export { Notification } from "./Notification"
+export type { NotificationProps } from "./Notification.d"

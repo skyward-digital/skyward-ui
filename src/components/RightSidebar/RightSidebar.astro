@@ -1,6 +1,6 @@
 ---
-import type { MarkdownHeading } from 'astro'
-import TableOfContents from './TableOfContents'
+import type { MarkdownHeading } from "astro"
+import TableOfContents from "./TableOfContents"
 // import MoreMenu from './MoreMenu.astro'
 
 type Props = {
@@ -11,9 +11,9 @@ type Props = {
 const { headings } = Astro.props
 ---
 
-<nav aria-labelledby='grid-right'>
-  <div class='text-sm space-y-3'>
-    <TableOfContents client:media='(min-width: 50em)' headings={headings} />
+<nav aria-labelledby="grid-right">
+  <div class="text-sm space-y-3">
+    <TableOfContents client:media="(min-width: 50em)" headings={headings} />
     <!-- <MoreMenu editHref={editUrl} /> -->
   </div>
 </nav>

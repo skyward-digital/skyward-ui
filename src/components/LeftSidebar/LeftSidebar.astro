@@ -1,18 +1,18 @@
 ---
-import { getCollection } from 'astro:content'
-import { cn } from '#/utils'
+import { getCollection } from "astro:content"
+import { cn } from "#/utils"
 
 type Props = {
   currentPage: string
 }
 
 const collectionLinks = await (async () => {
-  const componentEntries = await getCollection('components')
+  const componentEntries = await getCollection("components")
 
   return [
     {
-      title: 'Components',
-      items: componentEntries.map(entry => ({
+      title: "Components",
+      items: componentEntries.map((entry) => ({
         title: entry.data.title,
         path: `/${entry.collection}/${entry.slug}`,
       })),
@@ -21,26 +21,32 @@ const collectionLinks = await (async () => {
 })()
 
 const { currentPage } = Astro.props
-const linkMatch = (link: string) => link.replace('/', '')
+const linkMatch = (link: string) => link.replace("/", "")
 ---
 
-<nav aria-labelledby='grid-left'>
-  <ul class='text-sm space-y-3'>
+<nav aria-labelledby="grid-left">
+  <ul class="text-sm space-y-3">
     {
       collectionLinks.map(({ title, items }) => (
         <li>
           <div>
-            <h2 class='font-semibold text-gray-900 mb-1'>{title}</h2>
+            <h2 class="font-semibold text-gray-900 mb-1">{title}</h2>
             <ul>
-              {items.map(child => {
+              {items.map((child) => {
                 return (
                   <li>
                     <a
                       href={child.path}
-                      aria-current={linkMatch(currentPage) === linkMatch(child.path) ? 'page' : false}
+                      aria-current={
+                        linkMatch(currentPage) === linkMatch(child.path)
+                          ? "page"
+                          : false
+                      }
                       class={cn(
-                        'block py-1 text-gray-600 transition duration-100 ease-out hover:underline focus:underline',
-                        linkMatch(currentPage) === linkMatch(child.path) ? 'font-bold' : ''
+                        "block py-1 text-gray-600 transition duration-100 ease-out hover:underline focus:underline",
+                        linkMatch(currentPage) === linkMatch(child.path)
+                          ? "font-bold"
+                          : ""
                       )}
                     >
                       {child.title}

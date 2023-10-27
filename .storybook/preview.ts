@@ -1,10 +1,10 @@
-import type { Preview } from '@storybook/react'
-import { withThemeByClassName } from '@storybook/addon-styling'
-import '../src/styles/index.css'
+import type { Preview } from "@storybook/react"
+import { withThemeByClassName } from "@storybook/addon-styling"
+import "../src/styles/index.css"
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -17,10 +17,10 @@ const preview: Preview = {
     // NOTE: requires setting "darkMode" to "class" in your tailwind config
     withThemeByClassName({
       themes: {
-        light: 'light',
-        dark: 'dark',
+        light: "light",
+        dark: "dark",
       },
-      defaultTheme: 'dark',
+      defaultTheme: "dark",
     }),
   ],
 }

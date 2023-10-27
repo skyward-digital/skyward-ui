@@ -3,25 +3,29 @@ title: Avatar
 description: An image that displays a user avatar with a fallback to the user's initials.
 ---
 
-import { Button } from '#/ui/components/Button'
-import { Avatar } from '#/ui/components/Avatar'
+import { Button } from "#/ui/components/Button"
+import { Avatar } from "#/ui/components/Avatar"
 
-<div className='not-prose flex gap-2'>
-  <Button variant='outline' size='xs'>
+<div className="not-prose flex gap-2">
+  <Button variant="outline" size="xs">
     Storybook
   </Button>
-  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Avatar' variant='outline' size='xs'>
+  <Button
+    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Avatar"
+    variant="outline"
+    size="xs"
+  >
     Github
   </Button>
 </div>
 
 <br />
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
   <Avatar
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='Dan Spratling'
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="Dan Spratling"
   />
 </div>
 
@@ -30,14 +34,14 @@ import { Avatar } from '#/ui/components/Avatar'
 ## Usage
 
 ```jsx
-import { Avatar } from '#/ui/components/Avatar'
+import { Avatar } from "#/ui/components/Avatar"
 ```
 
 ```jsx
 <Avatar
-  src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-  alt='Dan Spratling'
-  fallback='Dan Spratling'
+  src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+  alt="Dan Spratling"
+  fallback="Dan Spratling"
 />
 ```
 
@@ -45,11 +49,11 @@ import { Avatar } from '#/ui/components/Avatar'
 
 The Avatar component functions like an image component, and takes `src` and `alt` props like an image would.
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
   <Avatar
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='Dan Spratling'
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="Dan Spratling"
   />
 </div>
 
@@ -57,71 +61,71 @@ The Avatar component functions like an image component, and takes `src` and `alt
 
 The avatar component has a fallback option that will display the user's initials if no image is provided.
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Avatar fallback='Dan Spratling' />
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+  <Avatar fallback="Dan Spratling" />
 </div>
 
 Fallbacks are automatically calculate the best initials to display (see code for a breakdown how this works).
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
   {/* Use 2 characters first, if you want to set your own */}
-  <Avatar fallback='DS' />
+  <Avatar fallback="DS" />
   {/* Use the first characters of the first 2 words if a space exists */}
-  <Avatar fallback='Dan Spratling' />
+  <Avatar fallback="Dan Spratling" />
   {/* Use the first 2 characters of the first word if no space exists */}
-  <Avatar fallback='Dan' />
+  <Avatar fallback="Dan" />
 </div>
 
 ## Size
 
 The avatar has a selection of sizes to choose between, from **xs** to **2xl**.
 
-<div className='not-prose border rounded-t-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-t-lg p-6 flex items-center justify-center gap-2">
   <Avatar
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='xs'
-    size='xs'
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="xs"
+    size="xs"
   >
     xs
   </Avatar>
   <Avatar
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='sm'
-    size='sm'
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="sm"
+    size="sm"
   >
     sm
   </Avatar>
   <Avatar
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='md'
-    size='md'
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="md"
+    size="md"
   >
     md
   </Avatar>
   <Avatar
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='lg'
-    size='lg'
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="lg"
+    size="lg"
   >
     lg
   </Avatar>
   <Avatar
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='xl'
-    size='xl'
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="xl"
+    size="xl"
   >
     xl
   </Avatar>
   <Avatar
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='2xl'
-    size='2xl'
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="2xl"
+    size="2xl"
   >
     2xl
   </Avatar>
@@ -135,12 +139,12 @@ The avatar has a selection of sizes to choose between, from **xs** to **2xl**.
 
 You can customize avatars by passing a `className` prop. If this clashes with the default styles, the `className` will take precedence.
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
   <Avatar
-    className='rounded-lg rounded-tl-none'
-    src='https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg'
-    alt='Dan Spratling'
-    fallback='Dan Spratling'
+    className="rounded-lg rounded-tl-none"
+    src="https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg"
+    alt="Dan Spratling"
+    fallback="Dan Spratling"
   />
-  <Avatar className='bg-orange-500 text-white' fallback='Dan Spratling' />
+  <Avatar className="bg-orange-500 text-white" fallback="Dan Spratling" />
 </div>

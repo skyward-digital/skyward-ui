@@ -4,21 +4,25 @@ description: Switches are boolean inputs that can be toggled on or off.
 client: true
 ---
 
-import { Switch } from '#/ui/components/Switch'
-import { Button } from '#/ui/components/Button'
+import { Switch } from "#/ui/components/Switch"
+import { Button } from "#/ui/components/Button"
 
-<div className='not-prose flex gap-2'>
-  <Button variant='outline' size='xs'>
+<div className="not-prose flex gap-2">
+  <Button variant="outline" size="xs">
     Storybook
   </Button>
-  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Button' variant='outline' size='xs'>
+  <Button
+    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Button"
+    variant="outline"
+    size="xs"
+  >
     Github
   </Button>
 </div>
 
 <br />
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
   <Switch client:visible />
   <Switch checked client:visible />
 </div>
@@ -28,25 +32,25 @@ import { Button } from '#/ui/components/Button'
 ## Usage
 
 ```jsx
-import { Switch } from '#/ui/components/Switch'
+import { Switch } from "#/ui/components/Switch"
 ```
 
 ```jsx
-<Switch label='Switch' hideLabel />
+<Switch label="Switch" hideLabel />
 ```
 
 ## Size
 
 The switch comes in 3 different sizes
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Switch size='sm' client:visible>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+  <Switch size="sm" client:visible>
     sm
   </Switch>
-  <Switch size='md' client:visible>
+  <Switch size="md" client:visible>
     md
   </Switch>
-  <Switch size='lg' client:visible>
+  <Switch size="lg" client:visible>
     lg
   </Switch>
 </div>
@@ -55,27 +59,27 @@ The switch comes in 3 different sizes
 
 You can pass a label directly to the switch, which will automatically be associated with that switch. (be careful not to use the same label twice)
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Switch label='Switch' client:visible />
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+  <Switch label="Switch" client:visible />
 </div>
 
 You can hide this label by passing the `hideLabel` prop
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Switch label='Hidden' hideLabel client:visible />
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+  <Switch label="Hidden" hideLabel client:visible />
 </div>
 
 Or you can create your own labels anywhere in your app (note if `id` is used, an id will not be generated from the label)
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <div className='border w-full max-w-2xl p-6 flex justify-between items-center gap-16 rounded-lg'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+  <div className="border w-full max-w-2xl p-6 flex justify-between items-center gap-16 rounded-lg">
     <div>
-      <label htmlFor='label-anywhere' className='font-semibold mb-0'>
+      <label htmlFor="label-anywhere" className="font-semibold mb-0">
         Some form component
       </label>
       <p>Try toggling this switch</p>
     </div>
-    <Switch id='label-anywhere' client:visible />
+    <Switch id="label-anywhere" client:visible />
   </div>
 </div>
 
@@ -85,16 +89,16 @@ When used this way, you'll need to do additional state management to make the sw
 
 You can optionally pass additional detail that is displayed under the label. This does not work without a label
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Switch label='Dark Mode Example' detail='Toggle the lights' client:visible />
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+  <Switch label="Dark Mode Example" detail="Toggle the lights" client:visible />
 </div>
 
 ## Reverse
 
 You can reverse the order of the label and switch by passing the `reverse` prop
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Switch label='Reversed' reverse client:visible />
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+  <Switch label="Reversed" reverse client:visible />
 </div>
 
 ## Customisation
@@ -103,8 +107,8 @@ You can reverse the order of the label and switch by passing the `reverse` prop
 
 You can customize individual buttons by passing a `className` prop. If this clashes with the default styles, the `className` will take precedence.
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
-  <Switch label='Custom' className='flex flex-col' client:visible />
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
+  <Switch label="Custom" className="flex flex-col" client:visible />
 </div>
 
 Due to how `tailwind-merge` works, you won't need to worry about conflicting styles when using the `className` prop.

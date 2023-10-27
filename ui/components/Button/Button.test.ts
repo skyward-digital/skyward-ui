@@ -1,5 +1,5 @@
-import { within, userEvent } from '@storybook/testing-library'
-import { expect } from '@storybook/jest'
+import { within, userEvent } from "@storybook/testing-library"
+import { expect } from "@storybook/jest"
 
 /*
  * See https://storybook.js.org/docs/react/writing-stories/play-function#working-with-the-canvas
@@ -9,15 +9,15 @@ export const testButtonClick = async ({ canvasElement }: any) => {
   const canvas = within(canvasElement)
 
   // Checks button text is displayed correctly
-  await expect(canvas.getByText('Button CTA')).toBeInTheDocument()
+  await expect(canvas.getByText("Button CTA")).toBeInTheDocument()
 
   // Checks button can be clicked
-  await userEvent.click(canvas.getByRole('button'))
+  await userEvent.click(canvas.getByRole("button"))
 }
 
 export const testButtonLink = async ({ canvasElement }: any) => {
   const canvas = within(canvasElement)
 
   // Checks Button is a link
-  await expect(canvas.getByRole('link')).toBeInTheDocument()
+  await expect(canvas.getByRole("link")).toBeInTheDocument()
 }

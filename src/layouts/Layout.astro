@@ -1,28 +1,28 @@
 ---
-import type { MarkdownHeading } from 'astro'
-import type { CollectionEntry } from 'astro:content'
-import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro'
-import RightSidebar from '../components/RightSidebar/RightSidebar.astro'
-import { EDIT_URL } from '../consts'
+import type { MarkdownHeading } from "astro"
+import type { CollectionEntry } from "astro:content"
+import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro"
+import RightSidebar from "../components/RightSidebar/RightSidebar.astro"
+import { EDIT_URL } from "../consts"
 
-type Props = CollectionEntry<'components'>['data'] & {
+type Props = CollectionEntry<"components">["data"] & {
   headings: MarkdownHeading[]
 }
 
 const { title, headings } = Astro.props
 const currentPage = Astro.url.pathname
-const currentFile = `src/content/docs${currentPage.replace(/\/$/, '')}.mdx`
+const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.mdx`
 const editUrl = `${EDIT_URL}/${currentFile}`
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <style>
       * {
@@ -38,18 +38,21 @@ const editUrl = `${EDIT_URL}/${currentFile}`
   </head>
   <body>
     <!-- <Header currentPage={currentPage} /> -->
-    <main class='container relative flex justify-center pb-12 gap-8'>
-      <aside title='Site Navigation' class='hidden w-56 flex-col gap-6 pt-12 xl:sticky xl:top-0 xl:flex xl:h-screen'>
+    <main class="container relative flex justify-center pb-12 gap-8">
+      <aside
+        title="Site Navigation"
+        class="hidden w-56 flex-col gap-6 pt-12 xl:sticky xl:top-0 xl:flex xl:h-screen"
+      >
         <LeftSidebar currentPage={currentPage} />
       </aside>
-      <div class='flex-1 pt-12 max-w-4xl'>
+      <div class="flex-1 pt-12 max-w-4xl">
         <!-- <PageContent title={data.title} headings={headings} editUrl={editUrl}> -->
         <slot />
         <!-- </PageContent> -->
       </div>
       <aside
-        title='Table of Contents'
-        class='hidden w-56 xl:sticky xl:top-0 xl:-mr-6 xl:block xl:h-screen xl:overflow-y-auto xl:py-12 xl:pr-6'
+        title="Table of Contents"
+        class="hidden w-56 xl:sticky xl:top-0 xl:-mr-6 xl:block xl:h-screen xl:overflow-y-auto xl:py-12 xl:pr-6"
       >
         <RightSidebar headings={headings} editUrl={editUrl} />
       </aside>

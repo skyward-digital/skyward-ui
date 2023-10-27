@@ -1,28 +1,28 @@
-import type { Meta } from '@storybook/react'
-import { CircleIcon } from '@untitledui-icons/react/line'
-import { Button } from './Button'
-import type { ButtonProps } from './Button.d'
-import { testButtonClick, testButtonLink } from './Button.test'
+import type { Meta } from "@storybook/react"
+import { CircleIcon } from "@untitledui-icons/react/line"
+import { Button } from "./Button"
+import type { ButtonProps } from "./Button.d"
+import { testButtonClick, testButtonLink } from "./Button.test"
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<ButtonProps> = {
-  title: 'Components/Button',
+  title: "Components/Button",
   component: Button,
   parameters: {
     docs: {
       description: {
         component:
-          'Buttons are components that allow users to take actions within your website or app. They are used in a variety of places where you want users to do something like submitting a form, confirming a notificaiton or changing a setting',
+          "Buttons are components that allow users to take actions within your website or app. They are used in a variety of places where you want users to do something like submitting a form, confirming a notificaiton or changing a setting",
       },
     },
     // disable a11y checks for this story - WARNING this is not recommended unless you know what you are doing
     a11y: {
-      element: '#storybook-root',
+      element: "#storybook-root",
       config: {
         rules: [
           {
             // For buttons, white text on a saturated blue background should not throw a contrast error.
-            id: 'color-contrast',
+            id: "color-contrast",
             enabled: false,
           },
         ],
@@ -30,14 +30,14 @@ const meta: Meta<ButtonProps> = {
       options: {},
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta
 
 const args = {
-  children: 'Button CTA',
-  variant: 'primary',
+  children: "Button CTA",
+  variant: "primary",
   onClick: undefined,
   // size: 'md',
 }
@@ -52,22 +52,22 @@ export const Primary = {
 export const Outline = {
   args: {
     ...args,
-    variant: 'outline',
+    variant: "outline",
   },
 }
 
 export const Ghost = {
   args: {
     ...args,
-    variant: 'ghost',
+    variant: "ghost",
   },
 }
 
 export const Text = {
   args: {
     ...args,
-    href: '#',
-    variant: 'text',
+    href: "#",
+    variant: "text",
   },
   play: testButtonLink,
 }
@@ -75,7 +75,7 @@ export const Text = {
 export const Destructive = {
   args: {
     ...args,
-    variant: 'destructive',
+    variant: "destructive",
   },
 }
 
@@ -85,7 +85,7 @@ export const Icon = {
     children: (
       <>
         <CircleIcon />
-        <span className='sr-only'>Button CTA</span>
+        <span className="sr-only">Button CTA</span>
       </>
     ),
   },
@@ -117,41 +117,41 @@ export const IconTrailing = {
 export const XSmall = {
   args: {
     ...args,
-    size: 'xs',
+    size: "xs",
   },
 }
 
 export const Small = {
   args: {
     ...args,
-    size: 'sm',
+    size: "sm",
   },
 }
 
 export const Medium = {
   args: {
     ...args,
-    size: 'md',
+    size: "md",
   },
 }
 
 export const Large = {
   args: {
     ...args,
-    size: 'lg',
+    size: "lg",
   },
 }
 
 export const XLarge = {
   args: {
     ...args,
-    size: 'xl',
+    size: "xl",
   },
 }
 
 export const XXLarge = {
   args: {
     ...args,
-    size: '2xl',
+    size: "2xl",
   },
 }

@@ -1,27 +1,27 @@
-import type { Meta } from '@storybook/react'
-import { Author } from './Author'
-import { Default as Avatar } from '../Avatar/Avatar.stories'
+import type { Meta } from "@storybook/react"
+import { Author } from "./Author"
+import { Default as Avatar } from "../Avatar/Avatar.stories"
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Author> = {
-  title: 'Components/Author',
+  title: "Components/Author",
   component: Author,
   parameters: {
     docs: {
       description: {
-        component: 'Author component',
+        component: "Author component",
       },
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta
 
 const args = {
-  href: '#dan-spratling',
-  name: 'Dan Spratling',
-  detail: 'CEO @ Skyward.digital',
+  href: "#dan-spratling",
+  name: "Dan Spratling",
+  detail: "CEO @ Skyward.digital",
   avatar: Avatar.args,
 }
 
@@ -33,7 +33,7 @@ export const Default = {
 export const WithEmail = {
   args: {
     ...args,
-    detail: 'dan@skyward.digital',
+    detail: "dan@skyward.digital",
   },
 }
 

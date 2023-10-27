@@ -1,32 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Switch } from '.'
-import { testSwitchClick } from './Switch.test'
+import type { Meta, StoryObj } from "@storybook/react"
+import { Switch } from "."
+import { testSwitchClick } from "./Switch.test"
 
 const meta: Meta<typeof Switch> = {
-  title: 'Components/Switch',
+  title: "Components/Switch",
   component: Switch,
   parameters: {
     docs: {
       description: {
-        component: 'Switch component',
+        component: "Switch component",
       },
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta
 
 export const Default = {
   args: {
-    label: 'Dark Mode',
+    label: "Dark Mode",
     hideLabel: true,
   },
 }
 
 export const Checked = {
   args: {
-    label: 'Dark Mode',
+    label: "Dark Mode",
     checked: true,
     hideLabel: true,
   },
@@ -34,38 +34,38 @@ export const Checked = {
 
 export const Label = {
   args: {
-    label: 'Dark Mode',
+    label: "Dark Mode",
   },
   play: testSwitchClick,
 }
 
 export const Detail = {
   args: {
-    label: 'Dark Mode',
-    detail: 'Toggle the lights',
+    label: "Dark Mode",
+    detail: "Toggle the lights",
   },
 }
 
 export const Small = {
   args: {
-    label: 'Dark Mode',
+    label: "Dark Mode",
     hideLabel: true,
-    size: 'sm',
+    size: "sm",
   },
 }
 
 export const Medium = {
   args: {
-    label: 'Dark Mode',
+    label: "Dark Mode",
     hideLabel: true,
-    size: 'md',
+    size: "md",
   },
 }
 
 export const Large = {
   args: {
-    label: 'Dark Mode',
+    label: "Dark Mode",
     hideLabel: true,
-    size: 'lg',
+    size: "lg",
   },
 }

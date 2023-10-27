@@ -3,27 +3,31 @@ title: Author
 description: The author component displays an authors name, avatar and optional detail and links.
 ---
 
-import { Button } from '#/ui/components/Button'
-import { Author } from '#/ui/components/Author'
+import { Button } from "#/ui/components/Button"
+import { Author } from "#/ui/components/Author"
 
-<div className='not-prose flex gap-2'>
-  <Button variant='outline' size='xs'>
+<div className="not-prose flex gap-2">
+  <Button variant="outline" size="xs">
     Storybook
   </Button>
-  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Author' variant='outline' size='xs'>
+  <Button
+    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Author"
+    variant="outline"
+    size="xs"
+  >
     Github
   </Button>
 </div>
 
 <br />
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
+    name="Dan Spratling"
   />
 </div>
 
@@ -32,16 +36,16 @@ import { Author } from '#/ui/components/Author'
 ## Usage
 
 ```jsx
-import { Author } from '#/ui/components/Author'
+import { Author } from "#/ui/components/Author"
 ```
 
 ```jsx
 <Author
   avatar={{
-    src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-    alt: 'Dan Spratling',
+    src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+    alt: "Dan Spratling",
   }}
-  name='Dan Spratling'
+  name="Dan Spratling"
 />
 ```
 
@@ -49,14 +53,14 @@ import { Author } from '#/ui/components/Author'
 
 By passing a href prop the author will become a link, ideal for linking to author profiles.
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
-    href='#dan-spratling'
+    name="Dan Spratling"
+    href="#dan-spratling"
   />
 </div>
 
@@ -64,14 +68,14 @@ By passing a href prop the author will become a link, ideal for linking to autho
 
 We can optionally pass additional detail which will appear under the authors name.
 
-<div className='not-prose border rounded-lg p-6 flex items-center justify-center gap-2'>
+<div className="not-prose border rounded-lg p-6 flex items-center justify-center gap-2">
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
-    detail='Founder of Skyward Digital'
+    name="Dan Spratling"
+    detail="Founder of Skyward Digital"
   />
 </div>
 
@@ -79,53 +83,53 @@ We can optionally pass additional detail which will appear under the authors nam
 
 In some situations you might want to adjust the size of the author component, which you can do using the size prop
 
-<div className='not-prose border rounded-lg px-6 flex flex-col items-center justify-center gap-8 py-12'>
+<div className="not-prose border rounded-lg px-6 flex flex-col items-center justify-center gap-8 py-12">
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
-    size='xs'
+    name="Dan Spratling"
+    size="xs"
   />
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
-    size='sm'
+    name="Dan Spratling"
+    size="sm"
   />
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
-    size='md'
+    name="Dan Spratling"
+    size="md"
   />
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
-    size='lg'
+    name="Dan Spratling"
+    size="lg"
   />
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
-    size='xl'
+    name="Dan Spratling"
+    size="xl"
   />
   <Author
     avatar={{
-      src: 'https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg',
-      alt: 'Dan Spratling',
+      src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+      alt: "Dan Spratling",
     }}
-    name='Dan Spratling'
-    size='2xl'
+    name="Dan Spratling"
+    size="2xl"
   />
 </div>

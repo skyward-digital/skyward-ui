@@ -1,5 +1,5 @@
-import { within, userEvent } from '@storybook/testing-library'
-import { expect } from '@storybook/jest'
+import { within, userEvent } from "@storybook/testing-library"
+import { expect } from "@storybook/jest"
 
 /*
  * See https://storybook.js.org/docs/react/writing-stories/play-function#working-with-the-canvas
@@ -9,11 +9,11 @@ export const testSwitchClick = async ({ canvasElement }: any) => {
   const canvas = within(canvasElement)
 
   // Checks label text is displayed correctly
-  await expect(canvas.getByText('Dark Mode')).toBeInTheDocument()
+  await expect(canvas.getByText("Dark Mode")).toBeInTheDocument()
 
   // Checks label is clickable
-  await userEvent.click(canvas.getByText('Dark Mode'))
+  await userEvent.click(canvas.getByText("Dark Mode"))
 
   // Checks switch can be clicked
-  await userEvent.click(canvas.getByRole('button'))
+  await userEvent.click(canvas.getByRole("button"))
 }

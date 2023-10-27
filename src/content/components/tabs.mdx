@@ -4,14 +4,18 @@ description: Tab are used to switch between different content within the same co
 client: true
 ---
 
-import { Tabs, TabsGranular, CodePreview } from '#/src/components/Tabs'
-import { Button } from '#/ui/components/Button'
+import { Tabs, TabsGranular, CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
 
-<div className='not-prose flex gap-2'>
-  <Button variant='outline' size='xs'>
+<div className="not-prose flex gap-2">
+  <Button variant="outline" size="xs">
     Storybook
   </Button>
-  <Button href='https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Tabs' variant='outline' size='xs'>
+  <Button
+    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Tabs"
+    variant="outline"
+    size="xs"
+  >
     Github
   </Button>
 </div>
@@ -19,37 +23,46 @@ import { Button } from '#/ui/components/Button'
 <br />
 
 <CodePreview client:load>
-  <Tabs tabs={['Tab 1', 'Tab 2', 'Tab 3']} slot='preview' client:load>
-    <div className='py-1.5 px-2' slot='1'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ac odio tempor orci dapibus ultrices in. Tortor posuere ac ut consequat semper viverra. Vehicula
-      ipsum a arcu cursus vitae congue mauris rhoncus aenean. Iaculis nunc sed augue lacus viverra vitae congue eu
-      consequat. Sit amet porttitor eget dolor morbi non arcu risus. Lorem sed risus ultricies tristique nulla aliquet
-      enim tortor. Eu tincidunt tortor aliquam nulla. Eu mi bibendum neque egestas congue quisque.
+  <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} slot="preview" client:load>
+    <div className="py-1.5 px-2" slot="1">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci
+      dapibus ultrices in. Tortor posuere ac ut consequat semper viverra.
+      Vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean. Iaculis
+      nunc sed augue lacus viverra vitae congue eu consequat. Sit amet porttitor
+      eget dolor morbi non arcu risus. Lorem sed risus ultricies tristique nulla
+      aliquet enim tortor. Eu tincidunt tortor aliquam nulla. Eu mi bibendum
+      neque egestas congue quisque.
     </div>
-    <div className='py-1.5 px-2' slot='2'>
-      Hac habitasse platea dictumst vestibulum. Sed libero enim sed faucibus. Nunc mattis enim ut tellus elementum
-      sagittis vitae. Vel facilisis volutpat est velit egestas dui. Semper viverra nam libero justo. Nunc faucibus a
-      pellentesque sit amet porttitor. Urna duis convallis convallis tellus. Blandit aliquam etiam erat velit
-      scelerisque in. Egestas tellus rutrum tellus pellentesque eu tincidunt. Mattis rhoncus urna neque viverra justo.
+    <div className="py-1.5 px-2" slot="2">
+      Hac habitasse platea dictumst vestibulum. Sed libero enim sed faucibus.
+      Nunc mattis enim ut tellus elementum sagittis vitae. Vel facilisis
+      volutpat est velit egestas dui. Semper viverra nam libero justo. Nunc
+      faucibus a pellentesque sit amet porttitor. Urna duis convallis convallis
+      tellus. Blandit aliquam etiam erat velit scelerisque in. Egestas tellus
+      rutrum tellus pellentesque eu tincidunt. Mattis rhoncus urna neque viverra
+      justo.
     </div>
-    <div className='py-1.5 px-2' slot='3'>
-      Nulla facilisi etiam dignissim diam. Sit amet nulla facilisi morbi tempus iaculis urna id volutpat. Ultrices dui
-      sapien eget mi proin sed libero enim sed. Ut placerat orci nulla pellentesque dignissim enim sit amet. Dolor sed
-      viverra ipsum nunc aliquet bibendum. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Consectetur
-      libero id faucibus nisl tincidunt. Lectus urna duis convallis convallis tellus. Tortor at risus viverra adipiscing
-      at. Placerat orci nulla pellentesque dignissim enim sit amet. Malesuada nunc vel risus commodo viverra maecenas.
+    <div className="py-1.5 px-2" slot="3">
+      Nulla facilisi etiam dignissim diam. Sit amet nulla facilisi morbi tempus
+      iaculis urna id volutpat. Ultrices dui sapien eget mi proin sed libero
+      enim sed. Ut placerat orci nulla pellentesque dignissim enim sit amet.
+      Dolor sed viverra ipsum nunc aliquet bibendum. Ullamcorper dignissim cras
+      tincidunt lobortis feugiat vivamus at. Consectetur libero id faucibus nisl
+      tincidunt. Lectus urna duis convallis convallis tellus. Tortor at risus
+      viverra adipiscing at. Placerat orci nulla pellentesque dignissim enim sit
+      amet. Malesuada nunc vel risus commodo viverra maecenas.
     </div>
   </Tabs>
-  <div slot='code'>
+  <div slot="code">
     ```jsx
-    <div className='flex w-full space-x-2'>
+    <div className="flex w-full space-x-2">
       <Tabs
-        tabs={['Tab 1', 'Tab 2', 'Tab 3']}
+        tabs={["Tab 1", "Tab 2", "Tab 3"]}
         panels={[
-          'Lorem ipsum dolor sit amet...',
-          'Hac habitasse platea dictumst vestibulum...',
-          'Nulla facilisi etiam dignissim diam...',
+          "Lorem ipsum dolor sit amet...",
+          "Hac habitasse platea dictumst vestibulum...",
+          "Nulla facilisi etiam dignissim diam...",
         ]}
       />
     </div>
@@ -62,7 +75,7 @@ import { Button } from '#/ui/components/Button'
 ## Usage
 
 ```jsx
-import { Tabs } from '#/ui/components/Switch'
+import { Tabs } from "#/ui/components/Switch"
 ```
 
 ```jsx
@@ -80,26 +93,41 @@ import { Tabs } from '#/ui/components/Switch'
 The tabs component does not provide any styling for the panels, but you can pass your own.
 
 <CodePreview client:load>
-  <Tabs tabs={['Tab 1', 'Tab 2', 'Tab 3']} client:load slot='preview'>
-    <div className='w-full h-full bg-red-100 rounded border border-red-400 p-4' slot='1'>
+  <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load slot="preview">
+    <div
+      className="w-full h-full bg-red-100 rounded border border-red-400 p-4"
+      slot="1"
+    >
       Tab 1
     </div>
-    <div className='w-full h-full bg-blue-100 rounded border border-blue-400 p-4' slot='2'>
+    <div
+      className="w-full h-full bg-blue-100 rounded border border-blue-400 p-4"
+      slot="2"
+    >
       Tab 2
     </div>
-    <div className='w-full h-full bg-green-100 rounded border border-green-400 p-4' slot='3'>
+    <div
+      className="w-full h-full bg-green-100 rounded border border-green-400 p-4"
+      slot="3"
+    >
       Tab 3
     </div>
   </Tabs>
-  <div slot='code'>
+  <div slot="code">
     ```jsx
-    <div className='flex w-full space-x-2'>
+    <div className="flex w-full space-x-2">
       <Tabs
-        tabs={['Tab 1', 'Tab 2', 'Tab 3']}
+        tabs={["Tab 1", "Tab 2", "Tab 3"]}
         panels={[
-          <div className='w-full h-full bg-red-100 rounded border border-red-400 p-4'>Tab 1</div>,
-          <div className='w-full h-full bg-blue-100 rounded border border-blue-400 p-4'>Tab 2</div>,
-          <div className='w-full h-full bg-green-100 rounded border border-green-400 p-4'>Tab 3</div>,
+          <div className="w-full h-full bg-red-100 rounded border border-red-400 p-4">
+            Tab 1
+          </div>,
+          <div className="w-full h-full bg-blue-100 rounded border border-blue-400 p-4">
+            Tab 2
+          </div>,
+          <div className="w-full h-full bg-green-100 rounded border border-green-400 p-4">
+            Tab 3
+          </div>,
         ]}
       />
     </div>
@@ -112,36 +140,53 @@ The tabs component does not provide any styling for the panels, but you can pass
 If you need more fine-grain control you can access each layer of the tabs component individually.
 
 <CodePreview client:load>
-  <TabsGranular tabs={['Tab 1', 'Tab 2', 'Tab 3']} client:load slot='preview'>
-    <div className='w-full h-full bg-red-100 rounded border border-red-400 p-4' slot='1'>
+  <TabsGranular tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load slot="preview">
+    <div
+      className="w-full h-full bg-red-100 rounded border border-red-400 p-4"
+      slot="1"
+    >
       Tab 1
     </div>
-    <div className='w-full h-full bg-blue-100 rounded border border-blue-400 p-4' slot='2'>
+    <div
+      className="w-full h-full bg-blue-100 rounded border border-blue-400 p-4"
+      slot="2"
+    >
       Tab 2
     </div>
-    <div className='w-full h-full bg-green-100 rounded border border-green-400 p-4' slot='3'>
+    <div
+      className="w-full h-full bg-green-100 rounded border border-green-400 p-4"
+      slot="3"
+    >
       Tab 3
     </div>
   </TabsGranular>
-  <div slot='code'>
-    ```jsx
-    import { TabGroup, TabList, TabTrigger, TabPanels, TabPanel } from '#/ui/components/Tabs'
-    //...
-    <div className='flex w-full space-x-2'>
+  <div slot="code">
+    ```jsx import {(TabGroup, TabList, TabTrigger, TabPanels, TabPanel)} from
+    '#/ui/components/Tabs' //...
+    <div className="flex w-full space-x-2">
       <TabGroup>
-        <TabList className='flex flex-col w-40'>
+        <TabList className="flex flex-col w-40">
           <TabTrigger>Tab 1</TabTrigger>
           <TabTrigger>Tab 2</TabTrigger>
           <TabTrigger>Tab 3</TabTrigger>
         </TabList>
-        <TabPanels className='flex flex-1'>
-          <TabPanel className='w-full h-full bg-red-100 rounded border border-red-400 p-4' slot='1'>
+        <TabPanels className="flex flex-1">
+          <TabPanel
+            className="w-full h-full bg-red-100 rounded border border-red-400 p-4"
+            slot="1"
+          >
             Tab 1
           </TabPanel>
-          <TabPanel className='w-full h-full bg-blue-100 rounded border border-blue-400 p-4' slot='2'>
+          <TabPanel
+            className="w-full h-full bg-blue-100 rounded border border-blue-400 p-4"
+            slot="2"
+          >
             Tab 2
           </TabPanel>
-          <TabPanel className='w-full h-full bg-green-100 rounded border border-green-400 p-4' slot='3'>
+          <TabPanel
+            className="w-full h-full bg-green-100 rounded border border-green-400 p-4"
+            slot="3"
+          >
             Tab 3
           </TabPanel>
         </TabPanels>

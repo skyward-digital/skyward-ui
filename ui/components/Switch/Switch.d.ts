@@ -3,6 +3,6 @@ export type SwitchProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   detail?: string
   hideLabel?: boolean
   reverse?: boolean
-  size?: 'sm' | 'md' | 'lg'
+  size?: "sm" | "md" | "lg"
   checked?: boolean
 }

@@ -1,26 +1,26 @@
-import type { Meta } from '@storybook/react'
-import { CircleIcon } from '@untitledui-icons/react/line'
-import { Notification } from './Notification'
-import type { NotificationProps } from './Notification.d'
+import type { Meta } from "@storybook/react"
+import { CircleIcon } from "@untitledui-icons/react/line"
+import { Notification } from "./Notification"
+import type { NotificationProps } from "./Notification.d"
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<NotificationProps> = {
-  title: 'Components/Notification',
+  title: "Components/Notification",
   component: Notification,
   parameters: {
     docs: {
       description: {
-        component: '',
+        component: "",
       },
     },
     // disable a11y checks for this story - WARNING this is not recommended unless you know what you are doing
     a11y: {
-      element: '#storybook-root',
+      element: "#storybook-root",
       config: {
         rules: [
           {
             // For Notifications, white text on a saturated blue background should not throw a contrast error.
-            id: 'color-contrast',
+            id: "color-contrast",
             enabled: false,
           },
         ],
@@ -28,12 +28,14 @@ const meta: Meta<NotificationProps> = {
       options: {},
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta
 
-const Square = () => <div className='w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50'></div>
+const Square = () => (
+  <div className="w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50"></div>
+)
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 
