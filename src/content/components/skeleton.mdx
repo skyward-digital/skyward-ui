@@ -1,0 +1,73 @@
+---
+title: Skeleton
+description: A skeleton loader that displays a placeholder while content is loading
+client: false # Or true if JS is required for this component to function
+links:
+  {
+    "storybook": "https://google.com",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Skeleton",
+  }
+---
+
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
+import { Skeleton } from "#/ui/components/Skeleton"
+
+<CodePreview>
+  <div className="flex gap-3 items-center">
+    <Skeleton className="w-10 h-10 rounded-full" />
+    <div className="space-y-2">
+      <Skeleton className="w-24 h-2.5" />
+      <Skeleton className="w-16 h-2.5" />
+    </div>
+  </div>
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Skeleton } from "#/ui/components/Skeleton"
+```
+
+```jsx
+<div className="flex gap-3 items-center">
+  <Skeleton className="w-10 h-10 rounded-full" />
+  <div className="space-y-2">
+    <Skeleton className="w-24 h-2.5" />
+    <Skeleton className="w-16 h-2.5" />
+  </div>
+</div>
+```
+
+The skeleton is simply an empty div with a pulsing background. It's designed to show a loading state for content that is being fetched from an API.
+
+It does not automatically style itself to look like your element, so you'll need to pass the appropriate classes to make it match your content.
+
+It's best to make it show the individual elements that will be loaded, rather than entire page sections.
+
+For example, a text block might look like this:
+
+<CodePreview client:load>
+  <div className="grid gap-2 w-full max-w-[40ch]">
+    <Skeleton className="w-full h-2.5" />
+    <Skeleton className="w-full h-2.5" />
+    <Skeleton className="w-2/3 h-2.5" />
+  </div>
+  <div slot="code">
+    ```jsx
+    <div className="grid gap-2 w-full max-w-[40ch]">
+      {loading ? (
+        <>
+          <Skeleton className="w-full h-2.5" />
+          <Skeleton className="w-full h-2.5" />
+          <Skeleton className="w-2/3 h-2.5" />
+        </>
+      ) : (
+        <>{content}</>
+      )}
+    </div>
+    ```
+  </div>
+</CodePreview>
