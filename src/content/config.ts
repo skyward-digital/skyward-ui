@@ -1,5 +1,6 @@
 // Import utilities from `astro:content`
-import { z, defineCollection } from "astro:content"
+import { defineCollection, z } from "astro:content"
+
 // Define a `type` and `schema` for each collection
 const componentsCollection = defineCollection({
   type: "content",
@@ -7,6 +8,12 @@ const componentsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     client: z.boolean().optional(),
+    links: z
+      .object({
+        github: z.string().optional(),
+        storybook: z.string().optional(),
+      })
+      .optional(),
     // pubDate: z.date(),
     // author: z.string(),
     // image: z.object({

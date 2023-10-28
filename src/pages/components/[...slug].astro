@@ -9,8 +9,6 @@ import Layout from "../../layouts/Layout.astro"
 export async function getStaticPaths() {
   const componentEntries = await getCollection("components")
 
-  // get next/prev posts
-
   return componentEntries.map((entry, index) => ({
     params: { slug: entry.slug },
     props: {
@@ -23,7 +21,6 @@ export async function getStaticPaths() {
 
 const { entry, next, prev } = Astro.props
 const { Content, headings } = await entry.render()
-console.log({ next, prev })
 ---
 
 <Layout headings={headings} {...entry.data}>
@@ -44,7 +41,22 @@ console.log({ next, prev })
     {entry.data.description}
   </p>
 
-  <div class="prose dark:prose-invert max-w-none">
+  <div class="flex gap-2">
+    {
+      Object.entries(entry.data.links).map((link) => (
+        <Button
+          href={link[1]}
+          variant="outline"
+          size="xs"
+          className="capitalize"
+        >
+          {link[0]}
+        </Button>
+      ))
+    }
+  </div>
+
+  <div class="prose dark:prose-invert max-w-none mt-6">
     <Content />
   </div>
 

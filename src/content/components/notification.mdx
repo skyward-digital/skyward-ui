@@ -1,6 +1,11 @@
 ---
 title: Notification
 description: A small indicator notifying users of an unread message or event.
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/ui-components-notification--default",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Notification",
+  }
 ---
 
 import { Bell01Icon } from "@untitledui-icons/react/line"
@@ -8,21 +13,6 @@ import { CodePreview } from "#/src/components/Tabs"
 import { Badge } from "#/ui/components/Badge"
 import { Button } from "#/ui/components/Button"
 import { Notification } from "#/ui/components/Notification"
-
-<div className="not-prose flex gap-2">
-  <Button variant="outline" size="xs">
-    Storybook
-  </Button>
-  <Button
-    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Notification"
-    variant="outline"
-    size="xs"
-  >
-    Github
-  </Button>
-</div>
-
-<br />
 
 <CodePreview client:load>
   <div className="space-x-6">

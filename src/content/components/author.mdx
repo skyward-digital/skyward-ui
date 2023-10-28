@@ -1,26 +1,16 @@
 ---
 title: Author
 description: The author component displays an authors name, avatar and optional detail and links.
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/components-author--default",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Author",
+  }
 ---
 
 import { CodePreview } from "#/src/components/Tabs"
 import { Author } from "#/ui/components/Author"
 import { Button } from "#/ui/components/Button"
-
-<div className="not-prose flex gap-2">
-  <Button variant="outline" size="xs">
-    Storybook
-  </Button>
-  <Button
-    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Author"
-    variant="outline"
-    size="xs"
-  >
-    Github
-  </Button>
-</div>
-
-<br />
 
 <CodePreview>
   <Author

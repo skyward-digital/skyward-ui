@@ -1,6 +1,11 @@
 ---
 title: Badge
 description: Highlight important information, like a new feature or a notification.
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/ui-components-badge--all",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Badge",
+  }
 ---
 
 import {
@@ -13,21 +18,6 @@ import {
 import { CodePreview } from "#/src/components/Tabs"
 import { Badge } from "#/ui/components/Badge"
 import { Button } from "#/ui/components/Button"
-
-<div className="not-prose flex gap-2">
-  <Button variant="outline" size="xs">
-    Storybook
-  </Button>
-  <Button
-    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Tab"
-    variant="outline"
-    size="xs"
-  >
-    Github
-  </Button>
-</div>
-
-<br />
 
 <CodePreview client:load>
   <Badge size="sm" color="info">

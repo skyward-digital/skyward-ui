@@ -2,25 +2,15 @@
 title: Tabs
 description: Tab are used to switch between different content within the same context
 client: true
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/ui-components-tabs--default",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Tabs",
+  }
 ---
 
 import { CodePreview, Tabs, TabsGranular } from "#/src/components/Tabs"
 import { Button } from "#/ui/components/Button"
-
-<div className="not-prose flex gap-2">
-  <Button variant="outline" size="xs">
-    Storybook
-  </Button>
-  <Button
-    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Tabs"
-    variant="outline"
-    size="xs"
-  >
-    Github
-  </Button>
-</div>
-
-<br />
 
 <CodePreview client:load>
   <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load>

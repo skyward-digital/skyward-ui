@@ -1,6 +1,11 @@
 ---
 title: Button
 description: Buttons are components that allow users to take actions within your website or app.
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/ui-components-button--all",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Button",
+  }
 ---
 
 import {
@@ -10,25 +15,6 @@ import {
 } from "@untitledui-icons/react/line"
 import { CodePreview } from "#/src/components/Tabs"
 import { Button } from "#/ui/components/Button"
-
-They are used in a variety of places where you want users to do something like submitting a form, confirming a notificaiton or changing a setting.
-
-{/* Storybook, Github */}
-
-<div className="not-prose flex gap-2">
-  <Button variant="outline" size="xs">
-    Storybook
-  </Button>
-  <Button
-    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Button"
-    variant="outline"
-    size="xs"
-  >
-    Github
-  </Button>
-</div>
-
-<br />
 
 <CodePreview client:load>
   <Button variant="primary">Primary</Button>

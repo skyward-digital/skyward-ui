@@ -2,29 +2,17 @@
 title: Checkbox
 description: A toggle that allows users to choose between checked and unchecked states.
 client: true
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/ui-components-checkbox--default",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Checkbox",
+  }
 ---
 
 import { FaceHappyIcon, MinusIcon } from "@untitledui-icons/react/line"
 import { CodePreview } from "#/src/components/Tabs"
 import { Button } from "#/ui/components/Button"
 import { Checkbox } from "#/ui/components/Checkbox"
-
-<div className="not-prose flex gap-2">
-  <Button variant="outline" size="xs">
-    Storybook
-  </Button>
-  <Button
-    href="https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Checkbox"
-    variant="outline"
-    size="xs"
-  >
-    Github
-  </Button>
-</div>
-
-<br />
-
-{/* Preview */}
 
 <CodePreview client:load>
   <Checkbox client:load />
