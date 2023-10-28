@@ -1,7 +1,9 @@
 "use client"
+
 import { useState } from "react"
-import { cn, transformId } from "#/utils"
 import { CheckIcon } from "@untitledui-icons/react/line"
+import { cn, transformId } from "#/utils"
+
 import type { CheckboxProps } from "./Checkbox.d"
 
 export const Checkbox = ({
@@ -13,6 +15,7 @@ export const Checkbox = ({
   icon,
   size = "md",
   className,
+  as,
   ...props
 }: CheckboxProps) => {
   // Uncontrolled (internal) component state - see "checked" for controlled component state
@@ -21,9 +24,11 @@ export const Checkbox = ({
   const formattedId = id ? id : label ? transformId(label) : undefined
   const isChecked = checked !== undefined ? checked : checkedState
 
+  const Component = as ?? "button"
+
   return (
     <>
-      <button
+      <Component
         id={formattedId}
         type="button"
         role="checkbox"
@@ -65,7 +70,7 @@ export const Checkbox = ({
             />
           ))}
         <span className="sr-only">{label}</span>
-      </button>
+      </Component>
       <input
         type="checkbox"
         aria-hidden="true"

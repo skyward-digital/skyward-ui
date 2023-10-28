@@ -1,0 +1,216 @@
+---
+title: CheckboxCard
+description: A stylized checkbox that allows you to add additional information or design elements to checkboxes.
+client: true
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/ui-components-checkboxgroup--default",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/CheckboxCard",
+  }
+---
+
+import { ContainerIcon } from "@untitledui-icons/react/line"
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
+import { CheckboxCard } from "#/ui/components/CheckboxCard"
+
+<CodePreview client:load>
+  <CheckboxCard client:load>Checkbox</CheckboxCard>
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { CheckboxCard } from "#/ui/components/CheckboxCard"
+```
+
+```jsx
+<CheckboxCard>Checkbox</CheckboxCard>
+```
+
+As you build more complex components sometimes a simple checkbox doesn't quite solve the needs of your design. The CheckboxCard component allows you to add additional information or design elements to checkboxes.
+
+## Content
+
+The CheckboxCard component accepts any content as its children. This allows you to add additional information or design elements to checkboxes.
+
+Make sure you pass a unique id to the CheckboxCard component that's associated with a label element. This will ensure that the checkbox is accessible.
+
+<CodePreview client:load>
+  <CheckboxCard
+    client:load
+    id="custom-checkbox"
+    defaultChecked={true}
+    className="flex gap-4 max-w-md"
+  >
+    <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+    <div className="text-left">
+      <label htmlFor="custom-checkbox" className="font-bold">
+        Lorem ipsum
+      </label>
+      <p className="text-sm text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum tortor sem, vel aliquet velit blandit ut.
+      </p>
+    </div>
+  </CheckboxCard>
+  <div slot="code">
+    ```jsx
+    <CheckboxCard
+      id="custom-checkbox"
+      defaultChecked={true}
+      className="flex gap-4 max-w-md"
+    >
+      <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+      <div className="text-left">
+        <label htmlFor="custom-checkbox" className="font-bold">
+          Lorem ipsum
+        </label>
+        <p className="text-sm text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          condimentum tortor sem, vel aliquet velit blandit ut.
+        </p>
+      </div>
+    </CheckboxCard>
+    ```
+  </div>
+</CodePreview>
+
+Alternatively, you can just pass a string to your CheckboxCard component (in which case, an id will be generated for you).
+
+<CodePreview client:load>
+  <CheckboxCard client:load>Checkbox</CheckboxCard>
+  <div slot="code">
+    ```jsx
+    <CheckboxCard>Checkbox</CheckboxCard>
+    ```
+  </div>
+</CodePreview>
+
+## DefaultChecked
+
+If you'd like to pre-select the checkbox, you can pass the `defaultChecked` prop.
+
+<CodePreview client:load>
+  <CheckboxCard client:load defaultChecked>
+    Default Checked
+  </CheckboxCard>
+  <div slot="code">
+    ```jsx
+    <CheckboxCard defaultChecked>Default Checked</CheckboxCard>
+    ```
+  </div>
+</CodePreview>
+
+## Controlled
+
+By default, the CheckboxCard manages its own state. You can control the state of the CheckboxCard from outside of the component by passing the `checked` and `onChange` props.
+
+<CodePreview client:load>
+  {/* Show usestate code here for code preview only */}
+  <CheckboxCard client:load>Controlled</CheckboxCard>
+  <div slot="code">
+    ```jsx
+    export const Controlled = () => {
+      const [checked, setChecked] = useState(false)
+      return (
+        <CheckboxCard
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+        >Controlled</CheckboxCard>
+      )
+    }
+    ```
+  </div>
+</CodePreview>
+
+## Show Checkbox
+
+If you'd like, you can show the checkbox itself by passing the `showCheckbox` prop to the CheckboxCard component.
+
+<CodePreview client:load>
+  <CheckboxCard client:load showCheckbox defaultChecked>
+    Show Checkbox
+  </CheckboxCard>
+  <div slot="code">
+    ```jsx
+    <CheckboxCard showCheckbox>Show Checkbox</CheckboxCard>
+    ```
+  </div>
+</CodePreview>
+
+This tends to work better on larger cards
+
+<CodePreview client:load>
+  <CheckboxCard
+    client:load
+    id="custom-checkbox"
+    defaultChecked={true}
+    showCheckbox={true}
+    className="flex gap-4 max-w-md items-start"
+  >
+    <ContainerIcon className="w-6 h-6 flex-shrink-0 my-auto" />
+    <div className="text-left">
+      <label htmlFor="custom-checkbox" className="font-bold">
+        Lorem ipsum
+      </label>
+      <p className="text-sm text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum tortor sem, vel aliquet velit blandit ut.
+      </p>
+    </div>
+  </CheckboxCard>
+  <div slot="code">
+    ```jsx
+    <CheckboxCard
+      id="custom-checkbox"
+      defaultChecked={true}
+      showCheckbox={true}
+      className="flex gap-4 max-w-md"
+    >
+      <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+      <div className="text-left">
+        <label htmlFor="custom-checkbox" className="font-bold">
+          Lorem ipsum
+        </label>
+        <p className="text-sm text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          condimentum tortor sem, vel aliquet velit blandit ut.
+        </p>
+      </div>
+    </CheckboxCard>
+    ```
+  </div>
+</CodePreview>
+
+### Additional Checkbox controls
+
+For the sake of simplicity, you do lose out on some checkbox functionality when you use the checkbox card, however. If you're missing some controls it's recommended that you extend the CheckboxCard component, or create your own card components using the Checkbox.
+
+## Customisation
+
+### Classes
+
+All custom classes will be passed down to the CheckboxCard, so you can style it however you want.
+
+<CodePreview client:load>
+  <CheckboxCard
+    client:load
+    defaultChecked
+    className="font-medium data-[headlessui-state=checked]:bg-indigo-500 data-[headlessui-state=checked]:text-white"
+  >
+    Custom Checkbox
+  </CheckboxCard>
+  <div slot="code">
+    ```jsx
+    <CheckboxCard
+      defaultChecked
+      className="font-medium data-[headlessui-state=checked]:bg-indigo-500 data-[headlessui-state=checked]:text-white"
+    >
+      Custom Checkbox
+    </CheckboxCard>
+    ```
+  </div>
+</CodePreview>

@@ -1,5 +1,5 @@
 export type CheckboxProps = {
-  label: string
+  label?: string
   hideLabel?: boolean
   checked?: "indeterminate" | boolean
   defaultChecked?: boolean
@@ -7,4 +7,5 @@ export type CheckboxProps = {
   className?: string
   required?: string
   size?: "sm" | "md" | "lg"
+  as?: "button" | "span"
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
