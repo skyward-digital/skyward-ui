@@ -1,0 +1,125 @@
+---
+title: Accordion
+description: Lorem ipsum dolor sit amet
+client: true
+links:
+  {
+    "storybook": "https://google.com",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Accordion",
+  }
+---
+
+import { CodePreview } from "#/src/components/Tabs"
+import { Accordion, AccordionItem } from "#/ui/components/Accordion"
+import { Button } from "#/ui/components/Button"
+
+<CodePreview client:load>
+  <Accordion
+    items={[
+      {
+        title: "How does it work?",
+        content:
+          "Easy, just copy and paste the code into your project and tweak it to match your needs",
+      },
+      {
+        title: "Lorem ipsum",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget lacinia lacinia, nunc nunc aliquam nunc, vitae aliquam nunc nunc eget nisl. Donec euismod, nisl eget lacinia lacinia, nunc nunc aliquam nunc, vitae aliquam nunc nunc eget nisl.",
+      },
+      {
+        title: "Lorem ipsum",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget lacinia lacinia, nunc nunc aliquam nunc, vitae aliquam nunc nunc eget nisl. Donec euismod, nisl eget lacinia lacinia, nunc nunc aliquam nunc, vitae aliquam nunc nunc eget nisl.",
+      },
+    ]}
+    client:load
+  />
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Accordion } from "#/ui/components/Accordion"
+```
+
+```jsx
+<Accordion
+  items={[
+    {
+      title: "How does it work?",
+      content:
+        "Easy, just copy and paste the code into your project and tweak it to match your needs",
+    },
+    {
+      ...
+    }
+  ]}
+/>
+```
+
+## Accordion Item
+
+The accordion is built up of multiple items. These can be used individually if you need, either a single accordion item or to allow more Customisation.
+
+```jsx
+import { AccordionItem } from "#/ui/components/Accordion"
+```
+
+<CodePreview client:load>
+  <AccordionItem title="How does it work?" className="w-96" client:load>
+    Easy, just copy and paste the code into your project and tweak it to match
+    your needs
+  </AccordionItem>
+  <div slot="code">
+    ```jsx
+    <AccordionItem title="How does it work?" className="w-96" client:load>
+      Easy, just copy and paste the code into your project and tweak it to match
+      your needs
+    </AccordionItem>
+    ```
+  </div>
+</CodePreview>
+
+You can pass any component or jsx as a child to the AccordionItem
+
+<CodePreview client:load>
+  <AccordionItem title="How does it work?" className="w-96" client:load>
+    <Button size="sm">Example Button</Button>
+  </AccordionItem>
+  <div slot="code">
+    ```jsx
+    <AccordionItem title="How does it work?" className="w-96" client:load>
+      <Button size="sm">Example Button</Button>
+    </AccordionItem>
+    ```
+  </div>
+</CodePreview>
+
+## Customisation
+
+### Classes
+
+Classes can be passed to both the Accordion and AccordionItem components, which will apply styling to the root element of the component.
+
+<CodePreview client:load>
+  <AccordionItem
+    title="How does it work?"
+    className="bg-gray-100 rounded-t-lg px-8 w-full"
+    client:load
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </AccordionItem>
+  <div slot="code">
+    ```jsx
+    <AccordionItem
+      title="How does it work?"
+      className="bg-gray-100 rounded-t-lg px-8 w-full"
+      client:load
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </AccordionItem>
+    ```
+  </div>
+</CodePreview>
