@@ -1,15 +1,21 @@
 ---
+import { ArrowLeftIcon, ArrowRightIcon } from "@untitledui-icons/react/line"
+import { Badge } from "#/ui/components/Badge"
+import { Button } from "#/ui/components/Button"
 import type { MarkdownHeading } from "astro"
 import type { CollectionEntry } from "astro:content"
+
 import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro"
 import RightSidebar from "../components/RightSidebar/RightSidebar.astro"
 import { EDIT_URL } from "../consts"
 
 type Props = CollectionEntry<"components">["data"] & {
   headings: MarkdownHeading[]
+  next?: CollectionEntry<"components">
+  prev?: CollectionEntry<"components">
 }
 
-const { title, headings } = Astro.props
+const { title, description, client, links, headings, next, prev } = Astro.props
 const currentPage = Astro.url.pathname
 const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.mdx`
 const editUrl = `${EDIT_URL}/${currentFile}`
@@ -46,9 +52,71 @@ const editUrl = `${EDIT_URL}/${currentFile}`
         <LeftSidebar currentPage={currentPage} />
       </aside>
       <div class="flex-1 pt-12 max-w-4xl">
-        <!-- <PageContent title={data.title} headings={headings} editUrl={editUrl}> -->
+        <!-- Breadcrumbs here -->
+        <div class="flex gap-2 mb-4 items-end">
+          <h1 class="text-4xl font-semibold leading-none">{title}</h1>
+          {
+            client && (
+              <>
+                <Badge size="sm" color="gray">
+                  Requires JS
+                </Badge>
+              </>
+            )
+          }
+        </div>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-4">
+          {description}
+        </p>
+
+        <div class="flex gap-2">
+          {
+            links &&
+              Object.entries(links).map((link) => (
+                <Button
+                  href={link[1]}
+                  variant="outline"
+                  size="xs"
+                  className="capitalize"
+                >
+                  {link[0]}
+                </Button>
+              ))
+          }
+        </div>
+
         <slot />
-        <!-- </PageContent> -->
+
+        <div class="flex justify-between items-center gap-4 mt-12">
+          {
+            prev ? (
+              <Button
+                href={`/${prev.collection}/${prev.slug}`}
+                variant="ghost"
+                size="sm"
+              >
+                <ArrowLeftIcon />
+                {prev.data.title}
+              </Button>
+            ) : (
+              <div />
+            )
+          }
+          {
+            next ? (
+              <Button
+                href={`/${next.collection}/${next.slug}`}
+                variant="ghost"
+                size="sm"
+              >
+                {next.data.title}
+                <ArrowRightIcon />
+              </Button>
+            ) : (
+              <div />
+            )
+          }
+        </div>
       </div>
       <aside
         title="Table of Contents"
