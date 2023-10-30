@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import { fontFamily } from "tailwindcss/defaultTheme"
 
 module.exports = {
   content: [
@@ -15,9 +16,15 @@ module.exports = {
       padding: "1rem",
     },
     extend: {
-      // fontFamily: {
-      //   brand: ['var(--font-mazzard)', ...fontFamily.sans],
-      // },
+      fontFamily: {
+        sans: [
+          `Geist, ${fontFamily.sans}`,
+          {
+            fontVariationSettings: '"wght" 80',
+          },
+        ],
+        mono: ["GeistMono", ...fontFamily.mono],
+      },
       // screens: {
       //   '2xl': '1440px',
       // },
@@ -42,5 +49,12 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
+  corePlugins: {
+    fontWeight: false,
+  },
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("./plugins/fontVariationSettings"),
+  ],
 } satisfies Config

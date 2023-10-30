@@ -1,0 +1,171 @@
+---
+title: Radio
+description: A toggle that allows users to choose between checked and unchecked states.
+client: true
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/ui-components-Radio--default",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Radio",
+  }
+---
+
+import { FaceHappyIcon, MinusIcon } from "@untitledui-icons/react/line"
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
+import { Radio } from "#/ui/components/Radio"
+import { RadioCard } from "#/ui/components/RadioCard"
+
+<CodePreview client:load>
+  <Radio client:load />
+  <Radio defaultChecked client:load />
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Radio } from "#/ui/components/Radio"
+```
+
+```jsx
+<Radio />
+```
+
+Note: Radios are note designed to be used alone. You should always use them within a [RadioGroup](/docs/components/RadioGroup).
+
+## Label
+
+You can pass a label to your Radio to automatically associate it with the Radio.
+
+<CodePreview client:load>
+  <Radio label="Accept terms and conditions" defaultChecked client:load />
+  <div slot="code">
+    ```jsx
+    <Radio label="Accept terms and conditions" defaultChecked />
+    ```
+  </div>
+</CodePreview>
+
+If you need a Radio with accessible text that isn't visible, you can hide the label
+
+<CodePreview client:load>
+  <Radio
+    label="Accept terms and conditions"
+    hideLabel
+    defaultChecked
+    client:load
+  />
+  <div slot="code">
+    ```jsx
+    <Radio label="Accept terms and conditions" hideLabel defaultChecked />
+    ```
+  </div>
+</CodePreview>
+
+Optionally, if you need your label separated from your Radio, you can associate them by using the `id` and `htmlFor` props.
+
+## Size
+
+You can change the size of your Radio by passing the `size` prop.
+
+<CodePreview client:load>
+  <Radio size="sm" label="size sm" hideLabel defaultChecked client:load />
+  <Radio size="md" label="size md" hideLabel defaultChecked client:load />
+  <Radio size="lg" label="size lg" hideLabel defaultChecked client:load />
+  <div slot="code">
+    ```jsx
+    <Radio
+      size="sm" // sm, md, lg
+      label="size sm"
+      hideLabel
+      defaultChecked
+    />
+    ```
+  </div>
+</CodePreview>
+
+## Icon
+
+You can pass a custom icon if you want to change the default check
+
+<CodePreview client:load>
+  <Radio label="custom icon example" hideLabel defaultChecked client:load>
+    <FaceHappyIcon slot="icon" />
+  </Radio>
+  <div slot="code">
+    ```jsx
+    <Radio label="custom icon example" hideLabel defaultChecked>
+      <FaceHappyIcon slot="icon" />
+    </Radio>
+    ```
+  </div>
+</CodePreview>
+
+You may need to adjust the size of your icon to fit the Radio (this isn't done for you for custom icons)
+
+## Controlled
+
+You can control the state of the Radio from outside of the component by passing the `checked` and `onChange` props.
+
+<CodePreview client:load>
+  {/* Show usestate code here for code preview only */}
+  <Radio label="controlled example" defaultChecked client:load />
+  <div slot="code">
+    ```jsx
+    export const Controlled = () => {
+      const [checked, setChecked] = useState(false)
+      return (
+        <Radio
+          label="controlled example"
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+        />
+      )
+    }
+    ```
+  </div>
+</CodePreview>
+
+## Customisation
+
+If you'd like to extend the radio to make a larger clickable area, you can use the `RadioCard` component.
+
+<CodePreview client:load>
+  <RadioCard
+    client:load
+    defaultChecked
+    showCheckbox
+    className="max-w-md flex items-start"
+  >
+    <div className="text-left">
+      <label htmlFor="custom-checkbox" className="font-bold">
+        Radio Card
+      </label>
+      <p className="text-sm text-gray-500">
+        Try clicking this to see the checkbox in action
+      </p>
+    </div>
+  </RadioCard>
+  <div slot="code">
+    ```jsx
+    <RadioCard
+      client:load
+      defaultChecked
+      showCheckbox
+      className="max-w-md flex items-start"
+    >
+      <div className="text-left">
+        <label htmlFor="custom-checkbox" className="font-bold">
+          Radio Card
+        </label>
+        <p className="text-sm text-gray-500">
+          Try clicking this to see the checkbox in action
+        </p>
+      </div>
+    </RadioCard>
+    ```
+  </div>
+</CodePreview>
+
+See more at [RadioCard](/docs/components/RadioCard)

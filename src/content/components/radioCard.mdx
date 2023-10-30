@@ -1,0 +1,232 @@
+---
+title: Radio Card
+description: A stylized radio that allows you to add additional information or design elements to Radioes.
+client: true
+links:
+  {
+    "storybook": "https://skyward-digital.github.io/sky-ui/?path=/story/ui-components-Radiogroup--default",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/RadioCard",
+  }
+---
+
+import { ContainerIcon } from "@untitledui-icons/react/line"
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
+import { RadioCard } from "#/ui/components/RadioCard"
+
+<CodePreview client:load>
+  <RadioCard
+    client:load
+    defaultChecked
+    showRadio
+    className="max-w-md flex items-start"
+  >
+    <div className="text-left">
+      <label htmlFor="custom-radio" className="font-bold">
+        Radio Card
+      </label>
+      <p className="text-sm text-gray-500">
+        Try clicking this to see the radio in action
+      </p>
+    </div>
+  </RadioCard>
+</CodePreview>
+
+If you're looking for RadioGroup, you can find it [here](/ui/components/RadioGroup).
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { RadioCard } from "#/ui/components/RadioCard"
+```
+
+```jsx
+<RadioCard>Radio</RadioCard>
+```
+
+As you build more complex components sometimes a simple radio doesn't quite solve the needs of your design. The RadioCard component allows you to add additional information or design elements to Radioes.
+
+## Content
+
+The RadioCard component accepts any content as its children. This allows you to add additional information or design elements to radios.
+
+Make sure you pass a unique id to the RadioCard component that's associated with a label element. This will ensure that the radio is accessible.
+
+<CodePreview client:load>
+  <RadioCard
+    client:load
+    id="custom-radio"
+    defaultChecked={true}
+    className="flex gap-4 max-w-md"
+  >
+    <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+    <div className="text-left">
+      <label htmlFor="custom-radio" className="font-bold">
+        Lorem ipsum
+      </label>
+      <p className="text-sm text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum tortor sem, vel aliquet velit blandit ut.
+      </p>
+    </div>
+  </RadioCard>
+  <div slot="code">
+    ```jsx
+    <RadioCard
+      id="custom-radio"
+      defaultChecked={true}
+      className="flex gap-4 max-w-md"
+    >
+      <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+      <div className="text-left">
+        <label htmlFor="custom-radio" className="font-bold">
+          Lorem ipsum
+        </label>
+        <p className="text-sm text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          condimentum tortor sem, vel aliquet velit blandit ut.
+        </p>
+      </div>
+    </RadioCard>
+    ```
+  </div>
+</CodePreview>
+
+Alternatively, you can just pass a string to your RadioCard component (in which case, an id will be generated for you).
+
+<CodePreview client:load>
+  <RadioCard client:load>Radio</RadioCard>
+  <div slot="code">
+    ```jsx
+    <RadioCard>Radio</RadioCard>
+    ```
+  </div>
+</CodePreview>
+
+## DefaultChecked
+
+If you'd like to pre-select the radio, you can pass the `defaultChecked` prop.
+
+<CodePreview client:load>
+  <RadioCard client:load defaultChecked>
+    Default Checked
+  </RadioCard>
+  <div slot="code">
+    ```jsx
+    <RadioCard defaultChecked>Default Checked</RadioCard>
+    ```
+  </div>
+</CodePreview>
+
+## Controlled
+
+By default, the RadioCard manages its own state. You can control the state of the RadioCard from outside of the component by passing the `checked` and `onChange` props.
+
+<CodePreview client:load>
+  {/* Show usestate code here for code preview only */}
+  <RadioCard client:load>Controlled</RadioCard>
+  <div slot="code">
+    ```jsx
+    export const Controlled = () => {
+      const [checked, setChecked] = useState(false)
+      return (
+        <RadioCard
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+        >Controlled</RadioCard>
+      )
+    }
+    ```
+  </div>
+</CodePreview>
+
+## Show Radio
+
+If you'd like, you can show the radio itself by passing the `showRadio` prop to the RadioCard component.
+
+<CodePreview client:load>
+  <RadioCard client:load showRadio defaultChecked>
+    Show Radio
+  </RadioCard>
+  <div slot="code">
+    ```jsx
+    <RadioCard showRadio>Show Radio</RadioCard>
+    ```
+  </div>
+</CodePreview>
+
+This tends to work better on larger cards
+
+<CodePreview client:load>
+  <RadioCard
+    client:load
+    id="custom-radio"
+    defaultChecked={true}
+    showRadio={true}
+    className="flex gap-4 max-w-md items-start"
+  >
+    <ContainerIcon className="w-6 h-6 flex-shrink-0 my-auto" />
+    <div className="text-left">
+      <label htmlFor="custom-radio" className="font-bold">
+        Lorem ipsum
+      </label>
+      <p className="text-sm text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum tortor sem, vel aliquet velit blandit ut.
+      </p>
+    </div>
+  </RadioCard>
+  <div slot="code">
+    ```jsx
+    <RadioCard
+      id="custom-radio"
+      defaultChecked={true}
+      showRadio={true}
+      className="flex gap-4 max-w-md"
+    >
+      <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+      <div className="text-left">
+        <label htmlFor="custom-radio" className="font-bold">
+          Lorem ipsum
+        </label>
+        <p className="text-sm text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          condimentum tortor sem, vel aliquet velit blandit ut.
+        </p>
+      </div>
+    </RadioCard>
+    ```
+  </div>
+</CodePreview>
+
+### Additional Radio controls
+
+For the sake of simplicity, you do lose out on some radio functionality when you use the radio card, however. If you're missing some controls it's recommended that you extend the RadioCard component, or create your own card components using the radio.
+
+## Customisation
+
+### Classes
+
+All custom classes will be passed down to the RadioCard, so you can style it however you want.
+
+<CodePreview client:load>
+  <RadioCard
+    client:load
+    defaultChecked
+    className="font-medium data-[headlessui-state=checked]:bg-indigo-500 data-[headlessui-state=checked]:text-white"
+  >
+    Custom Radio
+  </RadioCard>
+  <div slot="code">
+    ```jsx
+    <RadioCard
+      defaultChecked
+      className="font-medium data-[headlessui-state=checked]:bg-indigo-500 data-[headlessui-state=checked]:text-white"
+    >
+      Custom Radio
+    </RadioCard>
+    ```
+  </div>
+</CodePreview>

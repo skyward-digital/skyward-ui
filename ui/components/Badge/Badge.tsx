@@ -1,4 +1,5 @@
 import { cn } from "#/utils"
+
 import { Image } from "../Image"
 import type { BadgeProps } from "./Badge.d"
 
@@ -50,7 +51,7 @@ export const Badge = ({
     <div
       className={cn(
         // layout
-        "border inline-flex items-center justify-center overflow-hidden whitespace-nowrap font-semibold tracking-snug [&>*]:inline-flex [&>*]:items-center",
+        "border inline-flex items-center justify-center overflow-hidden whitespace-nowrap font-medium tracking-snug [&>*]:inline-flex [&>*]:items-center",
 
         // variants
         variant === "rounded" && "rounded-lg",

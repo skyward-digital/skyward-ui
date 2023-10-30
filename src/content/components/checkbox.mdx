@@ -13,6 +13,7 @@ import { FaceHappyIcon, MinusIcon } from "@untitledui-icons/react/line"
 import { CodePreview } from "#/src/components/Tabs"
 import { Button } from "#/ui/components/Button"
 import { Checkbox } from "#/ui/components/Checkbox"
+import { CheckboxCard } from "#/ui/components/CheckboxCard"
 
 <CodePreview client:load>
   <Checkbox client:load />
@@ -60,32 +61,7 @@ If you need a checkbox with accessible text that isn't visible, you can hide the
   </div>
 </CodePreview>
 
-Optionally, if you need your label separated from your checkbox, you can associate them by using the `id` and `aria-labelledby` props.
-
-<CodePreview client:load>
-  <div className="border rounded-lg p-6 justify-between w-full max-w-2xl flex">
-    <div className="flex flex-col">
-      <label htmlFor="card-example">Newsletter</label>
-      <span className="text-sm text-gray-600">
-        Join 1500+ subscribers for a free weekly newsletter
-      </span>
-    </div>
-    <Checkbox id="card-example" defaultChecked client:load />
-  </div>
-  <div slot="code">
-    ```jsx
-    <div className="border rounded-lg p-6 justify-between w-full max-w-2xl flex">
-      <div className="flex flex-col">
-        <label htmlFor="card-example">Newsletter</label>
-        <span className="text-sm text-gray-600">
-          Join 1500+ subscribers for a free weekly newsletter
-        </span>
-      </div>
-      <Checkbox id="card-example" defaultChecked />
-    </div>
-    ```
-  </div>
-</CodePreview>
+Optionally, if you need your label separated from your checkbox, you can associate them by using the `id` and `htmlFor` props.
 
 ## Size
 
@@ -187,3 +163,46 @@ While a checkbox can only accept 2 states in a form, checked or unchecked, there
     ```
   </div>
 </CodePreview>
+
+## Customisation
+
+If you'd like to extend the checkbox to make a larger clickable area, you can use the `CheckboxCard` component.
+
+<CodePreview client:load>
+  <CheckboxCard
+    client:load
+    defaultChecked
+    showCheckbox
+    className="max-w-md flex items-start"
+  >
+    <div className="text-left">
+      <label htmlFor="custom-checkbox" className="font-bold">
+        Checkbox Card
+      </label>
+      <p className="text-sm text-gray-500">
+        Try clicking this to see the checkbox in action
+      </p>
+    </div>
+  </CheckboxCard>
+  <div slot="code">
+    ```jsx
+    <CheckboxCard
+      client:load
+      defaultChecked
+      showCheckbox
+      className="max-w-md flex items-start"
+    >
+      <div className="text-left">
+        <label htmlFor="custom-checkbox" className="font-bold">
+          Checkbox Card
+        </label>
+        <p className="text-sm text-gray-500">
+          Try clicking this to see the checkbox in action
+        </p>
+      </div>
+    </CheckboxCard>
+    ```
+  </div>
+</CodePreview>
+
+See more at [CheckboxCard](/docs/components/CheckboxCard)

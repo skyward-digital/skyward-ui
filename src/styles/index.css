@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist/GeistVF.woff2") format(woff2) tech(variations);
+  font-weight: 32 240;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+}
+
+@font-face {
+  font-family: "GeistMono";
+  src: url("/fonts/GeistMono/GeistMonoVF.woff2") format(woff2) tech(variations);
+  font-weight: 32 240;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+}
+
 * {
   @apply antialiased;
 }
