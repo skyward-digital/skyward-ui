@@ -1,5 +1,5 @@
 ---
-title: CheckboxCard
+title: Checkbox Card
 description: A stylized checkbox that allows you to add additional information or design elements to checkboxes.
 client: true
 links:
@@ -15,8 +15,24 @@ import { Button } from "#/ui/components/Button"
 import { CheckboxCard } from "#/ui/components/CheckboxCard"
 
 <CodePreview client:load>
-  <CheckboxCard client:load>Checkbox</CheckboxCard>
+  <CheckboxCard
+    client:load
+    defaultChecked
+    showCheckbox
+    className="max-w-md flex items-start"
+  >
+    <div className="text-left">
+      <label htmlFor="custom-checkbox" className="font-bold">
+        Checkbox Card
+      </label>
+      <p className="text-sm text-gray-500">
+        Try clicking this to see the checkbox in action
+      </p>
+    </div>
+  </CheckboxCard>
 </CodePreview>
+
+If you're looking for CheckboxGroup, you can find it [here](/ui/components/CheckboxGroup).
 
 {/* ## Installation */}
 

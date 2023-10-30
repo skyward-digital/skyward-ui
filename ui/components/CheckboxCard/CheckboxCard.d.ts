@@ -3,4 +3,5 @@ export type CheckboxCardProps = {
   checked?: boolean
   defaultChecked?: boolean
   showCheckbox?: boolean
+  className?: any
 } & React.ButtonHTMLAttributes<HTMLButtonElement>

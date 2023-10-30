@@ -27,7 +27,7 @@ export const Checkbox = ({
   const Component = as ?? "button"
 
   return (
-    <>
+    <div className={cn("flex gap-3 items-center flex-nowrap", className)}>
       <Component
         id={formattedId}
         type="button"
@@ -43,9 +43,9 @@ export const Checkbox = ({
           // size
           size === "sm" && "w-4 h-4",
           size === "md" && "w-5 h-5",
-          size === "lg" && "w-6 h-6",
+          size === "lg" && "w-6 h-6"
           // overrides
-          className
+          // className
         )}
         onKeyDown={(event) => {
           props.onKeyDown && props.onKeyDown(event)
@@ -86,7 +86,7 @@ export const Checkbox = ({
         <label
           htmlFor={formattedId}
           className={cn(
-            "inline-block ml-2 text-gray-800 dark:text-gray-200 cursor-pointer", // size
+            "inline-block text-gray-800 dark:text-gray-200 cursor-pointer", // size
             size === "sm" && "text-xs",
             size === "md" && "text-sm",
             size === "lg" && "text-md"
@@ -95,6 +95,6 @@ export const Checkbox = ({
           {label}
         </label>
       )}
-    </>
+    </div>
   )
 }
