@@ -1,0 +1,123 @@
+---
+title: Progress
+description: A component for showing progress
+client: true # Or true if JS is required for this component to function
+links:
+  {
+    "storybook": "https://google.com",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Progress",
+  }
+---
+
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
+import { Progress } from "#/ui/components/Progress"
+
+<CodePreview>
+  <Progress value={55} client:load />
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Progress } from "#/ui/components/Progress"
+```
+
+```jsx
+<Progress value={55} />
+```
+
+## Value
+
+You can pass any value between 0 and 100
+
+<CodePreview client:load>
+  <Progress value={89.125} client:load />
+  <Progress value={55} client:load />
+  <Progress value={33.33} client:load />
+  <div slot="code">
+    ```jsx
+    <Progress value={89.125} />
+    <Progress value={55} />
+    <Progress value={33.33} />
+    ```
+  </div>
+</CodePreview>
+
+Any values over 100 or under 0 will automatically be adjusted to within the range
+
+<CodePreview client:load>
+  <Progress value={120} client:load />
+  <Progress value={-4} client:load />
+  <div slot="code">
+    ```jsx
+    <Progress value={120} />
+    <Progress value={-4} />
+    ```
+  </div>
+</CodePreview>
+
+## Max
+
+You can pass the `max` prop to change the maximum value to greater/less than 100
+
+<CodePreview client:load>
+  <Progress value={862} max={1000} client:load />
+  <Progress value={12} max={20} client:load />
+  <div slot="code">
+    ```jsx
+    <Progress value={862} max={1000} />
+    <Progress value={12} max={20} />
+    ```
+  </div>
+</CodePreview>
+
+## Indeterminate
+
+If you don't know the value, you can instead omit the `value` prop which will update the progress bar to be indeterminate
+
+<CodePreview client:load>
+  <Progress client:load />
+  <div slot="code">
+    ```jsx
+    <Progress />
+    ```
+  </div>
+</CodePreview>
+
+This is not the same as passing `0` to `value`, which is treated like a regular numeric value instead of an indeterminate state
+
+<CodePreview client:load>
+  <Progress client:load />
+  <Progress value={0} client:load />
+  <div slot="code">
+    ```jsx
+    <Progress />
+    <Progress value={0} client:load />
+    ```
+  </div>
+</CodePreview>
+
+## Customization
+
+### Classes
+
+You can pass a `className` prop to update the style of the progress bar. Behind the scenes the progress bar is a native `<progress>` element, (unless you're using the indeterminate state)
+
+<CodePreview client:load>
+  <Progress
+    className="h-5 [&::-webkit-progress-value]:bg-amber-500"
+    value={55}
+    client:load
+  />
+  <div slot="code">
+    ```jsx
+    <Progress
+      className="h-5 [&::-webkit-progress-value]:bg-amber-500"
+      value={55}
+    />
+    ```
+  </div>
+</CodePreview>

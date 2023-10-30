@@ -31,6 +31,14 @@ module.exports = {
       },
       animation: {
         spin: "spin 10s linear infinite",
+        loading: "loading-indeterminate-horizontal 1.4s infinite linear",
+      },
+      keyframes: {
+        "loading-indeterminate-horizontal": {
+          "0%": { transform: "translateX(0) scaleX(0)" },
+          "50%": { transform: "translateX(0) scaleX(0.4)" },
+          "100%": { transform: "translateX(100%) scaleX(0.9)" },
+        },
       },
     },
   },
