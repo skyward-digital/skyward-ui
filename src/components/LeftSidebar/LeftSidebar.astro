@@ -16,14 +16,14 @@ const collectionLinks = await (async () => {
       title: "Components",
       items: componentEntries.map((entry) => ({
         title: entry.data.title,
-        path: `/${entry.collection}/${entry.slug}`,
+        path: `/docs/${entry.collection}/${entry.slug}`,
       })),
     },
     {
       title: "Examples",
       items: exampleEntries.map((entry) => ({
         title: entry.data.title,
-        path: `/${entry.collection}/${entry.slug}`,
+        path: `/docs/${entry.collection}/${entry.slug}`,
       })),
     },
   ]
