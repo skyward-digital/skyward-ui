@@ -6,15 +6,15 @@ import {
   MinusIcon,
 } from "@untitledui-icons/react/line"
 
-import { Checkbox, type CheckboxProps } from "."
+import { Radio } from "./Radio"
 
-const meta: Meta<typeof Checkbox> = {
-  title: "Components/Checkbox",
-  component: Checkbox,
+const meta: Meta<typeof Radio> = {
+  title: "Components/Radio",
+  component: Radio,
   parameters: {
     docs: {
       description: {
-        component: "Checkbox component",
+        component: "Radio component",
       },
     },
   },
@@ -25,7 +25,7 @@ export default meta
 
 export const Default = {
   args: {
-    id: "text",
+    id: "default",
     label: "Accept terms and conditions",
   },
 }
@@ -35,34 +35,6 @@ export const Checked = {
     id: "checked",
     label: "Accept terms and conditions",
     defaultChecked: true,
-  },
-}
-
-export const Indeterminate = {
-  render: () => {
-    const [checked, setChecked] =
-      useState<CheckboxProps["checked"]>("indeterminate")
-    return (
-      <Checkbox
-        id="indeterminate"
-        label="Accept terms and conditions"
-        checked={checked}
-        icon={
-          checked === "indeterminate" ? (
-            <MinusIcon />
-          ) : checked ? (
-            <CheckIcon />
-          ) : undefined
-        }
-        onChange={() =>
-          checked === "indeterminate"
-            ? setChecked(true)
-            : checked
-            ? setChecked(false)
-            : setChecked("indeterminate")
-        }
-      />
-    )
   },
 }
 
