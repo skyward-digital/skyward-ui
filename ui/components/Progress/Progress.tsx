@@ -7,19 +7,18 @@ import type { ProgressProps } from "./Progress.d"
 
 export const Progress = ({
   id,
-  value: defaultValue,
+  value,
   max = 100,
   className,
 }: ProgressProps) => {
-  if (defaultValue && defaultValue < 0) defaultValue = 0
-  if (defaultValue && defaultValue > max) defaultValue = max
+  if (value && value < 0) value = 0
+  if (value && value > max) value = max
 
-  const [value, setValue] = useState(defaultValue === undefined ? undefined : 0)
+  const [loaded, setLoaded] = useState(false)
 
   // Animate the progress bar on initial load
   useEffect(() => {
-    if (value === undefined) return
-    setValue(defaultValue)
+    setLoaded(true)
   }, [])
 
   // Indeterminate - cannot be animated within a progress element (for now)
@@ -43,7 +42,7 @@ export const Progress = ({
   return (
     <progress
       id={id}
-      value={value}
+      value={loaded ? value : 0}
       max={max}
       className={cn(
         "h-2.5 w-full rounded-full overflow-hidden",
