@@ -1,6 +1,6 @@
 ---
-import { getCollection } from "astro:content"
 import { cn } from "#/utils"
+import { getCollection } from "astro:content"
 
 type Props = {
   currentPage: string
@@ -8,11 +8,20 @@ type Props = {
 
 const collectionLinks = await (async () => {
   const componentEntries = await getCollection("components")
+  const exampleEntries = await getCollection("examples")
+  // const componentEntries = await getCollection("components")
 
   return [
     {
       title: "Components",
       items: componentEntries.map((entry) => ({
+        title: entry.data.title,
+        path: `/${entry.collection}/${entry.slug}`,
+      })),
+    },
+    {
+      title: "Examples",
+      items: exampleEntries.map((entry) => ({
         title: entry.data.title,
         path: `/${entry.collection}/${entry.slug}`,
       })),

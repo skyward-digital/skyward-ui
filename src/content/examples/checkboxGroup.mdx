@@ -1,0 +1,449 @@
+---
+# Todo - as this is an example file it probably has a better place in the docs
+title: Checkbox Group
+description: A list of checkboxes grouped together
+client: true # Or true if JS is required for this component to function
+---
+
+import { CodePreview } from "#/src/components/Tabs"
+import { Checkbox } from "#/ui/components/Checkbox"
+import { CheckboxCard } from "#/ui/components/CheckboxCard"
+import { cn } from "#/utils"
+
+<CodePreview client:load>
+  <div className="flex gap-4 flex-col">
+    <p className="text-lg font-semibold">What kind of site are you building?</p>
+    <div className="flex gap-4">
+      <CheckboxCard
+        client:load
+        defaultChecked
+        showCheckbox
+        className="flex items-start flex-1"
+      >
+        <div className="text-left flex-1">
+          <label htmlFor="custom-checkbox" className="font-bold">
+            Website
+          </label>
+          <p className="text-sm text-gray-500">
+            {"A marketing or docs site for presenting information"}
+          </p>
+        </div>
+      </CheckboxCard>
+      <CheckboxCard
+        client:load
+        showCheckbox
+        className="flex items-start flex-1"
+      >
+        <div className="text-left flex-1">
+          <label htmlFor="custom-checkbox" className="font-bold">
+            Application
+          </label>
+          <p className="text-sm text-gray-500">
+            {"A web application to manage stuff with your account"}
+          </p>
+        </div>
+      </CheckboxCard>
+      <CheckboxCard
+        client:load
+        defaultChecked
+        showCheckbox
+        className="flex items-start flex-1"
+      >
+        <div className="text-left flex-1">
+          <label htmlFor="custom-checkbox" className="font-bold">
+            Ecommerce
+          </label>
+          <p className="text-sm text-gray-500">Buy or sell things</p>
+        </div>
+      </CheckboxCard>
+    </div>
+  </div>
+</CodePreview>
+
+This is a set of example components that could be useful when building out a variety of forms. As these are highly dependent on the context they'll be used in, it's very unlikely you'll need all of them so I've instead separated these out into examples.
+
+To use these components, copy the code from the code preview and paste it into your project.
+
+{/* ## Installation */}
+
+## Initialization
+
+In order to use these components you'll need one of the following imports
+
+```jsx
+import { Checkbox } from "#/ui/components/Checkbox"
+import { CheckboxCard } from "#/ui/components/CheckboxCard"
+```
+
+## Simple list
+
+<CodePreview client:load>
+  <div>
+    <label className="text-base font-semibold text-gray-900">
+      Notifications
+    </label>
+    <p className="text-sm text-gray-500">
+      How do you prefer to receive notifications?
+    </p>
+    <fieldset className="mt-4">
+      <legend className="sr-only">Notification method</legend>
+      <div className="flex gap-4 flex-col ">
+        <Checkbox label="One" client:load />
+        <Checkbox label="Two" client:load />
+        <Checkbox label="Three" client:load />
+      </div>
+    </fieldset>
+  </div>
+  <div slot="code">
+    ```jsx
+    <div>
+      <label className="text-base font-semibold text-gray-900">
+        Notifications
+      </label>
+      <p className="text-sm text-gray-500">
+        How do you prefer to receive notifications?
+      </p>
+      <fieldset className="mt-4">
+        <legend className="sr-only">Notification method</legend>
+        <div className="flex gap-4 items-center flex-col">
+          <Checkbox label="One" />
+          <Checkbox label="Two" />
+          <Checkbox label="Three" />
+        </div>
+      </fieldset>
+    </div>
+    ```
+  </div>
+</CodePreview>
+
+## List with description
+
+<CodePreview client:load>
+  <div>
+    <label className="text-base font-semibold text-gray-900">
+      Notifications
+    </label>
+    <p className="text-sm text-gray-500">
+      How do you prefer to receive notifications?
+    </p>
+    <fieldset className="mt-4">
+      <legend className="sr-only">Notification method</legend>
+      <div className="flex gap-4 flex-col ">
+        <div className="flex items-start gap-3">
+          <Checkbox id="one" className="mt-0.5" />
+          <div className="flex items-start flex-col leading-tight">
+            <label for="one">One</label>
+            <p className="text-sm text-gray-500">
+              {"A marketing or docs site for presenting information"}
+            </p>
+          </div>
+        </div>
+        <div className="flex items-start gap-3">
+          <Checkbox id="one" className="mt-0.5" />
+          <div className="flex items-start flex-col leading-tight">
+            <label for="one">One</label>
+            <p className="text-sm text-gray-500">
+              {"A marketing or docs site for presenting information"}
+            </p>
+          </div>
+        </div>
+        <div className="flex items-start gap-3">
+          <Checkbox id="one" className="mt-0.5" />
+          <div className="flex items-start flex-col leading-tight">
+            <label for="one">One</label>
+            <p className="text-sm text-gray-500">
+              {"A marketing or docs site for presenting information"}
+            </p>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div slot="code">
+    ```jsx
+    <div>
+      <label className="text-base font-semibold text-gray-900">
+        Notifications
+      </label>
+      <p className="text-sm text-gray-500">
+        How do you prefer to receive notifications?
+      </p>
+      <fieldset className="mt-4">
+        <legend className="sr-only">Notification method</legend>
+        <div className="flex gap-4 flex-col ">
+          <div className="flex items-start gap-3">
+            <Checkbox id="one" className="mt-0.5" />
+            <div className="flex items-start flex-col leading-tight">
+              <label for="one">One</label>
+              <p className="text-sm text-gray-500">
+                {"A marketing or docs site for presenting information"}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Checkbox id="one" className="mt-0.5" />
+            <div className="flex items-start flex-col leading-tight">
+              <label for="one">One</label>
+              <p className="text-sm text-gray-500">
+                {"A marketing or docs site for presenting information"}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Checkbox id="one" className="mt-0.5" />
+            <div className="flex items-start flex-col leading-tight">
+              <label for="one">One</label>
+              <p className="text-sm text-gray-500">
+                {"A marketing or docs site for presenting information"}
+              </p>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    ```
+  </div>
+</CodePreview>
+
+## Color picker
+
+<CodePreview client:load>
+  <div>
+    <label className="text-base font-semibold text-gray-900">
+      Choose your colors
+    </label>
+    <fieldset className="mt-4">
+      <legend className="sr-only">Color picker</legend>
+      <div className="flex gap-4">
+        <CheckboxCard
+          className="rounded-full border-none w-8 h-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          client:load
+        />
+        <CheckboxCard
+          className="rounded-full border-none w-8 h-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          client:load
+        />
+        <CheckboxCard
+          className="rounded-full border-none w-8 h-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          client:load
+        />
+        <CheckboxCard
+          className="rounded-full border-none w-8 h-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          client:load
+        />
+      </div>
+    </fieldset>
+  </div>
+  <div slot="code">
+    ```jsx
+    <div>
+      <label className="text-base font-semibold text-gray-900">
+        Choose your colors
+      </label>
+      <fieldset className="mt-4">
+        <legend className="sr-only">Color picker</legend>
+        <div className="flex gap-4">
+          <CheckboxCard className="rounded-full border-none w-8 h-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <CheckboxCard className="rounded-full border-none w-8 h-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <CheckboxCard className="rounded-full border-none w-8 h-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <CheckboxCard className="rounded-full border-none w-8 h-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+        </div>
+      </fieldset>
+    </div>
+    ```
+  </div>
+</CodePreview>
+
+## Small cards
+
+<CodePreview client:load>
+  <div>
+    <label className="text-base font-semibold text-gray-900">
+      Choose your colors
+    </label>
+    <fieldset className="mt-4">
+      <legend className="sr-only">Color picker</legend>
+      <div className="flex gap-4">
+        <CheckboxCard
+          className="aria-checked:bg-indigo-500 aria-checked:text-white"
+          client:load
+        >
+          $100
+        </CheckboxCard>
+        <CheckboxCard
+          className="aria-checked:bg-indigo-500 aria-checked:text-white"
+          client:load
+        >
+          $1000
+        </CheckboxCard>
+        <CheckboxCard
+          className="aria-checked:bg-indigo-500 aria-checked:text-white"
+          client:load
+        >
+          $10000
+        </CheckboxCard>
+        <CheckboxCard
+          className="aria-checked:bg-indigo-500 aria-checked:text-white "
+          client:load
+        >
+          $100000
+        </CheckboxCard>
+      </div>
+    </fieldset>
+  </div>
+  <div slot="code">
+    ```jsx
+    <div>
+      <label className="text-base font-semibold text-gray-900">
+        What's your budget?
+      </label>
+      <fieldset className="mt-4">
+        <legend className="sr-only">Budget picker</legend>
+        <div className="flex gap-4">
+          <CheckboxCard
+            className="aria-checked:bg-indigo-500 aria-checked:text-white"
+            client:load
+          >
+            $100
+          </CheckboxCard>
+          <CheckboxCard
+            className="aria-checked:bg-indigo-500 aria-checked:text-white"
+            client:load
+          >
+            $1000
+          </CheckboxCard>
+          <CheckboxCard
+            className="aria-checked:bg-indigo-500 aria-checked:text-white"
+            client:load
+          >
+            $10000
+          </CheckboxCard>
+          <CheckboxCard
+            className="aria-checked:bg-indigo-500 aria-checked:text-white "
+            client:load
+          >
+            $100000
+          </CheckboxCard>
+        </div>
+      </fieldset>
+    </div>
+    ```
+  </div>
+</CodePreview>
+
+## Cards
+
+<CodePreview client:load>
+  <div>
+    <label className="text-base font-semibold text-gray-900">
+      What kind of site are you building?
+    </label>
+    <fieldset className="mt-4">
+      <legend className="sr-only">Site selector</legend>
+      <div className="flex gap-4 flex-col">
+        <div className="flex gap-4">
+          <CheckboxCard
+            client:load
+            defaultChecked
+            showCheckbox
+            className="flex items-start flex-1"
+          >
+            <div className="text-left flex-1">
+              <label htmlFor="custom-checkbox" className="font-bold">
+                Website
+              </label>
+              <p className="text-sm text-gray-500">
+                {"A marketing or docs site for presenting information"}
+              </p>
+            </div>
+          </CheckboxCard>
+          <CheckboxCard
+            client:load
+            showCheckbox
+            className="flex items-start flex-1"
+          >
+            <div className="text-left flex-1">
+              <label htmlFor="custom-checkbox" className="font-bold">
+                Application
+              </label>
+              <p className="text-sm text-gray-500">
+                {"A web application to manage stuff with your account"}
+              </p>
+            </div>
+          </CheckboxCard>
+          <CheckboxCard
+            client:load
+            defaultChecked
+            showCheckbox
+            className="flex items-start flex-1"
+          >
+            <div className="text-left flex-1">
+              <label htmlFor="custom-checkbox" className="font-bold">
+                Ecommerce
+              </label>
+              <p className="text-sm text-gray-500">Buy or sell things</p>
+            </div>
+          </CheckboxCard>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div slot="code">
+    ```jsx
+    <div>
+      <label className="text-base font-semibold text-gray-900">
+        What kind of site are you building?
+      </label>
+      <fieldset className="mt-4">
+        <legend className="sr-only">Site selector</legend>
+        <div className="flex gap-4 flex-col">
+          <div className="flex gap-4">
+            <CheckboxCard
+              client:load
+              defaultChecked
+              showCheckbox
+              className="flex items-start flex-1"
+            >
+              <div className="text-left flex-1">
+                <label htmlFor="custom-checkbox" className="font-bold">
+                  Website
+                </label>
+                <p className="text-sm text-gray-500">
+                  {"A marketing or docs site for presenting information"}
+                </p>
+              </div>
+            </CheckboxCard>
+            <CheckboxCard
+              client:load
+              showCheckbox
+              className="flex items-start flex-1"
+            >
+              <div className="text-left flex-1">
+                <label htmlFor="custom-checkbox" className="font-bold">
+                  Application
+                </label>
+                <p className="text-sm text-gray-500">
+                  {"A web application to manage stuff with your account"}
+                </p>
+              </div>
+            </CheckboxCard>
+            <CheckboxCard
+              client:load
+              defaultChecked
+              showCheckbox
+              className="flex items-start flex-1"
+            >
+              <div className="text-left flex-1">
+                <label htmlFor="custom-checkbox" className="font-bold">
+                  Ecommerce
+                </label>
+                <p className="text-sm text-gray-500">Buy or sell things</p>
+              </div>
+            </CheckboxCard>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    ```
+  </div>
+</CodePreview>

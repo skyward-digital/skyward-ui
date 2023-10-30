@@ -1,0 +1,40 @@
+---
+title: Hero
+description: Lorem ipsum dolor sit amet
+client: false # Or true if JS is required for this component to function
+links:
+  {
+    "storybook": "https://google.com",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Component",
+  }
+---
+
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
+
+<CodePreview>
+  <Button href="#">Button</Button>
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Button } from "#/ui/components/Button"
+```
+
+```jsx
+<Button href="#">Button</Button>
+```
+
+<CodePreview client:load>
+  <Button href="#">Button</Button>
+  <div slot="code">
+    ```jsx
+    <Button href="#">Button</Button>
+    ```
+  </div>
+</CodePreview>
+
+Your content here
