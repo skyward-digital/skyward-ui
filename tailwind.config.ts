@@ -39,12 +39,22 @@ module.exports = {
       animation: {
         spin: "spin 10s linear infinite",
         loading: "loading-indeterminate-horizontal 1.4s infinite linear",
+        "font-weight-grow": "font-weight-grow 1s infinite alternate",
+        "font-weight-shrink": "font-weight-shrink 1s infinite alternate",
       },
       keyframes: {
         "loading-indeterminate-horizontal": {
           "0%": { transform: "translateX(0) scaleX(0)" },
           "50%": { transform: "translateX(0) scaleX(0.4)" },
           "100%": { transform: "translateX(100%) scaleX(0.9)" },
+        },
+        "font-weight-grow": {
+          "0%": { "font-variation-settings": '"wght" 32' },
+          "100%": { "font-variation-settings": '"wght" 96' },
+        },
+        "font-weight-shrink": {
+          "0%": { "font-variation-settings": '"wght" 96' },
+          "100%": { "font-variation-settings": '"wght" 32' },
         },
       },
     },
