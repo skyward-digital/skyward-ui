@@ -1,0 +1,82 @@
+---
+title: Slider
+description: An input component that allows users to select values within a range
+client: false # Or true if JS is required for this component to function
+links:
+  {
+    "storybook": "https://google.com",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Slider",
+  }
+---
+
+import { ControlledSlider } from "#/src/components/docs/ControlledSlider"
+import { CodePreview } from "#/src/components/Tabs"
+import { Badge } from "#/ui/components/Badge"
+import { Slider } from "#/ui/components/Slider"
+
+<CodePreview>
+  <Slider />
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Slider } from "#/ui/components/Slider"
+```
+
+```jsx
+<Slider />
+```
+
+<CodePreview client:load>
+  <Slider />
+  <div slot="code">
+    ```jsx
+    <Slider />
+    ```
+  </div>
+</CodePreview>
+
+## Min/Max
+
+You can set the min and max values of the slider using the `min` and `max` props.
+
+<CodePreview client:load>
+  <ControlledSlider min={1} max={5} value={3} client:load />
+  <div slot="code">
+    ```jsx
+    <Slider />
+    ```
+  </div>
+</CodePreview>
+
+(As we don't display the value anywhere right now, the only way we can check this works is by seeing the increased gaps between each step)
+
+## Controlled
+
+<Badge size="sm" color="gray">
+  Requires JS
+</Badge>
+
+We can manage the state of the slider from outside the component by passing in the `value` and `onChange` props.
+
+<CodePreview client:load>
+  <ControlledSlider value={20} client:load />
+  <div slot="code">
+    ```jsx
+    export const ControlledSlider = () => {
+      const [value, setValue] = useState(20)
+      return (
+        <Slider
+          min={0}
+          max={100}
+          value={value}
+          onChange={(e) => setValue(parseInt(e.target.value))}
+        />
+      )
+    }
+    ```
+  </div>
+</CodePreview>

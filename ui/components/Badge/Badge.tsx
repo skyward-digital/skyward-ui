@@ -51,7 +51,7 @@ export const Badge = ({
     <div
       className={cn(
         // layout
-        "border inline-flex items-center justify-center overflow-hidden whitespace-nowrap font-medium tracking-snug [&>*]:inline-flex [&>*]:items-center",
+        "border inline-flex items-center justify-center overflow-hidden whitespace-nowrap tracking-snug [&>*]:inline-flex [&>*]:items-center [&>*]:my-0",
 
         // variants
         variant === "rounded" && "rounded-lg",

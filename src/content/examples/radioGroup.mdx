@@ -51,6 +51,8 @@ import { cn } from "#/utils"
   </div>
 </CodePreview>
 
+Note: Unlike checkboxes, radios are intended to only have a single radio selected at a time. Because of this, it makes sense to manage the state from the group, rather than the individual radio.
+
 This is a set of example components that could be useful when building out a variety of forms. As these are highly dependent on the context they'll be used in, it's very unlikely you'll need all of them so I've instead separated these out into examples.
 
 To use these components, copy the code from the code preview and paste it into your project.
@@ -64,6 +66,39 @@ In order to use these components you'll need one of the following imports
 ```jsx
 import { Radio } from "#/ui/components/Radio"
 import { RadioCard } from "#/ui/components/RadioCard"
+```
+
+As we'll be managing the state here too, we'll need to import the `useState` hook from React
+
+```jsx
+import { useState } from "react"
+
+// ...
+export const RadioGroup = () => {
+  const [selected, setSelected] = useState("one")
+
+  return (
+    <fieldset>
+      <legend className="sr-only">Group Label</legend>
+      {/* Swap this for whatever radio style you want */}
+      <div>
+        <Radio
+          id="one"
+          name="radio-group"
+          checked={selected === "one"}
+          onChange={() => setSelected("one")}
+        />
+        <Radio
+          id="two"
+          name="radio-group"
+          checked={selected === "two"}
+          onChange={() => setSelected("two")}
+        />
+      </div>
+      ...
+    </fieldset>
+  )
+}
 ```
 
 ## Simple list

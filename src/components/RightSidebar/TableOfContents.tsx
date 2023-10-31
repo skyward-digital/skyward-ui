@@ -1,6 +1,6 @@
-import type { MarkdownHeading } from "astro"
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { cn } from "#/utils"
+import type { MarkdownHeading } from "astro"
 
 type ItemOffsets = {
   id: string
