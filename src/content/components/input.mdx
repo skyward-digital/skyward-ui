@@ -1,0 +1,238 @@
+---
+title: Input
+description: A component for collecting data input.
+client: false # Or true if JS is required for this component to function
+links:
+  {
+    "storybook": "https://google.com",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Input",
+  }
+---
+
+import { Copy06Icon, Mail01Icon } from "@untitledui-icons/react/line"
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
+import {
+  Input,
+  InputLeading,
+  InputTrailing,
+  InputWrapper,
+} from "#/ui/components/Input"
+
+<CodePreview>
+  <InputWrapper label="Name" hint="Enter your full name">
+    <Input placeholder="Dan Spratling" />
+  </InputWrapper>
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Input, InputWrapper } from "#/ui/components/Input"
+```
+
+```jsx
+<InputWrapper label="Name">
+  <Input placeholder="Dan Spratling" />
+</InputWrapper>
+```
+
+## How it works
+
+The `Input` component provides some base styling to the regular `input` element, but you can pass any other props to it that you would normally pass to an `input` element too.
+
+The `InputWrapper` goes around your `Input` to provide additional associated elements easily like labels & hints, but it's totally optional if you want to use an Input separate from your labels and roll-your-own.
+
+<CodePreview client:load>
+  <InputWrapper label="Name">
+    <Input placeholder="Dan Spratling" />
+  </InputWrapper>
+  <div slot="code">
+    ```jsx
+    <InputWrapper label="Name">
+      <Input placeholder="Dan Spratling" />
+    </InputWrapper>
+    ```
+  </div>
+</CodePreview>
+<CodePreview client:load>
+  <div className="w-full flex items-center">
+    <label htmlFor="example-input" className="w-1/3">
+      Custom Label
+    </label>
+    <Input id="example-input" placeholder="Dan Spratling" />
+  </div>
+  <div slot="code">
+    ```jsx
+    <div className="w-full flex items-center">
+      <label htmlFor="example-input" className="w-1/3">
+        Custom Label
+      </label>
+      <Input id="example-input" placeholder="Dan Spratling" />
+    </div>
+    ```
+  </div>
+</CodePreview>
+
+## Hint
+
+You can pass a hint to the `InputWrapper` to provide additional context to the user.
+
+<CodePreview client:load>
+  <InputWrapper label="Name" hint="What do you call yourself?">
+    <Input placeholder="Dan Spratling" />
+  </InputWrapper>
+  <div slot="code">
+    ```jsx
+    <InputWrapper label="Name" hint="required">
+      <Input placeholder="Dan Spratling" />
+    </InputWrapper>
+    ```
+  </div>
+</CodePreview>
+
+## Error
+
+Passing an error to the `InputWrapper` and `Input` will display error styles. If a hint exists, it will be replaced with the error.
+
+<CodePreview client:load>
+  <InputWrapper label="Name" hint="required" error="Your name is required">
+    <Input placeholder="Dan Spratling" error />
+  </InputWrapper>
+  <div slot="code">
+    ```jsx
+    <InputWrapper label="Name" hint="required" error="Your name is required">
+      <Input placeholder="Dan Spratling" error={true} />
+    </InputWrapper>
+    ```
+  </div>
+</CodePreview>
+
+## Leading Elements
+
+You can pass a `InputLeading` element to the `InputWrapper` to provide additional context to the user. This can accept any element as a child, which you can style yourself, but there are a few presets to help you get started.
+
+### Icon
+
+<CodePreview client:load>
+  <InputWrapper label="Name">
+    <InputLeading type="icon">
+      <Mail01Icon />
+    </InputLeading>
+    <Input placeholder="hello@skyward.digital" className="pl-10" />
+  </InputWrapper>
+  <div slot="code">
+    ```jsx
+    <InputWrapper label="Name">
+      <InputLeading type="icon">
+        <Mail01Icon />
+      </InputLeading>
+      <Input placeholder="hello@skyward.digital" className="pl-10" />
+    </InputWrapper>
+    ```
+  </div>
+</CodePreview>
+
+### Text
+
+<CodePreview client:load>
+  <InputWrapper label="URL">
+    <InputLeading type="text">https://</InputLeading>
+    <Input placeholder="skyward.digital" className="rounded-l-none" />
+  </InputWrapper>
+  <div slot="code">
+    ```jsx
+    <InputWrapper label="URL">
+      <InputLeading type="text">https://</InputLeading>
+      <Input placeholder="skyward.digital" className="rounded-l-none" />
+    </InputWrapper>
+    ```
+  </div>
+</CodePreview>
+
+## Trailing Elements
+
+Similar to the leading elements, this can accept children but has a few presets ready to go.
+
+### Icon
+
+<CodePreview client:load>
+  <InputWrapper label="Name">
+    <Input placeholder="hello@skyward.digital" />
+    <InputTrailing type="icon">
+      <Mail01Icon />
+    </InputTrailing>
+  </InputWrapper>
+  <div slot="code">
+    ```jsx
+    <InputWrapper label="Name">
+      <Input placeholder="hello@skyward.digital" />
+      <InputTrailing type="icon">
+        <Mail01Icon />
+      </InputTrailing>
+    </InputWrapper>
+    ```
+  </div>
+</CodePreview>
+
+### Text
+
+<CodePreview client:load>
+  <InputWrapper label="URL">
+    <Input placeholder="skyward.digital" className="rounded-r-none" />
+    <InputTrailing type="text">/blog</InputTrailing>
+  </InputWrapper>
+  <div slot="code">
+    ```jsx
+    <InputWrapper label="URL">
+      <Input placeholder="skyward.digital" className="rounded-r-none" />
+      <InputTrailing type="text">/blog</InputTrailing>
+    </InputWrapper>
+    ```
+  </div>
+</CodePreview>
+
+## Custom
+
+You can customise the input however you'd like by passing predefined or custom leading/trailing components within the slots. You can also style these components to match the input if necessary.
+
+<CodePreview client:load>
+  <InputWrapper label="URL" hint="required" className="w-full max-w-xl">
+    <InputLeading type="text">https://</InputLeading>
+    <Input placeholder="skyward.digital" className="rounded-none" />
+    <InputTrailing>
+      <Button
+        variant="outline"
+        className="rounded-l-none -ml-px border-gray-300 flex-none"
+      >
+        Copy
+        <Copy06Icon className="w-4 h-4" />
+      </Button>
+    </InputTrailing>
+    <Button variant="primary" size="md" className="flex-none ml-4">
+      <span>Save</span>
+    </Button>
+  </InputWrapper>
+  <div slot="code">
+    ```jsx
+    <InputWrapper label="URL" hint="required" className="w-full max-w-xl">
+      <InputLeading type="text">https://</InputLeading>
+      <Input placeholder="skyward.digital" className="rounded-none" />
+      <InputTrailing>
+        <Button
+          variant="outline"
+          className="rounded-l-none -ml-px border-gray-300 flex-none"
+        >
+          Copy
+          <Copy06Icon className="w-4 h-4" />
+        </Button>
+      </InputTrailing>
+      <Button variant="primary" size="md" className="flex-none ml-4">
+        <span>Save</span>
+      </Button>
+    </InputWrapper>
+    ```
+  </div>
+</CodePreview>

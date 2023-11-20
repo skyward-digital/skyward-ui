@@ -51,7 +51,7 @@ export const Badge = ({
     <div
       className={cn(
         // layout
-        "border inline-flex items-center justify-center overflow-hidden whitespace-nowrap tracking-snug [&>*]:inline-flex [&>*]:items-center [&>*]:my-0",
+        "border inline-flex items-center justify-center overflow-hidden font-medium whitespace-nowrap tracking-snug [&>*]:inline-flex [&>*]:items-center [&>*]:my-0",
 
         // variants
         variant === "rounded" && "rounded-lg",
@@ -113,7 +113,7 @@ export const Badge = ({
           "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900 dark:text-rose-200 dark:border-rose-700",
 
         // transparent
-        transparent && "bg-transparent border-current shadow-sm",
+        transparent && "bg-transparent shadow-sm",
 
         // any of the above classes can be overridden by passing a className prop
         className
