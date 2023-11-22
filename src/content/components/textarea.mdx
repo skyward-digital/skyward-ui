@@ -1,0 +1,108 @@
+---
+title: TextArea
+description: A component for collecting long-form data TextArea.
+client: false # Or true if JS is required for this component to function
+links:
+  {
+    "storybook": "https://google.com",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/TextArea",
+  }
+---
+
+import { CodePreview } from "#/src/components/Tabs"
+import {
+  TextArea,
+  TextAreaWrapper,
+} from "#/ui/components/TextArea"
+
+<CodePreview>
+  <TextAreaWrapper label="Name" hint="Enter your full name">
+    <TextArea placeholder="Dan Spratling" />
+  </TextAreaWrapper>
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { TextArea, TextAreaWrapper } from "#/ui/components/TextArea"
+```
+
+```jsx
+<TextAreaWrapper label="Name">
+  <TextArea placeholder="Dan Spratling" />
+</TextAreaWrapper>
+```
+
+## How it works
+
+The `TextArea` component provides some base styling to the regular `textarea` element, but you can pass any other props to it that you would normally pass to a `textarea` element too.
+
+The `TextAreaWrapper` goes around your `TextArea` to provide additional associated elements easily like labels & hints, but it's totally optional if you want to use a `TextArea` separate from your labels and roll-your-own.
+
+<CodePreview client:load>
+  <TextAreaWrapper label="Name">
+    <TextArea placeholder="Dan Spratling" />
+  </TextAreaWrapper>
+  <div slot="code">
+    ```jsx
+    <TextAreaWrapper label="Name">
+      <TextArea placeholder="Dan Spratling" />
+    </TextAreaWrapper>
+    ```
+  </div>
+</CodePreview>
+<CodePreview client:load>
+  <div className="w-full flex items-center">
+    <label htmlFor="example-TextArea" className="w-1/3">
+      Custom Label
+    </label>
+    <TextArea id="example-TextArea" placeholder="Dan Spratling" />
+  </div>
+  <div slot="code">
+    ```jsx
+    <div className="w-full flex items-center">
+      <label htmlFor="example-TextArea" className="w-1/3">
+        Custom Label
+      </label>
+      <TextArea id="example-TextArea" placeholder="Dan Spratling" />
+    </div>
+    ```
+  </div>
+</CodePreview>
+
+## Hint
+
+You can pass a hint to the `TextAreaWrapper` to provide additional context to the user.
+
+<CodePreview client:load>
+  <TextAreaWrapper label="Name" hint="What do you call yourself?">
+    <TextArea placeholder="Dan Spratling" />
+  </TextAreaWrapper>
+  <div slot="code">
+    ```jsx
+    <TextAreaWrapper label="Name" hint="required">
+      <TextArea placeholder="Dan Spratling" />
+    </TextAreaWrapper>
+    ```
+  </div>
+</CodePreview>
+
+## Error
+
+Passing an error to the `TextAreaWrapper` and `TextArea` will display error styles. If a hint exists, it will be replaced with the error.
+
+<CodePreview client:load>
+  <TextAreaWrapper label="Name" hint="required" error="Your name is required">
+    <TextArea placeholder="Dan Spratling" error />
+  </TextAreaWrapper>
+  <div slot="code">
+    ```jsx
+    <TextAreaWrapper label="Name" hint="required" error="Your name is required">
+      <TextArea placeholder="Dan Spratling" error={true} />
+    </TextAreaWrapper>
+    ```
+  </div>
+</CodePreview>
+
