@@ -14,12 +14,7 @@ import { cn } from "#/utils"
   <div className="flex gap-4 flex-col">
     <p className="text-lg font-semibold">What kind of site are you building?</p>
     <div className="flex gap-4">
-      <RadioCard
-        client:load
-        defaultChecked
-        showRadio
-        className="flex items-start flex-1"
-      >
+      <RadioCard client:load defaultChecked showRadio className="flex items-start flex-1">
         <div className="text-left flex-1">
           <label htmlFor="custom-Radio" className="font-bold">
             Website
@@ -105,12 +100,8 @@ export const RadioGroup = () => {
 
 <CodePreview client:load>
   <div>
-    <label className="text-base font-semibold text-gray-900">
-      Notifications
-    </label>
-    <p className="text-sm text-gray-500">
-      How do you prefer to receive notifications?
-    </p>
+    <label className="text-base font-semibold text-gray-900">Notifications</label>
+    <p className="text-sm text-gray-500">How do you prefer to receive notifications?</p>
     <fieldset className="mt-4">
       <legend className="sr-only">Notification method</legend>
       <div className="flex gap-4 flex-col ">
@@ -123,12 +114,8 @@ export const RadioGroup = () => {
   <div slot="code">
     ```jsx
     <div>
-      <label className="text-base font-semibold text-gray-900">
-        Notifications
-      </label>
-      <p className="text-sm text-gray-500">
-        How do you prefer to receive notifications?
-      </p>
+      <label className="text-base font-semibold text-gray-900">Notifications</label>
+      <p className="text-sm text-gray-500">How do you prefer to receive notifications?</p>
       <fieldset className="mt-4">
         <legend className="sr-only">Notification method</legend>
         <div className="flex gap-4 items-center flex-col">
@@ -146,12 +133,8 @@ export const RadioGroup = () => {
 
 <CodePreview client:load>
   <div>
-    <label className="text-base font-semibold text-gray-900">
-      Notifications
-    </label>
-    <p className="text-sm text-gray-500">
-      How do you prefer to receive notifications?
-    </p>
+    <label className="text-base font-semibold text-gray-900">Notifications</label>
+    <p className="text-sm text-gray-500">How do you prefer to receive notifications?</p>
     <fieldset className="mt-4">
       <legend className="sr-only">Notification method</legend>
       <div className="flex gap-4 flex-col ">
@@ -188,12 +171,8 @@ export const RadioGroup = () => {
   <div slot="code">
     ```jsx
     <div>
-      <label className="text-base font-semibold text-gray-900">
-        Notifications
-      </label>
-      <p className="text-sm text-gray-500">
-        How do you prefer to receive notifications?
-      </p>
+      <label className="text-base font-semibold text-gray-900">Notifications</label>
+      <p className="text-sm text-gray-500">How do you prefer to receive notifications?</p>
       <fieldset className="mt-4">
         <legend className="sr-only">Notification method</legend>
         <div className="flex gap-4 flex-col ">
@@ -235,26 +214,24 @@ export const RadioGroup = () => {
 
 <CodePreview client:load>
   <div>
-    <label className="text-base font-semibold text-gray-900">
-      Choose your colors
-    </label>
+    <label className="text-base font-semibold text-gray-900">Choose your colors</label>
     <fieldset className="mt-4">
       <legend className="sr-only">Color picker</legend>
       <div className="flex gap-4">
         <RadioCard
-          className="rounded-full border-none w-8 h-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          className="rounded-full border-none size-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
           client:load
         />
         <RadioCard
-          className="rounded-full border-none w-8 h-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          className="rounded-full border-none size-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
           client:load
         />
         <RadioCard
-          className="rounded-full border-none w-8 h-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          className="rounded-full border-none size-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
           client:load
         />
         <RadioCard
-          className="rounded-full border-none w-8 h-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          className="rounded-full border-none size-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
           client:load
         />
       </div>
@@ -263,16 +240,14 @@ export const RadioGroup = () => {
   <div slot="code">
     ```jsx
     <div>
-      <label className="text-base font-semibold text-gray-900">
-        Choose your colors
-      </label>
+      <label className="text-base font-semibold text-gray-900">Choose your colors</label>
       <fieldset className="mt-4">
         <legend className="sr-only">Color picker</legend>
         <div className="flex gap-4">
-          <RadioCard className="rounded-full border-none w-8 h-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
-          <RadioCard className="rounded-full border-none w-8 h-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
-          <RadioCard className="rounded-full border-none w-8 h-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
-          <RadioCard className="rounded-full border-none w-8 h-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <RadioCard className="rounded-full border-none size-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <RadioCard className="rounded-full border-none size-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <RadioCard className="rounded-full border-none size-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <RadioCard className="rounded-full border-none size-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
         </div>
       </fieldset>
     </div>
@@ -284,34 +259,20 @@ export const RadioGroup = () => {
 
 <CodePreview client:load>
   <div>
-    <label className="text-base font-semibold text-gray-900">
-      Choose your colors
-    </label>
+    <label className="text-base font-semibold text-gray-900">Choose your colors</label>
     <fieldset className="mt-4">
       <legend className="sr-only">Color picker</legend>
       <div className="flex gap-4">
-        <RadioCard
-          className="aria-checked:bg-indigo-500 aria-checked:text-white"
-          client:load
-        >
+        <RadioCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
           $100
         </RadioCard>
-        <RadioCard
-          className="aria-checked:bg-indigo-500 aria-checked:text-white"
-          client:load
-        >
+        <RadioCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
           $1000
         </RadioCard>
-        <RadioCard
-          className="aria-checked:bg-indigo-500 aria-checked:text-white"
-          client:load
-        >
+        <RadioCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
           $10000
         </RadioCard>
-        <RadioCard
-          className="aria-checked:bg-indigo-500 aria-checked:text-white "
-          client:load
-        >
+        <RadioCard className="aria-checked:bg-indigo-500 aria-checked:text-white " client:load>
           $100000
         </RadioCard>
       </div>
@@ -320,34 +281,20 @@ export const RadioGroup = () => {
   <div slot="code">
     ```jsx
     <div>
-      <label className="text-base font-semibold text-gray-900">
-        What's your budget?
-      </label>
+      <label className="text-base font-semibold text-gray-900">What's your budget?</label>
       <fieldset className="mt-4">
         <legend className="sr-only">Budget picker</legend>
         <div className="flex gap-4">
-          <RadioCard
-            className="aria-checked:bg-indigo-500 aria-checked:text-white"
-            client:load
-          >
+          <RadioCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
             $100
           </RadioCard>
-          <RadioCard
-            className="aria-checked:bg-indigo-500 aria-checked:text-white"
-            client:load
-          >
+          <RadioCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
             $1000
           </RadioCard>
-          <RadioCard
-            className="aria-checked:bg-indigo-500 aria-checked:text-white"
-            client:load
-          >
+          <RadioCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
             $10000
           </RadioCard>
-          <RadioCard
-            className="aria-checked:bg-indigo-500 aria-checked:text-white "
-            client:load
-          >
+          <RadioCard className="aria-checked:bg-indigo-500 aria-checked:text-white " client:load>
             $100000
           </RadioCard>
         </div>
@@ -368,12 +315,7 @@ export const RadioGroup = () => {
       <legend className="sr-only">Site selector</legend>
       <div className="flex gap-4 flex-col">
         <div className="flex gap-4">
-          <RadioCard
-            client:load
-            defaultChecked
-            showRadio
-            className="flex items-start flex-1"
-          >
+          <RadioCard client:load defaultChecked showRadio className="flex items-start flex-1">
             <div className="text-left flex-1">
               <label htmlFor="custom-Radio" className="font-bold">
                 Website
@@ -393,12 +335,7 @@ export const RadioGroup = () => {
               </p>
             </div>
           </RadioCard>
-          <RadioCard
-            client:load
-            defaultChecked
-            showRadio
-            className="flex items-start flex-1"
-          >
+          <RadioCard client:load defaultChecked showRadio className="flex items-start flex-1">
             <div className="text-left flex-1">
               <label htmlFor="custom-Radio" className="font-bold">
                 Ecommerce
@@ -420,12 +357,7 @@ export const RadioGroup = () => {
         <legend className="sr-only">Site selector</legend>
         <div className="flex gap-4 flex-col">
           <div className="flex gap-4">
-            <RadioCard
-              client:load
-              defaultChecked
-              showRadio
-              className="flex items-start flex-1"
-            >
+            <RadioCard client:load defaultChecked showRadio className="flex items-start flex-1">
               <div className="text-left flex-1">
                 <label htmlFor="custom-Radio" className="font-bold">
                   Website
@@ -435,11 +367,7 @@ export const RadioGroup = () => {
                 </p>
               </div>
             </RadioCard>
-            <RadioCard
-              client:load
-              showRadio
-              className="flex items-start flex-1"
-            >
+            <RadioCard client:load showRadio className="flex items-start flex-1">
               <div className="text-left flex-1">
                 <label htmlFor="custom-Radio" className="font-bold">
                   Application
@@ -449,12 +377,7 @@ export const RadioGroup = () => {
                 </p>
               </div>
             </RadioCard>
-            <RadioCard
-              client:load
-              defaultChecked
-              showRadio
-              className="flex items-start flex-1"
-            >
+            <RadioCard client:load defaultChecked showRadio className="flex items-start flex-1">
               <div className="text-left flex-1">
                 <label htmlFor="custom-Radio" className="font-bold">
                   Ecommerce

@@ -18,11 +18,7 @@ export const Input = ({
   return (
     <div className="relative mb-5 flex">
       <InputBase className={cn(className, "rounded-r-none")} {...props} />
-      <Button
-        href={buttonLink}
-        variant="outline"
-        className="rounded-l-none border-gray-300 -ml-px"
-      >
+      <Button href={buttonLink} variant="outline" className="rounded-l-none border-gray-300 -ml-px">
         {buttonLabel}
       </Button>
     </div>

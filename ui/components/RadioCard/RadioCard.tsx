@@ -20,11 +20,7 @@ export const RadioCard = ({
   const [checkedState, setCheckedState] = useState(defaultChecked || false)
   const isChecked = checked !== undefined ? checked : checkedState
 
-  const formattedId = id
-    ? id
-    : typeof children === "string"
-    ? transformId(children)
-    : undefined
+  const formattedId = id ? id : typeof children === "string" ? transformId(children) : undefined
 
   return (
     <Switch
@@ -57,11 +53,7 @@ export const RadioCard = ({
             id={formattedId}
             name={name}
             checked={isChecked}
-            className={cn(
-              "ml-4 -mr-2",
-              !showRadio && "hidden",
-              checked ? "visible" : "invisible"
-            )}
+            className={cn("ml-4 -mr-2", !showRadio && "hidden", checked ? "visible" : "invisible")}
             as="span"
           />
         </>

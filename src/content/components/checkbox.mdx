@@ -48,12 +48,7 @@ You can pass a label to your checkbox to automatically associate it with the che
 If you need a checkbox with accessible text that isn't visible, you can hide the label
 
 <CodePreview client:load>
-  <Checkbox
-    label="Accept terms and conditions"
-    hideLabel
-    defaultChecked
-    client:load
-  />
+  <Checkbox label="Accept terms and conditions" hideLabel defaultChecked client:load />
   <div slot="code">
     ```jsx
     <Checkbox label="Accept terms and conditions" hideLabel defaultChecked />
@@ -169,36 +164,22 @@ While a checkbox can only accept 2 states in a form, checked or unchecked, there
 If you'd like to extend the checkbox to make a larger clickable area, you can use the `CheckboxCard` component.
 
 <CodePreview client:load>
-  <CheckboxCard
-    client:load
-    defaultChecked
-    showCheckbox
-    className="max-w-md flex items-start"
-  >
+  <CheckboxCard client:load defaultChecked showCheckbox className="max-w-md flex items-start">
     <div className="text-left">
       <label htmlFor="custom-checkbox" className="font-bold">
         Checkbox Card
       </label>
-      <p className="text-sm text-gray-500">
-        Try clicking this to see the checkbox in action
-      </p>
+      <p className="text-sm text-gray-500">Try clicking this to see the checkbox in action</p>
     </div>
   </CheckboxCard>
   <div slot="code">
     ```jsx
-    <CheckboxCard
-      client:load
-      defaultChecked
-      showCheckbox
-      className="max-w-md flex items-start"
-    >
+    <CheckboxCard client:load defaultChecked showCheckbox className="max-w-md flex items-start">
       <div className="text-left">
         <label htmlFor="custom-checkbox" className="font-bold">
           Checkbox Card
         </label>
-        <p className="text-sm text-gray-500">
-          Try clicking this to see the checkbox in action
-        </p>
+        <p className="text-sm text-gray-500">Try clicking this to see the checkbox in action</p>
       </div>
     </CheckboxCard>
     ```

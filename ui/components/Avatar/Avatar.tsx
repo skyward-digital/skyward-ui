@@ -1,14 +1,9 @@
 import { Image } from "#/ui/components/Image"
 import { cn } from "#/utils"
+
 import type { AvatarProps } from "./Avatar.d"
 
-export const Avatar = ({
-  src,
-  alt,
-  size = "md",
-  fallback = "",
-  className,
-}: AvatarProps) => {
+export const Avatar = ({ src, alt, size = "md", fallback = "", className }: AvatarProps) => {
   const calculatedFallback = (() => {
     if (!fallback) return
 
@@ -49,7 +44,7 @@ export const Avatar = ({
       ) : (
         <p
           className={cn(
-            "grid place-items-center w-full h-full",
+            "grid place-items-center size-full",
             size === "xs" && "text-xs",
             size === "sm" && "text-sm",
             size === "md" && "text-base",

@@ -1,10 +1,6 @@
 import { useState } from "react"
 import type { Meta } from "@storybook/react"
-import {
-  CheckIcon,
-  FaceHappyIcon,
-  MinusIcon,
-} from "@untitledui-icons/react/line"
+import { CheckIcon, FaceHappyIcon, MinusIcon } from "@untitledui-icons/react/line"
 
 import { Checkbox, type CheckboxProps } from "."
 
@@ -40,20 +36,13 @@ export const Checked = {
 
 export const Indeterminate = {
   render: () => {
-    const [checked, setChecked] =
-      useState<CheckboxProps["checked"]>("indeterminate")
+    const [checked, setChecked] = useState<CheckboxProps["checked"]>("indeterminate")
     return (
       <Checkbox
         id="indeterminate"
         label="Accept terms and conditions"
         checked={checked}
-        icon={
-          checked === "indeterminate" ? (
-            <MinusIcon />
-          ) : checked ? (
-            <CheckIcon />
-          ) : undefined
-        }
+        icon={checked === "indeterminate" ? <MinusIcon /> : checked ? <CheckIcon /> : undefined}
         onChange={() =>
           checked === "indeterminate"
             ? setChecked(true)

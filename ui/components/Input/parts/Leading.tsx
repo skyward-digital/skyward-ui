@@ -10,16 +10,9 @@ type InputPropsWithLeadingText = React.HTMLProps<HTMLSpanElement> & {
   children: string
 }
 
-export type InputLeadingProps =
-  | InputPropsWithLeadingIcon
-  | InputPropsWithLeadingText
+export type InputLeadingProps = InputPropsWithLeadingIcon | InputPropsWithLeadingText
 
-export const InputLeading = ({
-  type,
-  children,
-  className,
-  ...props
-}: InputLeadingProps) => {
+export const InputLeading = ({ type, children, className, ...props }: InputLeadingProps) => {
   if (type === "text") {
     return (
       <span
@@ -37,7 +30,7 @@ export const InputLeading = ({
     return (
       <span
         className={cn(
-          "absolute top-1/2 ml-3 h-5 w-5 -translate-y-1/2 text-gray-500 dark:text-gray-400",
+          "absolute top-1/2 ml-3 size-5 -translate-y-1/2 text-gray-500 dark:text-gray-400",
           className
         )}
         {...props}

@@ -14,12 +14,7 @@ import { cn } from "#/utils"
   <div className="flex gap-4 flex-col">
     <p className="text-lg font-semibold">What kind of site are you building?</p>
     <div className="flex gap-4">
-      <CheckboxCard
-        client:load
-        defaultChecked
-        showCheckbox
-        className="flex items-start flex-1"
-      >
+      <CheckboxCard client:load defaultChecked showCheckbox className="flex items-start flex-1">
         <div className="text-left flex-1">
           <label htmlFor="custom-checkbox" className="font-bold">
             Website
@@ -29,11 +24,7 @@ import { cn } from "#/utils"
           </p>
         </div>
       </CheckboxCard>
-      <CheckboxCard
-        client:load
-        showCheckbox
-        className="flex items-start flex-1"
-      >
+      <CheckboxCard client:load showCheckbox className="flex items-start flex-1">
         <div className="text-left flex-1">
           <label htmlFor="custom-checkbox" className="font-bold">
             Application
@@ -43,12 +34,7 @@ import { cn } from "#/utils"
           </p>
         </div>
       </CheckboxCard>
-      <CheckboxCard
-        client:load
-        defaultChecked
-        showCheckbox
-        className="flex items-start flex-1"
-      >
+      <CheckboxCard client:load defaultChecked showCheckbox className="flex items-start flex-1">
         <div className="text-left flex-1">
           <label htmlFor="custom-checkbox" className="font-bold">
             Ecommerce
@@ -81,12 +67,8 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
 
 <CodePreview client:load>
   <div>
-    <label className="text-base font-semibold text-gray-900">
-      Notifications
-    </label>
-    <p className="text-sm text-gray-500">
-      How do you prefer to receive notifications?
-    </p>
+    <label className="text-base font-semibold text-gray-900">Notifications</label>
+    <p className="text-sm text-gray-500">How do you prefer to receive notifications?</p>
     <fieldset className="mt-4">
       <legend className="sr-only">Notification method</legend>
       <div className="flex gap-4 flex-col ">
@@ -99,12 +81,8 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
   <div slot="code">
     ```jsx
     <div>
-      <label className="text-base font-semibold text-gray-900">
-        Notifications
-      </label>
-      <p className="text-sm text-gray-500">
-        How do you prefer to receive notifications?
-      </p>
+      <label className="text-base font-semibold text-gray-900">Notifications</label>
+      <p className="text-sm text-gray-500">How do you prefer to receive notifications?</p>
       <fieldset className="mt-4">
         <legend className="sr-only">Notification method</legend>
         <div className="flex gap-4 items-center flex-col">
@@ -122,12 +100,8 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
 
 <CodePreview client:load>
   <div>
-    <label className="text-base font-semibold text-gray-900">
-      Notifications
-    </label>
-    <p className="text-sm text-gray-500">
-      How do you prefer to receive notifications?
-    </p>
+    <label className="text-base font-semibold text-gray-900">Notifications</label>
+    <p className="text-sm text-gray-500">How do you prefer to receive notifications?</p>
     <fieldset className="mt-4">
       <legend className="sr-only">Notification method</legend>
       <div className="flex gap-4 flex-col ">
@@ -164,12 +138,8 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
   <div slot="code">
     ```jsx
     <div>
-      <label className="text-base font-semibold text-gray-900">
-        Notifications
-      </label>
-      <p className="text-sm text-gray-500">
-        How do you prefer to receive notifications?
-      </p>
+      <label className="text-base font-semibold text-gray-900">Notifications</label>
+      <p className="text-sm text-gray-500">How do you prefer to receive notifications?</p>
       <fieldset className="mt-4">
         <legend className="sr-only">Notification method</legend>
         <div className="flex gap-4 flex-col ">
@@ -211,26 +181,24 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
 
 <CodePreview client:load>
   <div>
-    <label className="text-base font-semibold text-gray-900">
-      Choose your colors
-    </label>
+    <label className="text-base font-semibold text-gray-900">Choose your colors</label>
     <fieldset className="mt-4">
       <legend className="sr-only">Color picker</legend>
       <div className="flex gap-4">
         <CheckboxCard
-          className="rounded-full border-none w-8 h-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          className="rounded-full border-none size-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
           client:load
         />
         <CheckboxCard
-          className="rounded-full border-none w-8 h-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          className="rounded-full border-none size-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
           client:load
         />
         <CheckboxCard
-          className="rounded-full border-none w-8 h-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          className="rounded-full border-none size-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
           client:load
         />
         <CheckboxCard
-          className="rounded-full border-none w-8 h-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
+          className="rounded-full border-none size-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2"
           client:load
         />
       </div>
@@ -239,16 +207,14 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
   <div slot="code">
     ```jsx
     <div>
-      <label className="text-base font-semibold text-gray-900">
-        Choose your colors
-      </label>
+      <label className="text-base font-semibold text-gray-900">Choose your colors</label>
       <fieldset className="mt-4">
         <legend className="sr-only">Color picker</legend>
         <div className="flex gap-4">
-          <CheckboxCard className="rounded-full border-none w-8 h-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
-          <CheckboxCard className="rounded-full border-none w-8 h-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
-          <CheckboxCard className="rounded-full border-none w-8 h-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
-          <CheckboxCard className="rounded-full border-none w-8 h-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <CheckboxCard className="rounded-full border-none size-8 bg-red-500 hover:bg-red-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <CheckboxCard className="rounded-full border-none size-8 bg-blue-500 hover:bg-blue-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <CheckboxCard className="rounded-full border-none size-8 bg-green-500 hover:bg-green-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
+          <CheckboxCard className="rounded-full border-none size-8 bg-fuchsia-500 hover:bg-fuchsia-400 aria-selected:outline-2 aria-selected:outline-indigo-500 outline-offset-2" />
         </div>
       </fieldset>
     </div>
@@ -260,34 +226,20 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
 
 <CodePreview client:load>
   <div>
-    <label className="text-base font-semibold text-gray-900">
-      Choose your colors
-    </label>
+    <label className="text-base font-semibold text-gray-900">Choose your colors</label>
     <fieldset className="mt-4">
       <legend className="sr-only">Color picker</legend>
       <div className="flex gap-4">
-        <CheckboxCard
-          className="aria-checked:bg-indigo-500 aria-checked:text-white"
-          client:load
-        >
+        <CheckboxCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
           $100
         </CheckboxCard>
-        <CheckboxCard
-          className="aria-checked:bg-indigo-500 aria-checked:text-white"
-          client:load
-        >
+        <CheckboxCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
           $1000
         </CheckboxCard>
-        <CheckboxCard
-          className="aria-checked:bg-indigo-500 aria-checked:text-white"
-          client:load
-        >
+        <CheckboxCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
           $10000
         </CheckboxCard>
-        <CheckboxCard
-          className="aria-checked:bg-indigo-500 aria-checked:text-white "
-          client:load
-        >
+        <CheckboxCard className="aria-checked:bg-indigo-500 aria-checked:text-white " client:load>
           $100000
         </CheckboxCard>
       </div>
@@ -296,34 +248,20 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
   <div slot="code">
     ```jsx
     <div>
-      <label className="text-base font-semibold text-gray-900">
-        What's your budget?
-      </label>
+      <label className="text-base font-semibold text-gray-900">What's your budget?</label>
       <fieldset className="mt-4">
         <legend className="sr-only">Budget picker</legend>
         <div className="flex gap-4">
-          <CheckboxCard
-            className="aria-checked:bg-indigo-500 aria-checked:text-white"
-            client:load
-          >
+          <CheckboxCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
             $100
           </CheckboxCard>
-          <CheckboxCard
-            className="aria-checked:bg-indigo-500 aria-checked:text-white"
-            client:load
-          >
+          <CheckboxCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
             $1000
           </CheckboxCard>
-          <CheckboxCard
-            className="aria-checked:bg-indigo-500 aria-checked:text-white"
-            client:load
-          >
+          <CheckboxCard className="aria-checked:bg-indigo-500 aria-checked:text-white" client:load>
             $10000
           </CheckboxCard>
-          <CheckboxCard
-            className="aria-checked:bg-indigo-500 aria-checked:text-white "
-            client:load
-          >
+          <CheckboxCard className="aria-checked:bg-indigo-500 aria-checked:text-white " client:load>
             $100000
           </CheckboxCard>
         </div>
@@ -344,12 +282,7 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
       <legend className="sr-only">Site selector</legend>
       <div className="flex gap-4 flex-col">
         <div className="flex gap-4">
-          <CheckboxCard
-            client:load
-            defaultChecked
-            showCheckbox
-            className="flex items-start flex-1"
-          >
+          <CheckboxCard client:load defaultChecked showCheckbox className="flex items-start flex-1">
             <div className="text-left flex-1">
               <label htmlFor="custom-checkbox" className="font-bold">
                 Website
@@ -359,11 +292,7 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
               </p>
             </div>
           </CheckboxCard>
-          <CheckboxCard
-            client:load
-            showCheckbox
-            className="flex items-start flex-1"
-          >
+          <CheckboxCard client:load showCheckbox className="flex items-start flex-1">
             <div className="text-left flex-1">
               <label htmlFor="custom-checkbox" className="font-bold">
                 Application
@@ -373,12 +302,7 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
               </p>
             </div>
           </CheckboxCard>
-          <CheckboxCard
-            client:load
-            defaultChecked
-            showCheckbox
-            className="flex items-start flex-1"
-          >
+          <CheckboxCard client:load defaultChecked showCheckbox className="flex items-start flex-1">
             <div className="text-left flex-1">
               <label htmlFor="custom-checkbox" className="font-bold">
                 Ecommerce
@@ -415,11 +339,7 @@ import { CheckboxCard } from "#/ui/components/CheckboxCard"
                 </p>
               </div>
             </CheckboxCard>
-            <CheckboxCard
-              client:load
-              showCheckbox
-              className="flex items-start flex-1"
-            >
+            <CheckboxCard client:load showCheckbox className="flex items-start flex-1">
               <div className="text-left flex-1">
                 <label htmlFor="custom-checkbox" className="font-bold">
                   Application

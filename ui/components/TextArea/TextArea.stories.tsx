@@ -30,8 +30,7 @@ export const Filled: Story = {
   args: {
     label: "Message",
     placeholder: "Enter your message",
-    value:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos",
+    value: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos",
   },
 }
 

@@ -1,4 +1,5 @@
 import type { Meta } from "@storybook/react"
+
 import { Avatar } from "./Avatar"
 import type { AvatarProps } from "./Avatar.d"
 

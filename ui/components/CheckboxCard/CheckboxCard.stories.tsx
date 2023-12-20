@@ -43,19 +43,15 @@ export const ShowCheck = {
 export const Custom = {
   render: () => {
     return (
-      <CheckboxCard
-        id="custom-checkbox"
-        defaultChecked={true}
-        className="flex gap-4 max-w-md"
-      >
-        <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+      <CheckboxCard id="custom-checkbox" defaultChecked={true} className="flex gap-4 max-w-md">
+        <ContainerIcon className="size-6 flex-shrink-0" />
         <div className="text-left">
           <label htmlFor="custom-checkbox" className="font-bold">
             Lorem ipsum
           </label>
           <p className="text-sm text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            condimentum tortor sem, vel aliquet velit blandit ut.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem,
+            vel aliquet velit blandit ut.
           </p>
         </div>
       </CheckboxCard>
@@ -72,14 +68,14 @@ export const CustomWithCheck = {
         showCheckbox={true}
         className="flex gap-4 max-w-md"
       >
-        <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+        <ContainerIcon className="size-6 flex-shrink-0" />
         <div className="text-left">
           <label htmlFor="custom-checkbox" className="font-bold">
             Lorem ipsum
           </label>
           <p className="text-sm text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            condimentum tortor sem, vel aliquet velit blandit ut.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem,
+            vel aliquet velit blandit ut.
           </p>
         </div>
       </CheckboxCard>

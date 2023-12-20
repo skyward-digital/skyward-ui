@@ -1,11 +1,5 @@
 import { useState } from "react"
-import {
-  TabGroup,
-  TabList,
-  TabPanel,
-  TabPanels,
-  TabTrigger,
-} from "#/ui/components/Tabs"
+import { TabGroup, TabList, TabPanel, TabPanels, TabTrigger } from "#/ui/components/Tabs"
 import { cn } from "#/utils"
 import { renderToString } from "react-dom/server"
 
@@ -53,8 +47,7 @@ export const CodePreview = ({
                     selected
                       ? "bg-indigo-500 text-white border-indigo-500"
                       : "text-gray-400 hover:text-gray-200 hover:bg-gray-400/25 dark:hover:text-gray-200 dark:hover:bg-gray-200/10",
-                    !code &&
-                      "bg-transparent border-transparent text-gray-400 pointer-events-none"
+                    !code && "bg-transparent border-transparent text-gray-400 pointer-events-none"
                   )
                 }
               >
@@ -93,12 +86,10 @@ export const CodePreview = ({
         </TabList>
 
         <TabPanels className="flex flex-1">
-          <TabPanel className="not-prose w-full h-full border border-gray-200 px-6 py-16 rounded-lg my-6 shadow-md flex items-center justify-center shadow-gray-200/20 gap-2 flex-wrap">
+          <TabPanel className="not-prose size-full border border-gray-200 px-6 py-16 rounded-lg my-6 shadow-md flex items-center justify-center shadow-gray-200/20 gap-2 flex-wrap">
             {children}
           </TabPanel>
-          {code && (
-            <TabPanel className="w-full h-full [& pre]:py-8">{code}</TabPanel>
-          )}
+          {code && <TabPanel className="size-full [& pre]:py-8">{code}</TabPanel>}
         </TabPanels>
       </TabGroup>
     </div>

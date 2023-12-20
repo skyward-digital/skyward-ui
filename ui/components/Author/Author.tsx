@@ -1,6 +1,6 @@
 import { Avatar } from "#/ui/components/Avatar"
-import { Link } from "#/ui/components/Link"
 import { cn } from "#/utils"
+
 import type { AuthorProps } from "./Author.d"
 
 export const Author = ({
@@ -25,16 +25,9 @@ export const Author = ({
         className
       )}
     >
-      <Link href={href}>
-        <Avatar
-          src={avatar?.src}
-          alt={avatar?.alt}
-          fallback={name}
-          size={size}
-        />
-      </Link>
-      <div className="grid gap-0.5">
-        <Link href={href}>
+      <Avatar src={avatar?.src} alt={avatar?.alt} fallback={name} size={size} />
+      {name ? (
+        <div className="grid gap-0.5">
           <p
             className={cn(
               "text-gray-800 dark:text-gray-200 font-semibold underline-offset-2 group-hover:underline group-hover:text-gray-600 dark:group-hover:text-gray-400",
@@ -49,21 +42,22 @@ export const Author = ({
           >
             {name}
           </p>
-        </Link>
-        <p
-          className={cn(
-            "text-gray-600 dark:text-gray-400 tracking-tight",
-            size === "xs" && "text-xs",
-            size === "sm" && "text-xs",
-            size === "md" && "text-sm",
-            size === "lg" && "text-base",
-            size === "xl" && "text-base",
-            size === "2xl" && "text-base"
-          )}
-        >
-          {detail}
-        </p>
-      </div>
+
+          <p
+            className={cn(
+              "text-gray-600 dark:text-gray-400 tracking-tight",
+              size === "xs" && "text-xs",
+              size === "sm" && "text-xs",
+              size === "md" && "text-sm",
+              size === "lg" && "text-base",
+              size === "xl" && "text-base",
+              size === "2xl" && "text-base"
+            )}
+          >
+            {detail}
+          </p>
+        </div>
+      ) : null}
     </div>
   )
 }

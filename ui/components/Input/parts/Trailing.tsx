@@ -11,16 +11,9 @@ type InputPropsWithTrailingText = React.HTMLProps<HTMLSpanElement> & {
   children: string
 }
 
-export type InputTrailingProps =
-  | InputPropsWithTrailingIcon
-  | InputPropsWithTrailingText
+export type InputTrailingProps = InputPropsWithTrailingIcon | InputPropsWithTrailingText
 
-export const InputTrailing = ({
-  type,
-  children,
-  className,
-  ...props
-}: InputTrailingProps) => {
+export const InputTrailing = ({ type, children, className, ...props }: InputTrailingProps) => {
   if (type === "text") {
     return (
       <span
@@ -38,7 +31,7 @@ export const InputTrailing = ({
     return (
       <span
         className={cn(
-          "absolute top-1/2 right-0 mr-3 h-5 w-5 -translate-y-1/2 text-gray-500 dark:text-gray-400",
+          "absolute top-1/2 right-0 mr-3 size-5 -translate-y-1/2 text-gray-500 dark:text-gray-400",
           className
         )}
         {...props}

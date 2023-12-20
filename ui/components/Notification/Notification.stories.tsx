@@ -1,5 +1,6 @@
 import type { Meta } from "@storybook/react"
 import { CircleIcon } from "@untitledui-icons/react/line"
+
 import { Notification } from "./Notification"
 import type { NotificationProps } from "./Notification.d"
 
@@ -34,7 +35,7 @@ const meta: Meta<NotificationProps> = {
 export default meta
 
 const Square = () => (
-  <div className="w-8 h-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50"></div>
+  <div className="size-8 rounded-xl bg-gray-300 ring-inset ring-1 ring-gray-400/50"></div>
 )
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args

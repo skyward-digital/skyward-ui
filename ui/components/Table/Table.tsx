@@ -1,17 +1,10 @@
 import { cn } from "#/utils"
 
-export const Table = ({
-  className,
-  children,
-}: React.HTMLAttributes<HTMLTableElement>) => {
+export const Table = ({ className, children }: React.HTMLAttributes<HTMLTableElement>) => {
   return (
     <div className={cn("w-fit min-w-full overflow-auto", className)}>
       {/* class for stripes [&>tbody>*:nth-child(even)]:bg-gray-50 */}
-      <table
-        className={cn("w-max min-w-full border-separate border-spacing-0")}
-      >
-        {children}
-      </table>
+      <table className={cn("w-max min-w-full border-separate border-spacing-0")}>{children}</table>
     </div>
   )
 }

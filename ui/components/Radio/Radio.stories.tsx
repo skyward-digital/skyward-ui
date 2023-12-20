@@ -1,10 +1,6 @@
 import { useState } from "react"
 import type { Meta } from "@storybook/react"
-import {
-  CheckIcon,
-  FaceHappyIcon,
-  MinusIcon,
-} from "@untitledui-icons/react/line"
+import { CheckIcon, FaceHappyIcon, MinusIcon } from "@untitledui-icons/react/line"
 
 import { Radio } from "./Radio"
 

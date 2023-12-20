@@ -1,16 +1,8 @@
 import * as RS from "@radix-ui/react-select"
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@untitledui-icons/react/line"
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "@untitledui-icons/react/line"
 import { cn } from "#/utils"
 
-import type {
-  SelectOptionProps,
-  SelectProps,
-  SelectWrapperProps,
-} from "./Select.d"
+import type { SelectOptionProps, SelectProps, SelectWrapperProps } from "./Select.d"
 
 export const SelectWrapper = ({
   label,
@@ -73,7 +65,7 @@ export const Select = ({
       >
         <RS.Value placeholder={placeholder ?? "Select..."} />
         <RS.Icon>
-          <ChevronDownIcon className="h-4 w-4" />
+          <ChevronDownIcon className="size-4" />
         </RS.Icon>
       </RS.Trigger>
 
@@ -86,7 +78,7 @@ export const Select = ({
           position="popper"
         >
           <RS.ScrollUpButton>
-            <ChevronUpIcon className="h-4 w-4" />
+            <ChevronUpIcon className="size-4" />
           </RS.ScrollUpButton>
 
           <RS.Viewport className="my-2 flex flex-col gap-px relative w-full">
@@ -107,7 +99,7 @@ export const Select = ({
           </RS.Viewport>
 
           <RS.ScrollDownButton>
-            <ChevronDownIcon className="h-4 w-4" />
+            <ChevronDownIcon className="size-4" />
           </RS.ScrollDownButton>
 
           {/* <RS.Arrow /> */}
@@ -120,7 +112,7 @@ export const Select = ({
 export const SelectOption = ({
   value,
   children,
-  Icon = <CheckIcon className="h-4 w-4 text-indigo-600" strokeWidth={3} />,
+  Icon = <CheckIcon className="size-4 text-indigo-600" strokeWidth={3} />,
 }: SelectOptionProps) => {
   return (
     <RS.Item
@@ -128,9 +120,7 @@ export const SelectOption = ({
       className="text-sm mx-2 my-1 flex items-center justify-between gap-2 overflow-auto p-2 rounded-md outline-none transition-colors duration-150 ease-in-out hover:cursor-pointer focus:outline-2 focus:outline-primary-700 data-[state=checked]:bg-indigo-50 data-[state=checked]:text-indigo-600 hover:bg-gray-50"
     >
       <RS.ItemText>{children}</RS.ItemText>
-      <RS.ItemIndicator className="SelectItemIndicator">
-        {Icon}
-      </RS.ItemIndicator>
+      <RS.ItemIndicator className="SelectItemIndicator">{Icon}</RS.ItemIndicator>
     </RS.Item>
   )
 }

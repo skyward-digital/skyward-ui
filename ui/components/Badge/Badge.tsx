@@ -59,20 +59,14 @@ export const Badge = ({
         variant === "square" && "rounded-none",
 
         // sizing
-        size === "sm" &&
-          "gap-1 text-xs px-1.5 py-0.5 [&>*]:gap-1 leading-[18px]",
-        size === "md" &&
-          "gap-1.5 text-sm px-2 py-0.5 [&>*]:gap-1.5 leading-[20px]",
-        size === "lg" &&
-          "gap-1.5 text-md px-2.5 py-1 [&>*]:gap-1.5 leading-[22px]",
+        size === "sm" && "gap-1 text-xs px-1.5 py-0.5 [&>*]:gap-1 leading-[18px]",
+        size === "md" && "gap-1.5 text-sm px-2 py-0.5 [&>*]:gap-1.5 leading-[20px]",
+        size === "lg" && "gap-1.5 text-md px-2.5 py-1 [&>*]:gap-1.5 leading-[22px]",
 
         // Icon sizes
-        size === "sm" &&
-          "[&>svg]:-mx-0.5 [&>svg]:h-3 [&>svg]:w-3 [&>*>svg]:-mx-0.5 [&>*>svg]:h-3 [&>*>svg]:w-3",
-        size === "md" &&
-          "[&>svg]:-mx-0.5 [&>svg]:h-4 [&>svg]:w-4 [&>*>svg]:-mx-0.5 [&>*>svg]:h-4 [&>*>svg]:w-4",
-        size === "lg" &&
-          "[&>svg]:-mx-0.5 [&>svg]:h-5 [&>svg]:w-5 [&>*>svg]:-mx-0.5 [&>*>svg]:h-5 [&>*>svg]:w-5",
+        size === "sm" && "[&>svg]:-mx-0.5 [&>svg]:size-3 [&>*>svg]:-mx-0.5 [&>*>svg]:size-3",
+        size === "md" && "[&>svg]:-mx-0.5 [&>svg]:size-4 [&>*>svg]:-mx-0.5 [&>*>svg]:size-4",
+        size === "lg" && "[&>svg]:-mx-0.5 [&>svg]:size-5 [&>*>svg]:-mx-0.5 [&>*>svg]:size-5",
 
         // colors
         selectedColor === "gray" &&
@@ -124,9 +118,9 @@ export const Badge = ({
         <span
           className={cn(
             "bg-current opacity-75 rounded-full flex-shrink-0",
-            size === "sm" && "w-[5px] h-[5px]",
-            size === "md" && "w-[6px] h-[6px]",
-            size === "lg" && "w-[7px] h-[7px]"
+            size === "sm" && "size-[5px]",
+            size === "md" && "size-[6px]",
+            size === "lg" && "size-[7px]"
           )}
         />
       )}
@@ -135,7 +129,7 @@ export const Badge = ({
         <Image
           src={image.src}
           alt={image.alt}
-          className={cn("flex-shrink-0 rounded-full -ml-0.5 w-4 h-4")}
+          className={cn("flex-shrink-0 rounded-full -ml-0.5 size-4")}
         />
       )}
       {children}

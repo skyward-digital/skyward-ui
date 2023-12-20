@@ -10,17 +10,14 @@ links:
   }
 ---
 
-import { CodePreview } from "#/src/components/Tabs"
-import {
-  Select,
-  SelectWrapper,
-} from "#/ui/components/Select"
 import { CustomSelectOption } from "#/src/components/Select/CustomSelectOption"
+import { CodePreview } from "#/src/components/Tabs"
 import { employees } from "#/src/data/employees"
+import { Select, SelectWrapper } from "#/ui/components/Select"
 
 <CodePreview>
   <SelectWrapper label="Name" hint="Enter your full name">
-    <Select options={employees.map(employee => employee.name)} client:load />
+    <Select options={employees.map((employee) => employee.name)} client:load />
   </SelectWrapper>
 </CodePreview>
 
@@ -29,12 +26,12 @@ import { employees } from "#/src/data/employees"
 ## Usage
 
 ```jsx
-import { Select, SelectWrapper, SelectOption } from "#/ui/components/Select"
+import { Select, SelectOption, SelectWrapper } from "#/ui/components/Select"
 ```
 
 ```jsx
 <SelectWrapper label="Name">
-  <Select options={employees.map(employee => employee.name)} />
+  <Select options={employees.map((employee) => employee.name)} />
 </SelectWrapper>
 ```
 
@@ -46,12 +43,12 @@ The `SelectWrapper` goes around your `Select` to provide additional associated e
 
 <CodePreview client:load>
   <SelectWrapper label="Name">
-    <Select options={employees.map(employee => employee.name)} client:load />
+    <Select options={employees.map((employee) => employee.name)} client:load />
   </SelectWrapper>
   <div slot="code">
     ```jsx
     <SelectWrapper label="Name">
-      <Select options={employees.map(employee => employee.name)} client:load />
+      <Select options={employees.map((employee) => employee.name)} client:load />
     </SelectWrapper>
     ```
   </div>
@@ -59,10 +56,8 @@ The `SelectWrapper` goes around your `Select` to provide additional associated e
 
 <CodePreview client:load>
   <div className="w-full flex items-center justify-center gap-4">
-    <label htmlFor="example-Select">
-      Custom Label
-    </label>
-    <Select id="example-Select" options={employees.map(employee => employee.name)} client:load />
+    <label htmlFor="example-Select">Custom Label</label>
+    <Select id="example-Select" options={employees.map((employee) => employee.name)} client:load />
   </div>
   <div slot="code">
     ```jsx
@@ -70,7 +65,11 @@ The `SelectWrapper` goes around your `Select` to provide additional associated e
       <label htmlFor="example-Select" className="w-1/3">
         Custom Label
       </label>
-      <Select id="example-Select" options={employees.map(employee => employee.name)} client:load />
+      <Select
+        id="example-Select"
+        options={employees.map((employee) => employee.name)}
+        client:load
+      />
     </div>
     ```
   </div>
@@ -82,12 +81,12 @@ You can pass a hint to the `SelectWrapper` to provide additional context to the 
 
 <CodePreview client:load>
   <SelectWrapper label="Name" hint="What do you call yourself?">
-    <Select options={employees.map(employee => employee.name)} client:load />
+    <Select options={employees.map((employee) => employee.name)} client:load />
   </SelectWrapper>
   <div slot="code">
     ```jsx
     <SelectWrapper label="Name" hint="required">
-      <Select options={employees.map(employee => employee.name)} client:load />
+      <Select options={employees.map((employee) => employee.name)} client:load />
     </SelectWrapper>
     ```
   </div>
@@ -99,12 +98,12 @@ Passing an error to the `SelectWrapper` and `Select` will display error styles. 
 
 <CodePreview client:load>
   <SelectWrapper label="Name" hint="required" error="Your name is required">
-    <Select options={employees.map(employee => employee.name)} error client:load />
+    <Select options={employees.map((employee) => employee.name)} error client:load />
   </SelectWrapper>
   <div slot="code">
     ```jsx
     <SelectWrapper label="Name" hint="required" error="Your name is required">
-      <Select options={employees.map(employee => employee.name)} error={true} client:load />
+      <Select options={employees.map((employee) => employee.name)} error={true} client:load />
     </SelectWrapper>
     ```
   </div>
@@ -119,7 +118,7 @@ If you need more fine grain control over your `option` elements and how they loo
 The child elements of `SelectOption` will be displayed however you create them. In order to ensure the `Select` works properly, you must pass a `value` string to the `SelectOption` element.
 
 <CodePreview client:load>
-  <CustomSelectOption client:load/>
+  <CustomSelectOption client:load />
   <div slot="code">
     ```jsx
     <SelectWrapper label="Name">
@@ -127,11 +126,7 @@ The child elements of `SelectOption` will be displayed however you create them. 
         {employees.map((employee) => (
           <SelectOption key={employee.name} value={employee.name}>
             <div className="flex items-center gap-2 text-left">
-              <img
-                src={employee.avatar}
-                alt={employee.name}
-                className="w-8 h-8 rounded-full"
-              />
+              <img src={employee.avatar} alt={employee.name} className="size-8 rounded-full" />
               <div>
                 <div className="font-bold">{employee.name}</div>
                 <div className="text-xs text-gray-500">{employee.role}</div>

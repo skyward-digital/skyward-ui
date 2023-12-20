@@ -15,19 +15,12 @@ import { Button } from "#/ui/components/Button"
 import { CheckboxCard } from "#/ui/components/CheckboxCard"
 
 <CodePreview client:load>
-  <CheckboxCard
-    client:load
-    defaultChecked
-    showCheckbox
-    className="max-w-md flex items-start"
-  >
+  <CheckboxCard client:load defaultChecked showCheckbox className="max-w-md flex items-start">
     <div className="text-left">
       <label htmlFor="custom-checkbox" className="font-bold">
         Checkbox Card
       </label>
-      <p className="text-sm text-gray-500">
-        Try clicking this to see the checkbox in action
-      </p>
+      <p className="text-sm text-gray-500">Try clicking this to see the checkbox in action</p>
     </div>
   </CheckboxCard>
 </CodePreview>
@@ -61,32 +54,28 @@ Make sure you pass a unique id to the CheckboxCard component that's associated w
     defaultChecked={true}
     className="flex gap-4 max-w-md"
   >
-    <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+    <ContainerIcon className="size-6 flex-shrink-0" />
     <div className="text-left">
       <label htmlFor="custom-checkbox" className="font-bold">
         Lorem ipsum
       </label>
       <p className="text-sm text-gray-500">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-        condimentum tortor sem, vel aliquet velit blandit ut.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem, vel
+        aliquet velit blandit ut.
       </p>
     </div>
   </CheckboxCard>
   <div slot="code">
     ```jsx
-    <CheckboxCard
-      id="custom-checkbox"
-      defaultChecked={true}
-      className="flex gap-4 max-w-md"
-    >
-      <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+    <CheckboxCard id="custom-checkbox" defaultChecked={true} className="flex gap-4 max-w-md">
+      <ContainerIcon className="size-6 flex-shrink-0" />
       <div className="text-left">
         <label htmlFor="custom-checkbox" className="font-bold">
           Lorem ipsum
         </label>
         <p className="text-sm text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          condimentum tortor sem, vel aliquet velit blandit ut.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem, vel
+          aliquet velit blandit ut.
         </p>
       </div>
     </CheckboxCard>
@@ -167,14 +156,14 @@ This tends to work better on larger cards
     showCheckbox={true}
     className="flex gap-4 max-w-md items-start"
   >
-    <ContainerIcon className="w-6 h-6 flex-shrink-0 my-auto" />
+    <ContainerIcon className="size-6 flex-shrink-0 my-auto" />
     <div className="text-left">
       <label htmlFor="custom-checkbox" className="font-bold">
         Lorem ipsum
       </label>
       <p className="text-sm text-gray-500">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-        condimentum tortor sem, vel aliquet velit blandit ut.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem, vel
+        aliquet velit blandit ut.
       </p>
     </div>
   </CheckboxCard>
@@ -186,14 +175,14 @@ This tends to work better on larger cards
       showCheckbox={true}
       className="flex gap-4 max-w-md"
     >
-      <ContainerIcon className="w-6 h-6 flex-shrink-0" />
+      <ContainerIcon className="size-6 flex-shrink-0" />
       <div className="text-left">
         <label htmlFor="custom-checkbox" className="font-bold">
           Lorem ipsum
         </label>
         <p className="text-sm text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          condimentum tortor sem, vel aliquet velit blandit ut.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem, vel
+          aliquet velit blandit ut.
         </p>
       </div>
     </CheckboxCard>

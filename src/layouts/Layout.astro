@@ -64,12 +64,7 @@ const editUrl = `${EDIT_URL}/${currentFile}`
           {
             links &&
               Object.entries(links).map((link) => (
-                <Button
-                  href={link[1]}
-                  variant="outline"
-                  size="xs"
-                  className="capitalize"
-                >
+                <Button href={link[1]} variant="outline" size="xs" className="capitalize">
                   {link[0]}
                 </Button>
               ))
@@ -81,11 +76,7 @@ const editUrl = `${EDIT_URL}/${currentFile}`
         <div class="flex justify-between items-center gap-4 mt-12">
           {
             prev ? (
-              <Button
-                href={`/${prev.collection}/${prev.slug}`}
-                variant="ghost"
-                size="sm"
-              >
+              <Button href={`/${prev.collection}/${prev.slug}`} variant="ghost" size="sm">
                 <ArrowLeftIcon />
                 {prev.data.title}
               </Button>
@@ -95,11 +86,7 @@ const editUrl = `${EDIT_URL}/${currentFile}`
           }
           {
             next ? (
-              <Button
-                href={`/${next.collection}/${next.slug}`}
-                variant="ghost"
-                size="sm"
-              >
+              <Button href={`/${next.collection}/${next.slug}`} variant="ghost" size="sm">
                 {next.data.title}
                 <ArrowRightIcon />
               </Button>

@@ -1,8 +1,9 @@
 "use client"
 
 import { Tab } from "@headlessui/react"
-import type { TabsProps } from "./Tabs.d"
 import { cn, transformId } from "#/utils"
+
+import type { TabsProps } from "./Tabs.d"
 
 export const Tabs = ({ tabs, panels }: TabsProps) => {
   // console.log(panels)

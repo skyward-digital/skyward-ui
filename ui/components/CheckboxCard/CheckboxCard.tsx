@@ -19,11 +19,7 @@ export const CheckboxCard = ({
   const [checkedState, setCheckedState] = useState(defaultChecked || false)
   const isChecked = checked !== undefined ? checked : checkedState
 
-  const formattedId = id
-    ? id
-    : typeof children === "string"
-    ? transformId(children)
-    : undefined
+  const formattedId = id ? id : typeof children === "string" ? transformId(children) : undefined
 
   return (
     <Switch

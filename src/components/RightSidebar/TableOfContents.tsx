@@ -7,11 +7,7 @@ type ItemOffsets = {
   topOffset: number
 }
 
-const TableOfContents = ({
-  headings = [],
-}: {
-  headings: MarkdownHeading[]
-}) => {
+const TableOfContents = ({ headings = [] }: { headings: MarkdownHeading[] }) => {
   const toc = useRef<HTMLUListElement>()
   const onThisPageID = "on-this-page-heading"
   const itemOffsets = useRef<ItemOffsets[]>([])
@@ -54,15 +50,10 @@ const TableOfContents = ({
       threshold: 1,
     }
 
-    const headingsObserver = new IntersectionObserver(
-      setCurrent,
-      observerOptions
-    )
+    const headingsObserver = new IntersectionObserver(setCurrent, observerOptions)
 
     // Observe all the headings in the main page content.
-    document
-      .querySelectorAll("article :is(h1,h2,h3)")
-      .forEach((h) => headingsObserver.observe(h))
+    document.querySelectorAll("article :is(h1,h2,h3)").forEach((h) => headingsObserver.observe(h))
 
     // Stop observing when the component is unmounted.
     return () => headingsObserver.disconnect()

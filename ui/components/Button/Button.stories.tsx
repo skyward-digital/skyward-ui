@@ -1,5 +1,6 @@
 import type { Meta } from "@storybook/react"
 import { CircleIcon } from "@untitledui-icons/react/line"
+
 import { Button } from "./Button"
 import type { ButtonProps } from "./Button.d"
 import { testButtonClick, testButtonLink } from "./Button.test"

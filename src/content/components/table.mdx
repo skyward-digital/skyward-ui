@@ -9,23 +9,14 @@ links:
   }
 ---
 
-import {
-  ArchiveIcon,
-  Edit05Icon,
-  MessageChatCircleIcon,
-} from "@untitledui-icons/react/line"
+import { ArchiveIcon, Edit05Icon, MessageChatCircleIcon } from "@untitledui-icons/react/line"
+import { SortableTable } from "#/src/components/Table/SortableTable"
 import { CodePreview } from "#/src/components/Tabs"
+import { employees } from "#/src/data/employees"
 import { Author } from "#/ui/components/Author"
 import { Badge } from "#/ui/components/Badge"
 import { Button } from "#/ui/components/Button"
-import {
-  Table,
-  TableCell,
-  TableHeaderCell,
-  TableRow,
-} from "#/ui/components/Table"
-import { SortableTable } from "#/src/components/Table/SortableTable"
-import { employees } from '#/src/data/employees'
+import { Table, TableCell, TableHeaderCell, TableRow } from "#/ui/components/Table"
 
 <CodePreview>
   <Table>
@@ -43,7 +34,8 @@ import { employees } from '#/src/data/employees'
       </TableRow>
     </thead>
     <tbody>
-      {employees.map(employee => <TableRow>
+      {employees.map((employee) => (
+        <TableRow>
           <TableCell>
             <Author
               avatar={{
@@ -55,12 +47,17 @@ import { employees } from '#/src/data/employees'
             />
           </TableCell>
           <TableCell>
-            <Badge color={{
-              'Online': "green",
-              'Offline': "gray",
-              'Busy': "red",
-              'Away': "yellow",
-            }[employee.status]} dot>
+            <Badge
+              color={
+                {
+                  Online: "green",
+                  Offline: "gray",
+                  Busy: "red",
+                  Away: "yellow",
+                }[employee.status]
+              }
+              dot
+            >
               {employee.status}
             </Badge>
           </TableCell>
@@ -72,7 +69,7 @@ import { employees } from '#/src/data/employees'
             </Badge>
           </TableCell>
           <TableCell className="flex flex-col">
-            <span>{`${new Date().getHours()}:${(new Date().getMinutes())}`}</span>
+            <span>{`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
             <span className="text-xs">{employee.timezone}</span>
           </TableCell>
           <TableCell>
@@ -100,7 +97,7 @@ import { employees } from '#/src/data/employees'
             </Button>
           </TableCell>
         </TableRow>
-      )}
+      ))}
     </tbody>
   </Table>
 </CodePreview>
@@ -116,7 +113,7 @@ Some components like `thead` and `tbody` do not require additional styling for o
 You can add any component you'd like within the `TableCell` or `TableHeaderCell` components to give you the functionality you need, as shown in the other examples.
 
 ```jsx
-import { Table, TableRow, TableHeaderCell, TableCell } from "#/ui/components/Table"
+import { Table, TableCell, TableHeaderCell, TableRow } from "#/ui/components/Table"
 ```
 
 <CodePreview client:load>
@@ -198,7 +195,8 @@ You'll often want the header to follow as you scroll through the table data so y
       </TableRow>
     </thead>
     <tbody>
-      {employees.map((employee, index) => <TableRow>
+      {employees.map((employee, index) => (
+        <TableRow>
           <TableCell>
             <Author
               avatar={{
@@ -210,12 +208,17 @@ You'll often want the header to follow as you scroll through the table data so y
             />
           </TableCell>
           <TableCell>
-            <Badge color={{
-              'Online': "green",
-              'Offline': "gray",
-              'Busy': "red",
-              'Away': "yellow",
-            }[employee.status]} dot>
+            <Badge
+              color={
+                {
+                  Online: "green",
+                  Offline: "gray",
+                  Busy: "red",
+                  Away: "yellow",
+                }[employee.status]
+              }
+              dot
+            >
               {employee.status}
             </Badge>
           </TableCell>
@@ -227,7 +230,7 @@ You'll often want the header to follow as you scroll through the table data so y
             </Badge>
           </TableCell>
           <TableCell className="flex flex-col">
-            <span>{`${new Date().getHours()}:${(new Date().getMinutes())}`}</span>
+            <span>{`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
             <span className="text-xs">{employee.timezone}</span>
           </TableCell>
           <TableCell>
@@ -255,87 +258,93 @@ You'll often want the header to follow as you scroll through the table data so y
             </Button>
           </TableCell>
         </TableRow>
-      )}
+      ))}
     </tbody>
   </Table>
   <div slot="code">
-  ```jsx
-  <Table className="relative h-96">
-    <thead>
-      <TableRow className="sticky top-0 z-10">
-        <TableHeaderCell>Name</TableHeaderCell>
-        <TableHeaderCell>Status</TableHeaderCell>
-        <TableHeaderCell>Role</TableHeaderCell>
-        <TableHeaderCell>Email</TableHeaderCell>
-        <TableHeaderCell>Location</TableHeaderCell>
-        <TableHeaderCell>Time</TableHeaderCell>
-        <TableHeaderCell>Start Date</TableHeaderCell>
-        <TableHeaderCell>Bio</TableHeaderCell>
-        <TableHeaderCell>Actions</TableHeaderCell>
-      </TableRow>
-    </thead>
-    <tbody>
-      {employees.map((employee, index) => <TableRow>
-          <TableCell>
-            <Author
-              avatar={{
-                src: employee.avatar,
-                alt: employee.name,
-              }}
-              name={employee.name}
-              detail={employee.username}
-            />
-          </TableCell>
-          <TableCell>
-            <Badge color={{
-              'Online': "green",
-              'Offline': "gray",
-              'Busy': "red",
-              'Away': "yellow",
-            }[employee.status]} dot>
-              {employee.status}
-            </Badge>
-          </TableCell>
-          <TableCell>{employee.role}</TableCell>
-          <TableCell>{employee.email}</TableCell>
-          <TableCell>
-            <Badge color="gray" transparent>
-              {employee.location}
-            </Badge>
-          </TableCell>
-          <TableCell className="flex flex-col">
-            <span>{`${new Date().getHours()}:${(new Date().getMinutes())}`}</span>
-            <span className="text-xs">{employee.timezone}</span>
-          </TableCell>
-          <TableCell>
-            {new Date(employee.startDate).toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            })}
-          </TableCell>
-          <TableCell className="text-sm max-w-xs">
-            <span className="line-clamp-2">{employee.bio}</span>
-          </TableCell>
-          <TableCell className="space-x-2">
-            <Button variant="ghost" title="message">
-              <MessageChatCircleIcon />
-              <span className="sr-only">Message</span>
-            </Button>
-            <Button variant="ghost" title="edit">
-              <Edit05Icon />
-              <span className="sr-only">Edit</span>
-            </Button>
-            <Button variant="ghost" title="archive">
-              <ArchiveIcon />
-              <span className="sr-only">Archive</span>
-            </Button>
-          </TableCell>
+    ```jsx
+    <Table className="relative h-96">
+      <thead>
+        <TableRow className="sticky top-0 z-10">
+          <TableHeaderCell>Name</TableHeaderCell>
+          <TableHeaderCell>Status</TableHeaderCell>
+          <TableHeaderCell>Role</TableHeaderCell>
+          <TableHeaderCell>Email</TableHeaderCell>
+          <TableHeaderCell>Location</TableHeaderCell>
+          <TableHeaderCell>Time</TableHeaderCell>
+          <TableHeaderCell>Start Date</TableHeaderCell>
+          <TableHeaderCell>Bio</TableHeaderCell>
+          <TableHeaderCell>Actions</TableHeaderCell>
         </TableRow>
-      )}
-    </tbody>
-  </Table>
-  ```
+      </thead>
+      <tbody>
+        {employees.map((employee, index) => (
+          <TableRow>
+            <TableCell>
+              <Author
+                avatar={{
+                  src: employee.avatar,
+                  alt: employee.name,
+                }}
+                name={employee.name}
+                detail={employee.username}
+              />
+            </TableCell>
+            <TableCell>
+              <Badge
+                color={
+                  {
+                    Online: "green",
+                    Offline: "gray",
+                    Busy: "red",
+                    Away: "yellow",
+                  }[employee.status]
+                }
+                dot
+              >
+                {employee.status}
+              </Badge>
+            </TableCell>
+            <TableCell>{employee.role}</TableCell>
+            <TableCell>{employee.email}</TableCell>
+            <TableCell>
+              <Badge color="gray" transparent>
+                {employee.location}
+              </Badge>
+            </TableCell>
+            <TableCell className="flex flex-col">
+              <span>{`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+              <span className="text-xs">{employee.timezone}</span>
+            </TableCell>
+            <TableCell>
+              {new Date(employee.startDate).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </TableCell>
+            <TableCell className="text-sm max-w-xs">
+              <span className="line-clamp-2">{employee.bio}</span>
+            </TableCell>
+            <TableCell className="space-x-2">
+              <Button variant="ghost" title="message">
+                <MessageChatCircleIcon />
+                <span className="sr-only">Message</span>
+              </Button>
+              <Button variant="ghost" title="edit">
+                <Edit05Icon />
+                <span className="sr-only">Edit</span>
+              </Button>
+              <Button variant="ghost" title="archive">
+                <ArchiveIcon />
+                <span className="sr-only">Archive</span>
+              </Button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </tbody>
+    </Table>
+    ```
   </div>
 </CodePreview>
 
@@ -359,7 +368,8 @@ Sometimes you'll want the first column to follow as you scroll through the table
       </TableRow>
     </thead>
     <tbody>
-      {employees.map((employee, index) => <TableRow key={index}>
+      {employees.map((employee, index) => (
+        <TableRow key={index}>
           <TableCell className="sticky left-0 bg-white dark:bg-gray-950 z-10 border-r">
             <Author
               avatar={{
@@ -371,12 +381,17 @@ Sometimes you'll want the first column to follow as you scroll through the table
             />
           </TableCell>
           <TableCell>
-            <Badge color={{
-              'Online': "green",
-              'Offline': "gray",
-              'Busy': "red",
-              'Away': "yellow",
-            }[employee.status]} dot>
+            <Badge
+              color={
+                {
+                  Online: "green",
+                  Offline: "gray",
+                  Busy: "red",
+                  Away: "yellow",
+                }[employee.status]
+              }
+              dot
+            >
               {employee.status}
             </Badge>
           </TableCell>
@@ -388,7 +403,7 @@ Sometimes you'll want the first column to follow as you scroll through the table
             </Badge>
           </TableCell>
           <TableCell className="flex flex-col">
-            <span>{`${new Date().getHours()}:${(new Date().getMinutes())}`}</span>
+            <span>{`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
             <span className="text-xs">{employee.timezone}</span>
           </TableCell>
           <TableCell>
@@ -416,87 +431,93 @@ Sometimes you'll want the first column to follow as you scroll through the table
             </Button>
           </TableCell>
         </TableRow>
-      )}
+      ))}
     </tbody>
   </Table>
   <div slot="code">
-  ```jsx
-  <Table className="relative h-96">
-    <thead>
-      <TableRow>
-        <TableHeaderCell className="sticky left-0 border-r">Name</TableHeaderCell>
-        <TableHeaderCell>Status</TableHeaderCell>
-        <TableHeaderCell>Role</TableHeaderCell>
-        <TableHeaderCell>Email</TableHeaderCell>
-        <TableHeaderCell>Location</TableHeaderCell>
-        <TableHeaderCell>Time</TableHeaderCell>
-        <TableHeaderCell>Start Date</TableHeaderCell>
-        <TableHeaderCell>Bio</TableHeaderCell>
-        <TableHeaderCell>Actions</TableHeaderCell>
-      </TableRow>
-    </thead>
-    <tbody>
-      {employees.map((employee, index) => <TableRow>
-          <TableCell className="sticky left-0 bg-white dark:bg-gray-950 z-10 border-r">
-            <Author
-              avatar={{
-                src: employee.avatar,
-                alt: employee.name,
-              }}
-              name={employee.name}
-              detail={employee.username}
-            />
-          </TableCell>
-          <TableCell>
-            <Badge color={{
-              'Online': "green",
-              'Offline': "gray",
-              'Busy': "red",
-              'Away': "yellow",
-            }[employee.status]} dot>
-              {employee.status}
-            </Badge>
-          </TableCell>
-          <TableCell>{employee.role}</TableCell>
-          <TableCell>{employee.email}</TableCell>
-          <TableCell>
-            <Badge color="gray" transparent>
-              {employee.location}
-            </Badge>
-          </TableCell>
-          <TableCell className="flex flex-col">
-            <span>{`${new Date().getHours()}:${(new Date().getMinutes())}`}</span>
-            <span className="text-xs">{employee.timezone}</span>
-          </TableCell>
-          <TableCell>
-            {new Date(employee.startDate).toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            })}
-          </TableCell>
-          <TableCell className="text-sm max-w-xs">
-            <span className="line-clamp-2">{employee.bio}</span>
-          </TableCell>
-          <TableCell className="space-x-2">
-            <Button variant="ghost" title="message">
-              <MessageChatCircleIcon />
-              <span className="sr-only">Message</span>
-            </Button>
-            <Button variant="ghost" title="edit">
-              <Edit05Icon />
-              <span className="sr-only">Edit</span>
-            </Button>
-            <Button variant="ghost" title="archive">
-              <ArchiveIcon />
-              <span className="sr-only">Archive</span>
-            </Button>
-          </TableCell>
+    ```jsx
+    <Table className="relative h-96">
+      <thead>
+        <TableRow>
+          <TableHeaderCell className="sticky left-0 border-r">Name</TableHeaderCell>
+          <TableHeaderCell>Status</TableHeaderCell>
+          <TableHeaderCell>Role</TableHeaderCell>
+          <TableHeaderCell>Email</TableHeaderCell>
+          <TableHeaderCell>Location</TableHeaderCell>
+          <TableHeaderCell>Time</TableHeaderCell>
+          <TableHeaderCell>Start Date</TableHeaderCell>
+          <TableHeaderCell>Bio</TableHeaderCell>
+          <TableHeaderCell>Actions</TableHeaderCell>
         </TableRow>
-      )}
-    </tbody>
-  </Table>
-  ```
+      </thead>
+      <tbody>
+        {employees.map((employee, index) => (
+          <TableRow>
+            <TableCell className="sticky left-0 bg-white dark:bg-gray-950 z-10 border-r">
+              <Author
+                avatar={{
+                  src: employee.avatar,
+                  alt: employee.name,
+                }}
+                name={employee.name}
+                detail={employee.username}
+              />
+            </TableCell>
+            <TableCell>
+              <Badge
+                color={
+                  {
+                    Online: "green",
+                    Offline: "gray",
+                    Busy: "red",
+                    Away: "yellow",
+                  }[employee.status]
+                }
+                dot
+              >
+                {employee.status}
+              </Badge>
+            </TableCell>
+            <TableCell>{employee.role}</TableCell>
+            <TableCell>{employee.email}</TableCell>
+            <TableCell>
+              <Badge color="gray" transparent>
+                {employee.location}
+              </Badge>
+            </TableCell>
+            <TableCell className="flex flex-col">
+              <span>{`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+              <span className="text-xs">{employee.timezone}</span>
+            </TableCell>
+            <TableCell>
+              {new Date(employee.startDate).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </TableCell>
+            <TableCell className="text-sm max-w-xs">
+              <span className="line-clamp-2">{employee.bio}</span>
+            </TableCell>
+            <TableCell className="space-x-2">
+              <Button variant="ghost" title="message">
+                <MessageChatCircleIcon />
+                <span className="sr-only">Message</span>
+              </Button>
+              <Button variant="ghost" title="edit">
+                <Edit05Icon />
+                <span className="sr-only">Edit</span>
+              </Button>
+              <Button variant="ghost" title="archive">
+                <ArchiveIcon />
+                <span className="sr-only">Archive</span>
+              </Button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </tbody>
+    </Table>
+    ```
   </div>
 </CodePreview>
 
@@ -820,19 +841,20 @@ Sort functionality is not built into the table, but you can add your own by pass
       <Button variant="ghost" size="sm" className="flex flex-col gap-0 -my-2 group">
         <ChevronUpIcon
           className={cn(
-            "w-4 h-4 -mb-0.5",
+            "size-4 -mb-0.5",
             order !== "asc" && "opacity-50 group-hover:opacity-100"
           )}
         />
         <ChevronDownIcon
           className={cn(
-            "w-4 h-4 -mt-0.5",
+            "size-4 -mt-0.5",
             order !== "desc" && "opacity-50 group-hover:opacity-100"
           )}
         />
       </Button>
     )
     ```
+
   </div>
 </CodePreview>
 

@@ -9,8 +9,7 @@ const meta: Meta<typeof AccordionItem> = {
   parameters: {
     docs: {
       description: {
-        component:
-          "A single accordion item that displays a heading with expandable content",
+        component: "A single accordion item that displays a heading with expandable content",
       },
     },
     chromatic: {

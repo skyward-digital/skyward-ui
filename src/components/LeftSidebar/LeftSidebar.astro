@@ -47,15 +47,11 @@ const linkMatch = (link: string) => link.replace("/", "")
                     <a
                       href={child.path}
                       aria-current={
-                        linkMatch(currentPage) === linkMatch(child.path)
-                          ? "page"
-                          : false
+                        linkMatch(currentPage) === linkMatch(child.path) ? "page" : false
                       }
                       class={cn(
                         "block py-1 text-gray-600 transition duration-100 ease-out hover:underline focus:underline",
-                        linkMatch(currentPage) === linkMatch(child.path)
-                          ? "font-bold"
-                          : ""
+                        linkMatch(currentPage) === linkMatch(child.path) ? "font-bold" : ""
                       )}
                     >
                       {child.title}

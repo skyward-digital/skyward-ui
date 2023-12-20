@@ -5,12 +5,7 @@ import { cn } from "#/utils"
 
 import type { ProgressProps } from "./Progress.d"
 
-export const Progress = ({
-  id,
-  value,
-  max = 100,
-  className,
-}: ProgressProps) => {
+export const Progress = ({ id, value, max = 100, className }: ProgressProps) => {
   if (value && value < 0) value = 0
   if (value && value > max) value = max
 
@@ -31,7 +26,7 @@ export const Progress = ({
         )}
       >
         <div
-          className="h-full w-full rounded-full animate-loading motion-reduce:animate-pulse bg-indigo-500"
+          className="size-full rounded-full animate-loading motion-reduce:animate-pulse bg-indigo-500"
           style={{
             transformOrigin: "0% 50%",
           }}

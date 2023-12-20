@@ -10,7 +10,6 @@ links:
 
 import { CodePreview } from "#/src/components/Tabs"
 import { Author } from "#/ui/components/Author"
-import { Button } from "#/ui/components/Button"
 
 <CodePreview>
   <Author
@@ -42,7 +41,34 @@ import { Author } from "#/ui/components/Author"
 
 ## Link
 
-By passing a href prop the author will become a link, ideal for linking to author profiles.
+To turn your author profile card into a link, wrap it with a link component (or use `<a>`)
+
+<CodePreview client:load>
+  <a href="#dan-spratling">
+    <Author
+      avatar={{
+        src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+        alt: "Dan Spratling",
+      }}
+      name="Dan Spratling"
+    />
+  </a>
+  <div slot="code">
+    ```jsx
+    <a href="#dan-spratling">
+      <Author
+        avatar={{
+          src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
+          alt: "Dan Spratling",
+        }}
+        name="Dan Spratling"
+      />
+    </a>
+    ```
+  </div>
+</CodePreview>
+
+You can also pass rich text to `name` or `detail` to turn them into links if you wish.
 
 <CodePreview client:load>
   <Author
@@ -50,11 +76,10 @@ By passing a href prop the author will become a link, ideal for linking to autho
       src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
       alt: "Dan Spratling",
     }}
-    name="Dan Spratling"
-    href="#dan-spratling"
-
-/>
-
+    name={
+      <a href="#dan-spratling">Dan Spratling</a>
+    }
+  />
   <div slot="code">
     ```jsx
     <Author
@@ -62,8 +87,9 @@ By passing a href prop the author will become a link, ideal for linking to autho
         src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
         alt: "Dan Spratling",
       }}
-      name="Dan Spratling"
-      href="/team/dan-spratling"
+      name={
+        <a href="#dan-spratling">Dan Spratling</a>
+      }
     />
     ```
   </div>
@@ -81,9 +107,7 @@ We can optionally pass additional detail which will appear under the authors nam
     }}
     name="Dan Spratling"
     detail="Founder of Skyward Digital"
-
 />
-
   <div slot="code">
     ```jsx
     <Author
@@ -105,9 +129,7 @@ In some situations you might want to adjust the size of the author component, wh
 <CodePreview client:load>
   <div
     className="flex flex-col gap-4 justify-center items-center"
-
 >
-
     <Author
       avatar={{
         src: "https://a.storyblok.com/f/180053/1200x1600/bbce43daaf/dan-spratling-profile-picture.jpg",
@@ -156,7 +178,6 @@ In some situations you might want to adjust the size of the author component, wh
       name="Dan Spratling"
       size="2xl"
     />
-
   </div>
   <div slot="code">
     ```jsx

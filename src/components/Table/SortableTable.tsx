@@ -10,12 +10,7 @@ import { employees } from "#/src/data/employees"
 import { Author } from "#/ui/components/Author"
 import { Badge } from "#/ui/components/Badge"
 import { Button } from "#/ui/components/Button"
-import {
-  Table,
-  TableCell,
-  TableHeaderCell,
-  TableRow,
-} from "#/ui/components/Table"
+import { Table, TableCell, TableHeaderCell, TableRow } from "#/ui/components/Table"
 import { cn } from "#/utils"
 
 export const SortableTable = () => {
@@ -27,8 +22,7 @@ export const SortableTable = () => {
 
   const sortData = (key: string) => {
     const startOrder = currentSort?.key === key ? currentSort?.order : ""
-    const nextOrder =
-      startOrder === "" ? "asc" : startOrder === "asc" ? "desc" : ""
+    const nextOrder = startOrder === "" ? "asc" : startOrder === "asc" ? "desc" : ""
 
     setCurrentSort({
       key,
@@ -59,9 +53,7 @@ export const SortableTable = () => {
             className="flex justify-between items-center"
           >
             Name
-            <SortIndicator
-              order={currentSort?.key === "name" ? currentSort?.order : ""}
-            />
+            <SortIndicator order={currentSort?.key === "name" ? currentSort?.order : ""} />
           </TableHeaderCell>
           <TableHeaderCell>Status</TableHeaderCell>
           <TableHeaderCell
@@ -69,9 +61,7 @@ export const SortableTable = () => {
             className="flex justify-between items-center"
           >
             Role
-            <SortIndicator
-              order={currentSort?.key === "role" ? currentSort?.order : ""}
-            />
+            <SortIndicator order={currentSort?.key === "role" ? currentSort?.order : ""} />
           </TableHeaderCell>
           <TableHeaderCell>Email</TableHeaderCell>
           <TableHeaderCell
@@ -79,9 +69,7 @@ export const SortableTable = () => {
             className="flex justify-between items-center"
           >
             Location
-            <SortIndicator
-              order={currentSort?.key === "location" ? currentSort?.order : ""}
-            />
+            <SortIndicator order={currentSort?.key === "location" ? currentSort?.order : ""} />
           </TableHeaderCell>
           <TableHeaderCell>Time</TableHeaderCell>
           <TableHeaderCell
@@ -89,9 +77,7 @@ export const SortableTable = () => {
             className="flex justify-between items-center"
           >
             Start Date
-            <SortIndicator
-              order={currentSort?.key === "startDate" ? currentSort?.order : ""}
-            />
+            <SortIndicator order={currentSort?.key === "startDate" ? currentSort?.order : ""} />
           </TableHeaderCell>
           <TableHeaderCell>Bio</TableHeaderCell>
           <TableHeaderCell>Actions</TableHeaderCell>
@@ -170,16 +156,10 @@ export const SortableTable = () => {
 const SortIndicator = ({ order }: { order: "asc" | "desc" | "" }) => (
   <Button variant="ghost" size="sm" className="flex flex-col gap-0 -my-2 group">
     <ChevronUpIcon
-      className={cn(
-        "w-4 h-4 -mb-0.5",
-        order !== "asc" && "opacity-50 group-hover:opacity-100"
-      )}
+      className={cn("size-4 -mb-0.5", order !== "asc" && "opacity-50 group-hover:opacity-100")}
     />
     <ChevronDownIcon
-      className={cn(
-        "w-4 h-4 -mt-0.5",
-        order !== "desc" && "opacity-50 group-hover:opacity-100"
-      )}
+      className={cn("size-4 -mt-0.5", order !== "desc" && "opacity-50 group-hover:opacity-100")}
     />
   </Button>
 )

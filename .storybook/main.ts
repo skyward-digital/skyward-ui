@@ -1,13 +1,12 @@
 import type { StorybookConfig } from "@storybook/react-vite"
-const viteTsconfig = require("vite-tsconfig-paths")
 import { mergeConfig } from "vite"
+
+const viteTsconfig = require("vite-tsconfig-paths")
+
 const tsconfigPaths = viteTsconfig.default
 
 const config: StorybookConfig = {
-  stories: [
-    "../src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-    "../ui/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-  ],
+  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|mdx)", "../ui/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
   staticDirs: ["../public"],
   addons: [
     "@storybook/addon-links",

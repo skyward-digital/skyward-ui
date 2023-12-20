@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { cn, transformId } from "#/utils"
+
 import type { SwitchProps } from "./Switch.d"
 
 export const Switch = ({
@@ -51,9 +52,9 @@ export const Switch = ({
         <span
           className={cn(
             "pointer-events-none inline-block transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out",
-            size === "sm" && "h-3 w-3",
-            size === "md" && "h-5 w-5",
-            size === "lg" && "h-7 w-7",
+            size === "sm" && "size-3",
+            size === "md" && "size-5",
+            size === "lg" && "size-7",
             enabled
               ? {
                   "translate-x-4": size === "sm",
@@ -70,9 +71,7 @@ export const Switch = ({
           <label htmlFor={id} className="font-semibold">
             {label}
           </label>
-          {detail ? (
-            <p className="text-sm text-gray-600 dark:text-gray-400">{detail}</p>
-          ) : null}
+          {detail ? <p className="text-sm text-gray-600 dark:text-gray-400">{detail}</p> : null}
         </div>
       ) : null}
     </div>

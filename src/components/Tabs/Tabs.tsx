@@ -4,13 +4,7 @@ import { Tabs as TabsPrimitive, type TabsProps } from "#/ui/components/Tabs"
 Instead, we take advantage of the astro <slot> component functionality, passing in the tabs and panels as props
 We then convert those props into the format that the Tabs component expects
 */
-export const Tabs = ({
-  tabs,
-  ...props
-}: {
-  tabs: TabsProps["tabs"]
-  [key: string]: any
-}) => {
+export const Tabs = ({ tabs, ...props }: { tabs: TabsProps["tabs"]; [key: string]: any }) => {
   // Get all the slots from astro except
   const panels = Object.keys(props)
     .filter((key) => !key.includes("children"))

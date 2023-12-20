@@ -8,10 +8,7 @@ export const TableCell = ({
 }: React.HTMLAttributes<HTMLTableCellElement>) => {
   return (
     <td
-      className={cn(
-        "px-5 py-4 border-gray-200 dark:border-gray-800 border-b",
-        className
-      )}
+      className={cn("px-5 py-4 border-gray-200 dark:border-gray-800 border-b", className)}
       {...props}
     >
       {children}

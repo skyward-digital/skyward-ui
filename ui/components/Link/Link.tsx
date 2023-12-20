@@ -2,8 +2,7 @@ export type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export const Link = ({ href, children, target, ...props }: LinkProps) => {
   if (!href) {
-    if (props.className)
-      return <div className={props.className}>{children}</div>
+    if (props.className) return <div className={props.className}>{children}</div>
     return <>{children}</>
   }
 

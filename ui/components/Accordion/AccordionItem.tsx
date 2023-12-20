@@ -7,11 +7,7 @@ import { cn } from "#/utils"
 
 import type { AccordionItemProps } from "./Accordion.d"
 
-export const AccordionItem = ({
-  title,
-  children,
-  className,
-}: AccordionItemProps) => {
+export const AccordionItem = ({ title, children, className }: AccordionItemProps) => {
   const [tabExpanded, setTabExpanded] = useState(false)
 
   return (
@@ -23,7 +19,7 @@ export const AccordionItem = ({
         {title}{" "}
         <ChevronDownIcon
           className={cn(
-            "duration-300 h-4 w-4 transition-all text-gray-500",
+            "duration-300 size-4 transition-all text-gray-500",
             tabExpanded ? "rotate-180" : "rotate-0"
           )}
         />

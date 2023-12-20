@@ -107,17 +107,10 @@ This is not the same as passing `0` to `value`, which is treated like a regular 
 You can pass a `className` prop to update the style of the progress bar. Behind the scenes the progress bar is a native `<progress>` element, (unless you're using the indeterminate state)
 
 <CodePreview client:load>
-  <Progress
-    className="h-5 [&::-webkit-progress-value]:bg-amber-500"
-    value={55}
-    client:load
-  />
+  <Progress className="h-5 [&::-webkit-progress-value]:bg-amber-500" value={55} client:load />
   <div slot="code">
     ```jsx
-    <Progress
-      className="h-5 [&::-webkit-progress-value]:bg-amber-500"
-      value={55}
-    />
+    <Progress className="h-5 [&::-webkit-progress-value]:bg-amber-500" value={55} />
     ```
   </div>
 </CodePreview>

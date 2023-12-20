@@ -42,9 +42,9 @@ export const Radio = ({
             ? "border-indigo-500 bg-indigo-500 text-white"
             : "border-gray-700 dark:border-gray-300 bg-transparent",
           // size
-          size === "sm" && "w-4 h-4",
-          size === "md" && "w-5 h-5",
-          size === "lg" && "w-6 h-6"
+          size === "sm" && "size-4",
+          size === "md" && "size-5",
+          size === "lg" && "size-6"
           // overrides
           // className
         )}
@@ -66,9 +66,9 @@ export const Radio = ({
             <CircleIcon
               className={cn(
                 "pointer-events-none text-inherit",
-                size === "sm" && "w-3 h-3",
-                size === "md" && "w-4 h-4",
-                size === "lg" && "w-5 h-5"
+                size === "sm" && "size-3",
+                size === "md" && "size-4",
+                size === "lg" && "size-5"
               )}
               strokeWidth={3}
             />
@@ -81,7 +81,7 @@ export const Radio = ({
         aria-hidden="true"
         tabIndex={-1}
         value={isChecked ? "on" : "off"}
-        className="-translate-x-full absolute opacity-0 h-4 w-4 pointer-events-none"
+        className="-translate-x-full absolute opacity-0 size-4 pointer-events-none"
         checked={isChecked}
         onChange={(event) => {
           props.onChange ? props.onChange(event) : setCheckedState(!isChecked)
@@ -97,9 +97,7 @@ export const Radio = ({
             size === "lg" && "text-md"
           )}
           onClick={(event) => {
-            props.onChange
-              ? props.onChange(event)
-              : () => setCheckedState(!isChecked)
+            props.onChange ? props.onChange(event) : () => setCheckedState(!isChecked)
           }}
         >
           {label}

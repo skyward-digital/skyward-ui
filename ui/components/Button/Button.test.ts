@@ -1,5 +1,5 @@
-import { within, userEvent } from "@storybook/testing-library"
 import { expect } from "@storybook/jest"
+import { userEvent, within } from "@storybook/testing-library"
 
 /*
  * See https://storybook.js.org/docs/react/writing-stories/play-function#working-with-the-canvas

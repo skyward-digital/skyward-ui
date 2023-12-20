@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react"
-import { Author } from "./Author"
+
 import { Default as Avatar } from "../Avatar/Avatar.stories"
+import { Author } from "./Author"
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Author> = {
