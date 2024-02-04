@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@untitledui-icons/react/line"
 import { cn } from "#/utils"
 
@@ -24,7 +23,7 @@ export const AccordionItem = ({ title, children, className }: AccordionItemProps
           )}
         />
       </summary>
-      <Transition
+      {/* <Transition
         show={tabExpanded}
         enter="transition-all duration-500 overflow-hidden"
         enterFrom="max-h-0 opacity-0"
@@ -32,9 +31,9 @@ export const AccordionItem = ({ title, children, className }: AccordionItemProps
         leave="transition-all duration-500"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-      >
-        <div className={cn("prose dark:prose-invert py-2")}>{children}</div>
-      </Transition>
+      > */}
+      <div className={cn("prose dark:prose-invert py-2")}>{children}</div>
+      {/* </Transition> */}
     </details>
   )
 }

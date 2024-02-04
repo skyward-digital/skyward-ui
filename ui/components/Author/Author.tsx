@@ -3,18 +3,11 @@ import { cn } from "#/utils"
 
 import type { AuthorProps } from "./Author.d"
 
-export const Author = ({
-  href,
-  avatar,
-  name,
-  detail,
-  size = "md",
-  className,
-}: AuthorProps) => {
+export const Author = ({ href, avatar, name, detail, size = "md", className }: AuthorProps) => {
   return (
     <div
       className={cn(
-        "flex items-center",
+        "flex items-center max-w-max overflow-hidden",
         href && "group",
         size === "xs" && "gap-1.5",
         size === "sm" && "gap-2",
@@ -25,7 +18,13 @@ export const Author = ({
         className
       )}
     >
-      <Avatar src={avatar?.src} alt={avatar?.alt} fallback={name} size={size} />
+      <Avatar
+        src={avatar?.src}
+        alt={avatar?.alt}
+        fallback={name as string}
+        size={size}
+        className="shrink-0"
+      />
       {name ? (
         <div className="grid gap-0.5">
           <p

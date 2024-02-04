@@ -1,0 +1,26 @@
+---
+import Layout from "#/src/layouts/Layout.astro"
+import { getCollection } from "astro:content"
+
+export async function getStaticPaths() {
+  const entries = await getCollection("appComponents")
+
+  return entries.map((entry, index) => ({
+    params: { slug: entry.slug },
+    props: {
+      entry,
+      next: entries[index + 1] || undefined,
+      prev: entries[index - 1] || undefined,
+    },
+  }))
+}
+
+const { entry, next, prev } = Astro.props
+const { Content, headings } = await entry.render()
+---
+
+<Layout headings={headings} next={next} prev={prev} {...entry.data}>
+  <div class="prose mt-6 max-w-none dark:prose-invert">
+    <Content />
+  </div>
+</Layout>

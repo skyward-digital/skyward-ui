@@ -10,11 +10,10 @@ links:
 ---
 
 import { CodePreview, Tabs, TabsGranular } from "#/src/components/Tabs"
-import { Button } from "#/ui/components/Button"
 
 <CodePreview client:load>
   <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load>
-    <div className="py-1.5 px-2" slot="1">
+    <div className="px-2 py-1.5" slot="1">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
       labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in. Tortor posuere ac ut
       consequat semper viverra. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean.
@@ -22,14 +21,14 @@ import { Button } from "#/ui/components/Button"
       morbi non arcu risus. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Eu
       tincidunt tortor aliquam nulla. Eu mi bibendum neque egestas congue quisque.
     </div>
-    <div className="py-1.5 px-2" slot="2">
+    <div className="px-2 py-1.5" slot="2">
       Hac habitasse platea dictumst vestibulum. Sed libero enim sed faucibus. Nunc mattis enim ut
       tellus elementum sagittis vitae. Vel facilisis volutpat est velit egestas dui. Semper viverra
       nam libero justo. Nunc faucibus a pellentesque sit amet porttitor. Urna duis convallis
       convallis tellus. Blandit aliquam etiam erat velit scelerisque in. Egestas tellus rutrum
       tellus pellentesque eu tincidunt. Mattis rhoncus urna neque viverra justo.
     </div>
-    <div className="py-1.5 px-2" slot="3">
+    <div className="px-2 py-1.5" slot="3">
       Nulla facilisi etiam dignissim diam. Sit amet nulla facilisi morbi tempus iaculis urna id
       volutpat. Ultrices dui sapien eget mi proin sed libero enim sed. Ut placerat orci nulla
       pellentesque dignissim enim sit amet. Dolor sed viverra ipsum nunc aliquet bibendum.
@@ -60,15 +59,39 @@ import { Button } from "#/ui/components/Button"
 ## Usage
 
 ```jsx
-import { Tabs } from "#/ui/components/Switch"
+import { Tabs, TabsContent, TabsList, TabsRoot, TabsTrigger } from "#/ui/components/Tabs"
 ```
 
 ```jsx
-<Tabs tabs={['Tab 1', 'Tab 2', 'Tab 3']} panels={[
-  <div className='w-full h-12 bg-red-400'>Tab 1</div>
-  <div className='w-full h-12 bg-blue-400'>Tab 2</div>
-  <div className='w-full h-12 bg-green-400'>Tab 3</div>
-]} />
+<Tabs tabs={[{
+  title: 'Tab 1',
+  content: <div className='w-full h-12 bg-red-400'>Tab 1</div>
+}, {
+  title: 'Tab 2',
+  content: <div className='w-full h-12 bg-blue-400'>Tab 2</div>
+}, {
+  title: 'Tab 3',
+  content: <div className='w-full h-12 bg-green-400'>Tab 3</div>
+}]} />
+
+// or for more graular control
+
+<TabsRoot>
+  <TabsList>
+    <TabsTrigger value="tab-1">Tab 1</TabsTrigger>
+    <TabsTrigger value="tab-2">Tab 2</TabsTrigger>
+    <TabsTrigger value="tab-3">Tab 3</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab-1">
+    <div className='w-full h-12 bg-red-400'>Tab 1</div>
+  </TabsContent>
+  <TabsContent value="tab-2">
+    <div className='w-full h-12 bg-blue-400'>Tab 2</div>
+  </TabsContent>
+  <TabsContent value="tab-3">
+    <div className='w-full h-12 bg-green-400'>Tab 3</div>
+  </TabsContent>
+</TabsRoot>
 ```
 
 ## Customisation
@@ -79,13 +102,13 @@ The tabs component does not provide any styling for the panels, but you can pass
 
 <CodePreview client:load>
   <Tabs tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load>
-    <div className="w-full h-full bg-red-100 rounded border border-red-400 p-4" slot="1">
+    <div className="h-full w-full rounded border border-red-400 bg-red-100 p-4" slot="1">
       Tab 1
     </div>
-    <div className="w-full h-full bg-blue-100 rounded border border-blue-400 p-4" slot="2">
+    <div className="h-full w-full rounded border border-blue-400 bg-blue-100 p-4" slot="2">
       Tab 2
     </div>
-    <div className="w-full h-full bg-green-100 rounded border border-green-400 p-4" slot="3">
+    <div className="h-full w-full rounded border border-green-400 bg-green-100 p-4" slot="3">
       Tab 3
     </div>
   </Tabs>
@@ -93,13 +116,19 @@ The tabs component does not provide any styling for the panels, but you can pass
     ```jsx
     <div className="flex w-full space-x-2">
       <Tabs
-        tabs={["Tab 1", "Tab 2", "Tab 3"]}
-        panels={[
-          <div className="w-full h-full bg-red-100 rounded border border-red-400 p-4">Tab 1</div>,
-          <div className="w-full h-full bg-blue-100 rounded border border-blue-400 p-4">Tab 2</div>,
-          <div className="w-full h-full bg-green-100 rounded border border-green-400 p-4">
-            Tab 3
-          </div>,
+        tabs={[
+          {
+            title: "Tab 1",
+            content: <div className="h-12 w-full bg-red-400">Tab 1</div>,
+          },
+          {
+            title: "Tab 2",
+            content: <div className="h-12 w-full bg-blue-400">Tab 2</div>,
+          },
+          {
+            title: "Tab 3",
+            content: <div className="h-12 w-full bg-green-400">Tab 3</div>,
+          },
         ]}
       />
     </div>
@@ -114,50 +143,44 @@ If you need more fine-grain control you can access each layer of the tabs compon
 First, update your import
 
 ```jsx
-import { TabGroup, TabList, TabPanel, TabPanels, TabTrigger } from "#/ui/components/Tabs"
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "#/ui/components/Tabs"
 ```
 
 Then you can build your tabs out with the individual tab components
 
 <CodePreview client:load>
   <TabsGranular tabs={["Tab 1", "Tab 2", "Tab 3"]} client:load>
-    <div className="w-full h-full bg-red-100 rounded border border-red-400 p-4" slot="1">
+    <div className="h-full w-full rounded border border-red-400 bg-red-100 p-4" slot="1">
       Tab 1
     </div>
-    <div className="w-full h-full bg-blue-100 rounded border border-blue-400 p-4" slot="2">
+    <div className="h-full w-full rounded border border-blue-400 bg-blue-100 p-4" slot="2">
       Tab 2
     </div>
-    <div className="w-full h-full bg-green-100 rounded border border-green-400 p-4" slot="3">
+    <div className="h-full w-full rounded border border-green-400 bg-green-100 p-4" slot="3">
       Tab 3
     </div>
   </TabsGranular>
   <div slot="code">
     ```jsx
     <div className="flex w-full space-x-2">
-      <TabGroup>
-        <TabList className="flex flex-col w-40">
-          <TabTrigger>Tab 1</TabTrigger>
-          <TabTrigger>Tab 2</TabTrigger>
-          <TabTrigger>Tab 3</TabTrigger>
-        </TabList>
-        <TabPanels className="flex flex-1">
-          <TabPanel className="w-full h-full bg-red-100 rounded border border-red-400 p-4" slot="1">
+      <TabsRoot>
+        <TabsList className="flex w-40 flex-col">
+          <TabsTrigger>Tab 1</TabsTrigger>
+          <TabsTrigger>Tab 2</TabsTrigger>
+          <TabsTrigger>Tab 3</TabsTrigger>
+        </TabsList>
+        <div className="flex flex-1">
+          <TabsContent className="h-full w-full rounded border border-red-400 bg-red-100 p-4">
             Tab 1
-          </TabPanel>
-          <TabPanel
-            className="w-full h-full bg-blue-100 rounded border border-blue-400 p-4"
-            slot="2"
-          >
+          </TabsContent>
+          <TabsContent className="h-full w-full rounded border border-blue-400 bg-blue-100 p-4">
             Tab 2
-          </TabPanel>
-          <TabPanel
-            className="w-full h-full bg-green-100 rounded border border-green-400 p-4"
-            slot="3"
-          >
+          </TabsContent>
+          <TabsContent className="h-full w-full rounded border border-green-400 bg-green-100 p-4">
             Tab 3
-          </TabPanel>
-        </TabPanels>
-      </TabGroup>
+          </TabsContent>
+        </div>
+      </TabsRoot>
     </div>
     ```
   </div>

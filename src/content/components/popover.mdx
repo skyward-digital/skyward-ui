@@ -1,0 +1,123 @@
+---
+title: Popover
+description: A component to display rich content within a portal.
+client: true # Or true if JS is required for this component to function
+links:
+  {
+    "storybook": "https://google.com",
+    "github": "https://github.com/skyward-digital/sky-ui/tree/main/ui/components/Component",
+  }
+---
+
+import { Settings01Icon } from "@untitledui-icons/react/line"
+import { PopoverExample } from "#/src/components/Popover/PopoverExample"
+import { CodePreview } from "#/src/components/Tabs"
+import { Button } from "#/ui/components/Button"
+import { Input } from "#/ui/components/Input"
+import { Select } from "#/ui/components/Select"
+import { Switch } from "#/ui/components/Switch"
+
+<CodePreview client:load>
+  <PopoverExample trigger="Show Popover" content="Lorem ipsum dolor sit amet" client:load />
+</CodePreview>
+
+{/* ## Installation */}
+
+## Usage
+
+```jsx
+import { Popover, PopoverContent, PopoverTrigger } from "#/ui/components/Popover"
+```
+
+```jsx
+<Popover>
+  <PopoverTrigger>Trigger</PopoverTrigger>
+  <PopoverContent>Content</PopoverContent>
+</Popover>
+```
+
+<CodePreview client:load>
+  <PopoverExample trigger="trigger" content="content" client:load />
+  <div slot="code">
+    ```jsx
+    <Popover>
+      <PopoverTrigger>Trigger</PopoverTrigger>
+      <PopoverContent>Content</PopoverContent>
+    </Popover>
+    ```
+  </div>
+</CodePreview>
+
+The popover requires `PopoverTrigger`, triggering the popover to display, and `PopoverContent`, what gets displayed.
+
+```jsx
+<Popover>
+  <PopoverTrigger>Show Popover</PopoverTrigger>
+  <PopoverContent>Lorem ipsum dolor sit amet</PopoverContent>
+</Popover>
+```
+
+You're not limited to text content, you can pass in any valid JSX to either your Trigger or your Content.
+
+<CodePreview client:load>
+  <PopoverExample trigger="settings" client:load>
+    <div slot="content" className="grid grid-cols-2 items-center gap-2 text-sm">
+      <span>Name: </span>
+      <Input />
+      <span>Email Address: </span>
+      <Input />
+      <span>Company Name: </span>
+      <Input />
+      <span>Get email updates: </span>
+      <Switch client:load />
+    </div>
+  </PopoverExample>
+  <div slot="code">
+    ```jsx
+    <PopoverExample trigger="settings" client:load>
+      <div slot="content" className="grid grid-cols-2 items-center gap-2 text-sm">
+        <span>Name: </span>
+        <Input />
+        <span>Email Address: </span>
+        <Input />
+        <span>Company Name: </span>
+        <Input />
+        <span>Get email updates: </span>
+        <Switch client:load />
+      </div>
+    </PopoverExample>
+    ```
+  </div>
+</CodePreview>
+
+## Show Arrow
+
+If you want to add an arrow to the popover, you can pass in `showArrow` to the `PopoverContent` component.
+
+<CodePreview className="bg-gray-50" client:load>
+  <PopoverExample trigger="trigger" content="content" showArrow client:load />
+  <div slot="code">
+    ```jsx
+    <Popover>
+      <PopoverTrigger>Trigger</PopoverTrigger>
+      <PopoverContent showArrow>Content</PopoverContent>
+    </Popover>
+    ```
+  </div>
+</CodePreview>
+
+## Show Close
+
+If you want to add a close button to the popover, you can pass in `showClose` to the `PopoverContent` component. You can always close the popover by clicking away, but this makes the close action more explicit.
+
+<CodePreview className="bg-gray-50" client:load>
+  <PopoverExample trigger="trigger" content="content" showClose client:load />
+  <div slot="code">
+    ```jsx
+    <Popover>
+      <PopoverTrigger>Trigger</PopoverTrigger>
+      <PopoverContent showClose>Content</PopoverContent>
+    </Popover>
+    ```
+  </div>
+</CodePreview>

@@ -1,3 +1,3 @@
 export { Tabs } from "./Tabs"
-export { TabGroup, TabList, TabTrigger, TabPanels, TabPanel } from "./Tabs"
+export { TabsRoot, TabsList, TabsTrigger, TabsContent } from "./Tabs"
 export type { TabsProps } from "./Tabs.d"

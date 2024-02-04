@@ -43,12 +43,12 @@ export const Button = ({
         size === "2xl" && "gap-3 text-2xl px-5 py-2 [&>*]:gap-3",
 
         // Icon classes
-        size === "xs" && ":has[>.sr-only]:p-1.5",
-        size === "sm" && ":has[>.sr-only]:p-2",
-        size === "md" && ":has[>.sr-only]:p-2.5",
-        size === "lg" && ":has[>.sr-only]:p-3",
-        size === "xl" && ":has[>.sr-only]:p-3.5",
-        size === "2xl" && ":has[>.sr-only]:p-4",
+        size === "xs" && "has-[>.sr-only]:p-1.5",
+        size === "sm" && "has-[>.sr-only]:p-2",
+        size === "md" && "has-[>.sr-only]:p-2.5",
+        size === "lg" && "has-[>.sr-only]:p-3",
+        size === "xl" && "has-[>.sr-only]:p-3.5",
+        size === "2xl" && "has-[>.sr-only]:p-4",
 
         // icon classes - applies to child svgs
         size === "xs" && "[&>svg]:size-3 [&>*>svg]:size-3",

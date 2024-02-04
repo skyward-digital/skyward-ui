@@ -1,4 +1,4 @@
-import { TabGroup, TabList, TabPanel, TabPanels, TabTrigger } from "#/ui/components/Tabs"
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "#/ui/components/Tabs"
 
 /* Due to how astro works we cannot use a traditional react syntax for this component
 Instead, we take advantage of the astro <slot> component functionality, passing in the tabs and panels as props
@@ -13,22 +13,22 @@ export const TabsGranular = ({ tabs, ...props }: { tabs: string[]; [key: string]
     .map((key) => props[key])
 
   return (
-    <div className="flex w-full space-x-2">
-      <TabGroup>
-        <TabList className="flex flex-col w-40">
-          {tabs.map((tab) => (
-            <TabTrigger key={tab}>{tab}</TabTrigger>
-          ))}
-        </TabList>
+    <TabsRoot className="flex w-full space-x-2">
+      <TabsList className="flex flex-col">
+        {tabs.map((tab, index) => (
+          <TabsTrigger key={index} value={index}>
+            {tab}
+          </TabsTrigger>
+        ))}
+      </TabsList>
 
-        <TabPanels className="flex flex-1">
-          {tabs.map((tab, index) => (
-            <TabPanel key={tab} className="size-full">
-              {panels[index]}
-            </TabPanel>
-          ))}
-        </TabPanels>
-      </TabGroup>
-    </div>
+      <div className="flex flex-1">
+        {tabs.map((_, index) => (
+          <TabsContent key={index} value={index} className="size-full">
+            {panels[index]}
+          </TabsContent>
+        ))}
+      </div>
+    </TabsRoot>
   )
 }

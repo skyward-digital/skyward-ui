@@ -32,14 +32,11 @@ const Panel = ({ className, children }) => (
 export const Default = {
   render: () => (
     <Tabs
-      tabs={["Tab 1", "Tab 2", "Tab 3"]}
-      panels={
-        <>
-          <Panel className="bg-blue-800">Tab 1</Panel>
-          <Panel className="bg-red-800">Tab 2</Panel>
-          <Panel className="bg-green-800">Tab 3</Panel>
-        </>
-      }
+      tabs={[
+        { title: "Tab 1", content: <Panel className="bg-blue-800">Tab 1</Panel> },
+        { title: "Tab 2", content: <Panel className="bg-red-800">Tab 2</Panel> },
+        { title: "Tab 3", content: <Panel className="bg-green-800">Tab 3</Panel> },
+      ]}
     />
   ),
 }

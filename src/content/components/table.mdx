@@ -79,7 +79,7 @@ import { Table, TableCell, TableHeaderCell, TableRow } from "#/ui/components/Tab
               year: "numeric",
             })}
           </TableCell>
-          <TableCell className="text-sm max-w-xs">
+          <TableCell className="max-w-xs text-sm">
             <span className="line-clamp-2">{employee.bio}</span>
           </TableCell>
           <TableCell className="space-x-2">
@@ -240,7 +240,7 @@ You'll often want the header to follow as you scroll through the table data so y
               year: "numeric",
             })}
           </TableCell>
-          <TableCell className="text-sm max-w-xs">
+          <TableCell className="max-w-xs text-sm">
             <span className="line-clamp-2">{employee.bio}</span>
           </TableCell>
           <TableCell className="space-x-2">
@@ -323,7 +323,7 @@ You'll often want the header to follow as you scroll through the table data so y
                 year: "numeric",
               })}
             </TableCell>
-            <TableCell className="text-sm max-w-xs">
+            <TableCell className="max-w-xs text-sm">
               <span className="line-clamp-2">{employee.bio}</span>
             </TableCell>
             <TableCell className="space-x-2">
@@ -370,7 +370,7 @@ Sometimes you'll want the first column to follow as you scroll through the table
     <tbody>
       {employees.map((employee, index) => (
         <TableRow key={index}>
-          <TableCell className="sticky left-0 bg-white dark:bg-gray-950 z-10 border-r">
+          <TableCell className="sticky left-0 z-10 border-r bg-gray-50 dark:bg-gray-950">
             <Author
               avatar={{
                 src: employee.avatar,
@@ -413,7 +413,7 @@ Sometimes you'll want the first column to follow as you scroll through the table
               year: "numeric",
             })}
           </TableCell>
-          <TableCell className="text-sm max-w-xs">
+          <TableCell className="max-w-xs text-sm">
             <span className="line-clamp-2">{employee.bio}</span>
           </TableCell>
           <TableCell className="space-x-2">
@@ -453,7 +453,7 @@ Sometimes you'll want the first column to follow as you scroll through the table
       <tbody>
         {employees.map((employee, index) => (
           <TableRow>
-            <TableCell className="sticky left-0 bg-white dark:bg-gray-950 z-10 border-r">
+            <TableCell className="sticky left-0 z-10 border-r bg-white dark:bg-gray-950">
               <Author
                 avatar={{
                   src: employee.avatar,
@@ -496,7 +496,7 @@ Sometimes you'll want the first column to follow as you scroll through the table
                 year: "numeric",
               })}
             </TableCell>
-            <TableCell className="text-sm max-w-xs">
+            <TableCell className="max-w-xs text-sm">
               <span className="line-clamp-2">{employee.bio}</span>
             </TableCell>
             <TableCell className="space-x-2">

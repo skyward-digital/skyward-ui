@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Switch } from "@headlessui/react"
+import * as Toggle from "@radix-ui/react-toggle"
 import { Radio } from "#/ui/components/Radio"
 import { cn, transformId } from "#/utils"
 
@@ -23,41 +23,35 @@ export const RadioCard = ({
   const formattedId = id ? id : typeof children === "string" ? transformId(children) : undefined
 
   return (
-    <Switch
-      checked={isChecked}
-      onChange={(e) => {
+    <Toggle.Root
+      pressed={isChecked}
+      onPressedChange={(e) => {
         if (onChange) {
           onChange(e)
         }
         setCheckedState(e)
       }}
-      className={({ checked }) =>
-        cn(
-          "group relative flex cursor-pointer items-center gap-2 rounded-lg border border-gray-500 px-4 py-2 transition-colors duration-150 ease-in-out hover:bg-gray-100",
-          checked && "outline outline-indigo-500 border-indigo-500 bg-gray-50",
-          className
-        )
-      }
-    >
-      {({ checked }) => (
-        <>
-          {typeof children === "string" ? (
-            <label htmlFor={formattedId} className="flex-1">
-              {children}
-            </label>
-          ) : (
-            <>{children}</>
-          )}
-
-          <Radio
-            id={formattedId}
-            name={name}
-            checked={isChecked}
-            className={cn("ml-4 -mr-2", !showRadio && "hidden", checked ? "visible" : "invisible")}
-            as="span"
-          />
-        </>
+      className={cn(
+        "group relative flex cursor-pointer items-center gap-2 rounded-lg border border-gray-500 px-4 py-2 transition-colors duration-150 ease-in-out hover:bg-gray-100",
+        isChecked && "outline outline-indigo-500 border-indigo-500 bg-gray-50",
+        className
       )}
-    </Switch>
+    >
+      {typeof children === "string" ? (
+        <label htmlFor={formattedId} className="flex-1">
+          {children}
+        </label>
+      ) : (
+        <>{children}</>
+      )}
+
+      <Radio
+        id={formattedId}
+        name={name}
+        checked={isChecked}
+        className={cn("ml-4 -mr-2", !showRadio && "hidden", isChecked ? "visible" : "invisible")}
+        as="span"
+      />
+    </Toggle.Root>
   )
 }

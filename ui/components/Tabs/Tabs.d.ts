@@ -1,4 +1,6 @@
 export type TabsProps = {
-  tabs: string[]
-  panels: React.ReactElement[]
+  tabs: {
+    title: string
+    content: React.ReactElement
+  }[]
 }

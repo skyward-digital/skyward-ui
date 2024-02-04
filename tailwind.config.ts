@@ -23,7 +23,12 @@ module.exports = {
             fontVariationSettings: '"wght" 80',
           },
         ],
-        mono: ["GeistMono", ...fontFamily.mono],
+        mono: [
+          `GeistMono, ${fontFamily.mono}`,
+          {
+            fontVariationSettings: '"wght" 80',
+          },
+        ],
       },
       // screens: {
       //   '2xl': '1440px',

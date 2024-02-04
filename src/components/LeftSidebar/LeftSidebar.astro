@@ -9,12 +9,20 @@ type Props = {
 const collectionLinks = await (async () => {
   const componentEntries = await getCollection("components")
   const exampleEntries = await getCollection("examples")
+  const appComponentEntries = await getCollection("appComponents")
   // const componentEntries = await getCollection("components")
 
   return [
     {
       title: "Components",
       items: componentEntries.map((entry) => ({
+        title: entry.data.title,
+        path: `/docs/${entry.collection}/${entry.slug}`,
+      })),
+    },
+    {
+      title: "App Components",
+      items: appComponentEntries.map((entry) => ({
         title: entry.data.title,
         path: `/docs/${entry.collection}/${entry.slug}`,
       })),
@@ -34,12 +42,12 @@ const linkMatch = (link: string) => link.replace("/", "")
 ---
 
 <nav aria-labelledby="grid-left">
-  <ul class="text-sm space-y-3">
+  <ul class="space-y-3 text-sm">
     {
       collectionLinks.map(({ title, items }) => (
         <li>
           <div>
-            <h2 class="font-semibold text-gray-900 mb-1">{title}</h2>
+            <h2 class="mb-1 text-gray-900 font-semibold">{title}</h2>
             <ul>
               {items.map((child) => {
                 return (

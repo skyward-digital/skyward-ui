@@ -19,5 +19,5 @@ module.exports = {
     "",
     "^[./]",
   ],
-  plugins: ["@ianvs/prettier-plugin-sort-imports"],
+  plugins: ["prettier-plugin-tailwindcss", "@ianvs/prettier-plugin-sort-imports"],
 }
