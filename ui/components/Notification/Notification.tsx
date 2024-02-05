@@ -28,8 +28,8 @@ export function Notification({
               count > max
                 ? `${max.toLocaleString("en-US")}${!hidePlus ? "+" : ""}` // 99+
                 : count === 0 && !showZero // 0
-                ? ""
-                : count // 99
+                  ? ""
+                  : count // 99
             }
           </>
         )}
