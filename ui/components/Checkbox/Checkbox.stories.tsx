@@ -47,8 +47,8 @@ export const Indeterminate = {
           checked === "indeterminate"
             ? setChecked(true)
             : checked
-            ? setChecked(false)
-            : setChecked("indeterminate")
+              ? setChecked(false)
+              : setChecked("indeterminate")
         }
       />
     )
