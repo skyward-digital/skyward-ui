@@ -3,7 +3,7 @@ import Layout from "#/src/layouts/Layout.astro"
 import { getCollection } from "astro:content"
 
 export async function getStaticPaths() {
-  const entries = await getCollection("pageSections")
+  const entries = await getCollection("page-sections")
 
   return entries.map((entry, index) => ({
     params: { slug: entry.slug },
@@ -20,7 +20,7 @@ const { Content, headings } = await entry.render()
 ---
 
 <Layout headings={headings} next={next} prev={prev} {...entry.data}>
-  <div class="prose dark:prose-invert max-w-none mt-6">
+  <div class="prose mt-6 max-w-none dark:prose-invert">
     <Content />
   </div>
 </Layout>

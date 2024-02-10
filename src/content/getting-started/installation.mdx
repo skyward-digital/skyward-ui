@@ -1,0 +1,180 @@
+---
+title: Installation
+description: Start using SkywardUI in less than 5 minutes
+order: 2
+---
+
+import { Button } from "#/ui/components/Button"
+
+## 1. Download the component files
+
+Head on over to our LemonSqueezy store and download the free or premium version of the library.
+
+[Download SkywardUI](https://skyward.lemonsqueezy.com/)
+
+## 2. Add Tailwind CSS to your project
+
+Components are styled using Tailwind CSS, so you'll need to install it in your project.
+
+https://tailwindcss.com/docs/installation
+
+## 3. Setup dependencies in your project
+
+Install additional dependencies required by the component.
+
+```bash
+npm install clsx tailwind-merge
+```
+
+## 4. Add icon library
+
+Our components use UntitledUI icons line icon set, which you'll also need to install. This is a free icon set, which you can use in your projects.
+
+```bash
+npm install @untitledui-icons/react
+```
+
+UntitledUI provides other versions of their icons (solid, duotone, etc), which [you can purchase on their store](https://store.untitledui.com?aff=ze5Pg).
+
+If you choose to do this you'll need to update the package imports to use the new version. You won't need to update the icon names.
+
+```tsx
+- import { XCloseIcon } from '@untitledui-icons/react/line'
++ import { XCloseIcon } from '@untitledui-icons/react/duotone'
+```
+
+If you want to use your own icon library, you can replace the icons in the components. You'll need to update the imports and the new icon names.
+
+```tsx
+- import { XCloseIcon } from '@untitledui-icons/react/line'
++ import { XMarkIcon } from '@heroicons/react/outline'
+```
+
+## 5. Configure path aliases
+
+Add the following path aliases to your `tsconfig.json` file.
+
+If you prefer to use a different path alias, you can update the `#` alias to your preference (make sure to update the other imports too).
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["./*"]
+    }
+  }
+}
+```
+
+## 6. Install your fonts
+
+We use GeistSans and GeistMono for our components. These are variable fonts provided by Vercel.
+
+Download them from the [Vercel website](https://vercel.com/font/sans) and place them in your public folder.
+
+You can switch these for any other fonts if you'd like. You'll need to update the `tailwind.config.js` file in the next step.
+
+## 7. Configure tailwind.config.js
+
+We try and keep our tailwind file as close to the default as possible, but there are a few things that are different.
+
+You can copy the following configuration and update it to your needs.
+
+GeistSans and GeistMono are custom variable fonts used in SkywardUI. You can remove these if you wish.
+If you want to use alternate variable fonts update the `fontFamily` and `fontVariationSettings` accordingly, otherwise it's safe to remove them.
+
+```js
+import type { Config } from "tailwindcss"
+import { fontFamily } from "tailwindcss/defaultTheme"
+
+module.exports = {
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./ui/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+  ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  darkMode: "class",
+  theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+    },
+    extend: {
+      fontFamily: {
+        sans: [
+          `Geist, ${fontFamily.sans}`,
+          {
+            fontVariationSettings: '"wght" 80',
+          },
+        ],
+        mono: [
+          `GeistMono, ${fontFamily.mono}`,
+          {
+            fontVariationSettings: '"wght" 80',
+          },
+        ],
+      },
+      zIndex: {
+        "-10": "-10",
+      },
+      strokeWidth: {
+        0.5: "0.5",
+        1.5: "1.5",
+        2.5: "2.5",
+      },
+      animation: {
+        spin: "spin 10s linear infinite",
+        loading: "loading-indeterminate-horizontal 1.4s infinite linear",
+        "font-weight-grow": "font-weight-grow 1s infinite alternate",
+        "font-weight-shrink": "font-weight-shrink 1s infinite alternate",
+      },
+      keyframes: {
+        "loading-indeterminate-horizontal": {
+          "0%": { transform: "translateX(0) scaleX(0)" },
+          "50%": { transform: "translateX(0) scaleX(0.4)" },
+          "100%": { transform: "translateX(100%) scaleX(0.9)" },
+        },
+        "font-weight-grow": {
+          "0%": { "font-variation-settings": '"wght" 32' },
+          "100%": { "font-variation-settings": '"wght" 96' },
+        },
+        "font-weight-shrink": {
+          "0%": { "font-variation-settings": '"wght" 96' },
+          "100%": { "font-variation-settings": '"wght" 32' },
+        },
+      },
+    },
+  },
+  corePlugins: {
+    fontWeight: false,
+  },
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("./plugins/fontVariationSettings"), // Only if you use GeistSans and GeistMono
+  ],
+} satisfies Config
+```
+
+## 8. Copy the utilities & plugins
+
+From the downloaded package, you'll need to copy the `utils` and `plugins` folders into the root of your project.
+
+You can copy the whole folders, as they contain the necessary files for the components to work.
+
+## 9. Import the component
+
+You can now import the component and use it in your project.
+
+First create a folder called `ui` at the root of your project. Then copy any components from the downloaded package to this folder.
+
+We recommend using one component at a time, but if you feel like you'll need most/all of the components provided you can copy the whole `ui` folder.
+
+## 10. Tada! You're done
+
+Now you can use the component in your project by following the instructions in the docs here.
+
+Feel free to edit the component to suit your needs, either directly in the component file or by using the props provided.

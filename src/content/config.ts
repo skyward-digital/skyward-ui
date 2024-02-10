@@ -2,6 +2,15 @@
 import { defineCollection, z } from "astro:content"
 
 // Define a `type` and `schema` for each collection
+const gettingStartedCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number().optional(),
+  }),
+})
+
 const componentsCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -92,6 +101,7 @@ const appComponents = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
+  gettingStarted: gettingStartedCollection,
   components: componentsCollection,
   example: exampleCollection,
   pageSections: pageSections,

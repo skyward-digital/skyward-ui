@@ -31,3 +31,7 @@ html {
 body {
   @apply dark:bg-gray-950 dark:text-gray-100;
 }
+
+.astro-code {
+  @apply max-h-[32rem] overflow-auto;
+}

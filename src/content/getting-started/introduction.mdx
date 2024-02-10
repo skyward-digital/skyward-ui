@@ -1,0 +1,94 @@
+---
+title: Introduction
+description: Beatifully simple components. Accessible, customisable and limitlessly expandable.
+order: 1
+---
+
+import { Lock03Icon } from "@untitledui-icons/react/line"
+import { AccordionItem } from "#/ui/components/Accordion"
+import { Badge } from "#/ui/components/Badge"
+import { Checkbox } from "#/ui/components/Checkbox"
+
+## Welcome to SkywardUI
+
+SkywardUI is a component library that provides you with a starting point for your next web project.
+
+It's designed at it's core to be:
+
+- Simple
+- Accessible
+- Customisable
+
+All without adding any uneccessary bloat to your project, so it remains easy to maintain in the future.
+
+It's _not_ a traditional component library and you can't install it with NPM.
+
+Right now, we recommend that you use SkywardUI as a starting point to build your own component libraries.
+
+**Built with**
+
+- [React v18](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://styled-components.com/)
+- [Radix](https://radix-ui.com/)
+
+## Early access
+
+<Badge color="amber">
+  <Lock03Icon />
+  Alpha preview
+</Badge>
+
+SkywardUI is in alpha preview, which means it's under active development. We're working hard to make it better, and are continuously updating the documentation and current components to make it easier to use.
+
+Have any feedback to help us improve? [Let us know on X/Twitter](https://twitter.com/SkywardUI) or send us an email at [support@skywardui.com](mailto:support@skwardui.com).
+
+## Roadmap
+
+As an early access product, we're actively working on new components and features, but also our roadmap.
+
+Things might change, but here's what we're thinking about for the future:
+
+<div className="flex flex-col gap-2">
+  <Checkbox label="Create default components (buttons, inputs, etc.)" defaultChecked />
+  <Checkbox label="Add table of props for each component" />
+  <Checkbox label="Define detailed roadmap of future components" />
+  <Checkbox label="Set up premium (all-access) components & user login" />
+  <Checkbox label="Build out core application components (sidebar, dashboard, graphs, etc.)" />
+  <Checkbox label="Build out core marketing components (hero, pricing, etc.)" />
+  <Checkbox label="Add dark mode to all components and docs" />
+  <Checkbox label="Add more detailed documentation and examples" />
+  <Checkbox label="Accessibility review and improvements" />
+  <Checkbox label="Review NPM library possibility" />
+  <Checkbox label="Add templates for common use cases (landing page, dashboard, etc.)" />
+</div>
+
+## FAQs
+
+<div className="border-b">
+<AccordionItem title="How is SkywardUI different from a regular UI Library?" className="border-t">
+test
+</AccordionItem>
+<AccordionItem title="How editable is it?" className="border-t">
+  SkywardUI is designed to be as editable as possible.
+
+Each component is built with TailwindMerge which means you can quickly extend the default styles _without bloating your css or creating style conflicts_.
+
+If you need finer control, you have full access to the component's source code and can edit it directly to meet your exact needs but without having to build from scratch.
+
+</AccordionItem>
+<AccordionItem title="Will it ever be an NPM library?" className="border-t">
+  Possibly. We've been working with component libraries for a long time and we understand the importance of having a library that can be easily installed and used.
+
+There are plenty of libraries out there that are very difficult to edit, that still remain popular. Not every project needs custom design.
+
+But we strongly believe that you should not be limited by the library you choose and if you build a project with SkywardUI, even if you don't want to change the design you'll always have the option at a later point.
+
+So before we publish SkywardUI to NPM we want to make sure that:
+
+1. SkywardUI has outstanding default styles
+2. SkywardUI components can easily be updated without editing the component file
+3. SkywardUI components can be easily extended and customised
+
+</AccordionItem>
+</div>
