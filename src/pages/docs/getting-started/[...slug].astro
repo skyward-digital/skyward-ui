@@ -3,7 +3,7 @@ import Layout from "#/src/layouts/Layout.astro"
 import { getCollection } from "astro:content"
 
 export async function getStaticPaths() {
-  const entries = await getCollection("appComponents")
+  const entries = await getCollection("getting-started")
 
   return entries.map((entry, index) => ({
     params: { slug: entry.slug },

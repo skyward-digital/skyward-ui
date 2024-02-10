@@ -35,17 +35,17 @@ const editUrl = `${EDIT_URL}/${currentFile}`
   </head>
   <body>
     <!-- <Header currentPage={currentPage} /> -->
-    <main class="container relative flex justify-center pb-12 gap-8">
+    <main class="container relative flex justify-center gap-8 pb-12">
       <aside
         title="Site Navigation"
         class="hidden w-56 flex-col gap-6 pt-12 xl:sticky xl:top-0 xl:flex xl:h-screen"
       >
         <LeftSidebar currentPage={currentPage} />
       </aside>
-      <div class="flex-1 pt-12 max-w-4xl">
+      <div class="max-w-4xl flex-1 pt-12">
         <!-- Breadcrumbs here -->
-        <div class="flex gap-2 mb-4 items-end">
-          <h1 class="text-4xl font-semibold leading-none">{title}</h1>
+        <div class="mb-4 flex items-end gap-2">
+          <h1 class="text-4xl leading-none font-semibold">{title}</h1>
           {
             client && (
               <>
@@ -56,7 +56,7 @@ const editUrl = `${EDIT_URL}/${currentFile}`
             )
           }
         </div>
-        <p class="text-xl text-gray-600 dark:text-gray-400 mb-4">
+        <p class="mb-4 text-xl text-gray-600 dark:text-gray-400">
           {description}
         </p>
 
@@ -73,10 +73,10 @@ const editUrl = `${EDIT_URL}/${currentFile}`
 
         <slot />
 
-        <div class="flex justify-between items-center gap-4 mt-12">
+        <div class="mt-12 flex items-center justify-between gap-4">
           {
             prev ? (
-              <Button href={`/${prev.collection}/${prev.slug}`} variant="ghost" size="sm">
+              <Button href={`/docs/${prev.collection}/${prev.slug}`} variant="ghost" size="sm">
                 <ArrowLeftIcon />
                 {prev.data.title}
               </Button>
@@ -86,7 +86,7 @@ const editUrl = `${EDIT_URL}/${currentFile}`
           }
           {
             next ? (
-              <Button href={`/${next.collection}/${next.slug}`} variant="ghost" size="sm">
+              <Button href={`/docs/${next.collection}/${next.slug}`} variant="ghost" size="sm">
                 {next.data.title}
                 <ArrowRightIcon />
               </Button>
