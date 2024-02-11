@@ -4,7 +4,7 @@ import { Switch } from "."
 import { testSwitchClick } from "./Switch.test"
 
 const meta: Meta<typeof Switch> = {
-  title: "Components/Switch",
+  title: "Core/Switch",
   component: Switch,
   parameters: {
     docs: {

@@ -11,6 +11,7 @@ links:
 
 import { CodePreview } from "#/src/components/Tabs"
 import { Button } from "#/ui/components/Button"
+import { Table, TableCell, TableHeaderCell, TableRow } from "#/ui/components/Table"
 
 <CodePreview>
   <Button href="#">Button</Button>
@@ -38,3 +39,26 @@ import { Button } from "#/ui/components/Button"
 </CodePreview>
 
 Your content here
+
+## API Reference
+
+### Component
+
+Lorem ipsum dolor sit amet
+
+<Table>
+  <thead>
+    <TableRow>
+      <TableHeaderCell>Prop</TableHeaderCell>
+      <TableHeaderCell>Type</TableHeaderCell>
+      <TableHeaderCell>Default</TableHeaderCell>
+    </TableRow>
+  </thead>
+  <tbody>
+    <TableRow>
+      <TableCell>variant</TableCell>
+      <TableCell>primary | outline | ghost | text</TableCell>
+      <TableCell>primary</TableCell>
+    </TableRow>
+  </tbody>
+</Table>

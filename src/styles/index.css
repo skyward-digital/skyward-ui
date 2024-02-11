@@ -39,3 +39,8 @@ body {
 [class*="prose"] .astro-code:not(:has(+ pre)) {
   @apply my-0;
 }
+
+strong,
+b {
+  @apply font-semibold;
+}

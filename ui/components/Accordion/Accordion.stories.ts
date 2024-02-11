@@ -5,7 +5,7 @@ import { Default as Item } from "./AccordionItem.stories"
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Accordion> = {
-  title: "Components/Accordion",
+  title: "Core/Accordion",
   component: Accordion,
   parameters: {
     docs: {

@@ -5,7 +5,7 @@ import { CheckIcon, FaceHappyIcon, MinusIcon } from "@untitledui-icons/react/lin
 import { Checkbox, type CheckboxProps } from "."
 
 const meta: Meta<typeof Checkbox> = {
-  title: "Components/Checkbox",
+  title: "Core/Checkbox",
   component: Checkbox,
   parameters: {
     docs: {

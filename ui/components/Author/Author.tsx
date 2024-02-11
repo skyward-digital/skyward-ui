@@ -21,7 +21,7 @@ export const Author = ({ href, avatar, name, detail, size = "md", className }: A
       <Avatar
         src={avatar?.src}
         alt={avatar?.alt}
-        fallback={name as string}
+        fallback={name}
         size={size}
         className="shrink-0"
       />

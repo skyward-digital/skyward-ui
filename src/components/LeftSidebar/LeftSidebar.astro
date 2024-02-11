@@ -11,6 +11,7 @@ const collectionLinks = await (async () => {
   const componentEntries = await getCollection("components")
   const exampleEntries = await getCollection("examples")
   const appComponentEntries = await getCollection("application-components")
+  const marketingComponentEntries = await getCollection("marketing-components")
   // const componentEntries = await getCollection("components")
 
   return [
@@ -34,13 +35,6 @@ const collectionLinks = await (async () => {
         path: `/docs/${entry.collection}/${entry.slug}`,
       })),
     },
-    // {
-    //   title: "App Components",
-    //   items: appComponentEntries.map((entry) => ({
-    //     title: entry.data.title,
-    //     path: `/docs/${entry.collection}/${entry.slug}`,
-    //   })),
-    // },
     {
       title: "Examples",
       items: exampleEntries.map((entry) => ({
@@ -48,6 +42,20 @@ const collectionLinks = await (async () => {
         path: `/docs/${entry.collection}/${entry.slug}`,
       })),
     },
+    {
+      title: "Marketing Components",
+      items: marketingComponentEntries.map((entry) => ({
+        title: entry.data.title,
+        path: `/docs/${entry.collection}/${entry.slug}`,
+      })),
+    },
+    // {
+    //   title: "App Components",
+    //   items: appComponentEntries.map((entry) => ({
+    //     title: entry.data.title,
+    //     path: `/docs/${entry.collection}/${entry.slug}`,
+    //   })),
+    // },
   ]
 })()
 

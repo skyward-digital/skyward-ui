@@ -4,7 +4,7 @@ import type { InputProps } from ".."
 import { Input } from "./TrailingButton"
 
 const meta: Meta<typeof Input> = {
-  title: "Components/Input/TrailingButton",
+  title: "Core/Input/TrailingButton",
   component: Input,
   parameters: {
     docs: {

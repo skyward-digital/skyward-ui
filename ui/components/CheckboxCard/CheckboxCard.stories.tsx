@@ -4,7 +4,7 @@ import { ContainerIcon } from "@untitledui-icons/react/line"
 import { CheckboxCard } from "./CheckboxCard"
 
 const meta: Meta<typeof CheckboxCard> = {
-  title: "Components/CheckboxCard",
+  title: "Core/CheckboxCard",
   component: CheckboxCard,
   parameters: {
     docs: {

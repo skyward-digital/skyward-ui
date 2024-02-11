@@ -4,7 +4,7 @@ import { cn } from "#/utils"
 import { Tabs } from "./Tabs"
 
 const meta: Meta<typeof Tabs> = {
-  title: "Components/Tabs",
+  title: "Core/Tabs",
   component: Tabs,
   parameters: {
     docs: {

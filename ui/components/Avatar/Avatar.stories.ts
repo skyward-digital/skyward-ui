@@ -5,7 +5,7 @@ import type { AvatarProps } from "./Avatar.d"
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<AvatarProps> = {
-  title: "Components/Avatar",
+  title: "Core/Avatar",
   component: Avatar,
   parameters: {
     docs: {

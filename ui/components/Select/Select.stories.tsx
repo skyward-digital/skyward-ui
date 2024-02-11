@@ -4,7 +4,7 @@ import { employees } from "#/src/data/employees"
 import { Select, SelectOption } from "."
 
 const meta: Meta<typeof Select> = {
-  title: "Components/Select",
+  title: "Core/Select",
   component: Select,
   parameters: {
     docs: {

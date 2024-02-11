@@ -55,7 +55,7 @@ const exampleCollection = defineCollection({
   }),
 })
 
-const pageSections = defineCollection({
+const marketingComponents = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -104,6 +104,6 @@ export const collections = {
   gettingStarted: gettingStartedCollection,
   components: componentsCollection,
   example: exampleCollection,
-  pageSections: pageSections,
+  marketingComponents: marketingComponents,
   appComponents: appComponents,
 }

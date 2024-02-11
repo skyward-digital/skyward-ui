@@ -4,7 +4,7 @@ import { ContainerIcon } from "@untitledui-icons/react/line"
 import { RadioCard } from "./RadioCard"
 
 const meta: Meta<typeof RadioCard> = {
-  title: "Components/RadioCard",
+  title: "Core/RadioCard",
   component: RadioCard,
   parameters: {
     docs: {

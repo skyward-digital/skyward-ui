@@ -7,7 +7,7 @@ import { testButtonClick, testButtonLink } from "./Button.test"
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<ButtonProps> = {
-  title: "Components/Button",
+  title: "Core/Button",
   component: Button,
   parameters: {
     docs: {

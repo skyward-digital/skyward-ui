@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react"
 import { Table, TableCell, TableHeaderCell, TableRow } from "."
 
 const meta: Meta<typeof Table> = {
-  title: "Components/Table",
+  title: "Core/Table",
   component: Table,
   parameters: {
     docs: {

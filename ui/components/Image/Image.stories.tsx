@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react"
 import { Image } from "./Image"
 
 const meta: Meta<typeof Image> = {
-  title: "Components/Image",
+  title: "Core/Image",
   component: Image,
   parameters: {
     docs: {

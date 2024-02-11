@@ -15,7 +15,7 @@ import {
 import { Sidebar } from "./Sidebar"
 
 const meta: Meta<typeof Sidebar> = {
-  title: "Components/Sidebar",
+  title: "Core/Sidebar",
   component: Sidebar,
   parameters: {
     docs: {

@@ -5,7 +5,7 @@ import { CheckIcon, FaceHappyIcon, MinusIcon } from "@untitledui-icons/react/lin
 import { Radio } from "./Radio"
 
 const meta: Meta<typeof Radio> = {
-  title: "Components/Radio",
+  title: "Core/Radio",
   component: Radio,
   parameters: {
     docs: {

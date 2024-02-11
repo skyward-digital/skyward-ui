@@ -4,7 +4,7 @@ import { AccordionItem } from "./AccordionItem"
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof AccordionItem> = {
-  title: "Components/Accordion/Item",
+  title: "Core/Accordion/Item",
   component: AccordionItem,
   parameters: {
     docs: {

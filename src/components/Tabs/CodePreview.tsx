@@ -39,7 +39,7 @@ export const CodePreview = ({
   }
 
   return (
-    <div className="w-full relative -my-6">
+    <div className="w-full max-w-full relative -my-6">
       <TabsRoot defaultValue="preview" value={selectedTab} onValueChange={setSelectedTab}>
         <TabsList className="absolute top-10 right-4 flex items-center">
           <TabsTrigger value="preview" asChild>
