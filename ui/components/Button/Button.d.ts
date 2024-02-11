@@ -4,9 +4,7 @@ export type ButtonBaseProps = {
   destructive?: boolean
   className?: string
   children: React.ReactNode
-  [key: string]:
-    | React.AnchorHTMLAttributes<HTMLAnchorElement>
-    | React.ButtonHTMLAttributes<HTMLButtonElement>
+  onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
 }
 
 export type ButtonLinkProps = ButtonBaseProps &

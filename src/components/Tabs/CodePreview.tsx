@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Button } from "#/ui/components/Button"
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "#/ui/components/Tabs"
 import { cn } from "#/utils"
 import { renderToString } from "react-dom/server"
@@ -39,48 +40,33 @@ export const CodePreview = ({
 
   return (
     <div className="w-full relative -my-6">
-      <TabsRoot
-        defaultValue="preview"
-        value={selectedTab}
-        onValueChange={(e) => {
-          console.log(e)
-          setSelectedTab(e)
-        }}
-      >
+      <TabsRoot defaultValue="preview" value={selectedTab} onValueChange={setSelectedTab}>
         <TabsList className="absolute top-10 right-4 flex items-center">
-          <TabsTrigger
-            value="preview"
-            className={cn(
-              "rounded-md px-2 py-1.5 text-xs font-medium border border-transparent duration-150 text-gray-400 hover:text-gray-200 hover:bg-gray-400/25 dark:hover:text-gray-200 dark:hover:bg-gray-200/10 mb-0",
-              "data-[state=active]:bg-indigo-500 data-[state=active]:text-white data-[state=active]:border-indigo-500",
-              !code && "bg-transparent border-transparent text-gray-400 pointer-events-none"
-            )}
-          >
-            Preview
+          <TabsTrigger value="preview" asChild>
+            <Button
+              variant={selectedTab !== "code" ? "primary" : "ghost"}
+              size="xs"
+              className={cn(selectedTab === "code" && "text-gray-400 hover:text-gray-300")}
+            >
+              Preview
+            </Button>
           </TabsTrigger>
           {code && (
             <>
-              <TabsTrigger
-                value="code"
-                className={cn(
-                  "rounded-md px-2 py-1.5 text-xs font-medium border border-transparent duration-150 text-gray-400 hover:text-gray-700 hover:bg-gray-300/25 dark:hover:text-gray-200 dark:hover:bg-gray-200/10 mb-0",
-                  "data-[state=active]:bg-indigo-500 data-[state=active]:text-white data-[state=active]:border-indigo-500"
-                )}
-              >
-                Code
+              <TabsTrigger value="code" asChild>
+                <Button variant={selectedTab === "code" ? "primary" : "ghost"} size="xs">
+                  Code
+                </Button>
               </TabsTrigger>
               <span className="w-px h-2 bg-gray-400/50" />
-              <button
-                className={cn(
-                  "rounded-md py-1.5 text-xs font-medium border border-transparent duration-150 w-[3.25rem]",
-                  "text-gray-400 hover:text-gray-700 hover:bg-gray-300/25 dark:hover:text-gray-200 dark:hover:bg-gray-200/10",
-                  selectedTab === "code" &&
-                    "text-gray-400 hover:text-gray-200 hover:bg-gray-400/25 dark:hover:text-gray-200 dark:hover:bg-gray-200/10"
-                )}
+              <Button
+                variant="ghost"
+                size="xs"
+                className={cn(selectedTab === "code" && "text-gray-400 hover:text-gray-300")}
                 onClick={copyCode}
               >
                 {copying ? "Copied!" : "Copy"}
-              </button>
+              </Button>
             </>
           )}
         </TabsList>
@@ -98,7 +84,7 @@ export const CodePreview = ({
           </TabsContent>
           {code && (
             <TabsContent value="code">
-              <div className="size-full [& pre]:py-8">{code}</div>
+              <div className="size-full [&>*]:py-8">{code}</div>
             </TabsContent>
           )}
         </div>

@@ -35,3 +35,7 @@ body {
 .astro-code {
   @apply max-h-[32rem] overflow-auto;
 }
+
+[class*="prose"] .astro-code:not(:has(+ pre)) {
+  @apply my-0;
+}
