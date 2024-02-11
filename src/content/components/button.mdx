@@ -11,6 +11,7 @@ links:
 import { ArrowLeftIcon, ArrowRightIcon, Trash01Icon } from "@untitledui-icons/react/line"
 import { CodePreview } from "#/src/components/Tabs"
 import { Button } from "#/ui/components/Button"
+import { Table, TableCell, TableHeaderCell, TableRow } from "#/ui/components/Table"
 
 <CodePreview client:load>
   <Button variant="primary">Primary</Button>
@@ -30,18 +31,17 @@ import { Button } from "#/ui/components/Button"
 
 ## Variants
 
-The basic button comes with 5 variants
+The basic button comes with 4 variants
 
 <CodePreview client:load>
   <Button variant="primary">Primary</Button>
   <Button variant="outline">Outline</Button>
   <Button variant="ghost">Ghost</Button>
   <Button variant="text">Text</Button>
-  <Button variant="destructive">Destructive</Button>
   <div slot="code">
     ```jsx
     <Button
-      variant="primary" // or outline, ghost, text, destructive
+      variant="primary" // or outline, ghost, text
     >
       Primary
     </Button>
@@ -69,14 +69,11 @@ Each button has 6 different size options to choose between
   <Button variant="primary" size="xl">
     xl
   </Button>
-  <Button variant="primary" size="2xl">
-    2xl
-  </Button>
   <div slot="code">
     ```jsx
     <Button
       variant="primary"
-      size="xs" // or sm, md, lg, xl, 2xl
+      size="xs" // or sm, md, lg, xl
     >
       Button
     </Button>
@@ -87,15 +84,44 @@ Each button has 6 different size options to choose between
 All of these different sizes are available for each variant
 
 <CodePreview>
-  <Button variant="primary" size="xs">
+  <Button variant="outline" size="xs">
     Button
   </Button>
   <Button variant="ghost" size="md">
     Button
   </Button>
-  <Button variant="destructive" size="xl">
+  <Button variant="primary" size="xl">
     Button
   </Button>
+</CodePreview>
+
+## Destructive
+
+You can use the `destructive` prop to indicate a destructive action. This can be combined with any variant to apply appropriate styling
+
+<CodePreview client:load>
+  <Button variant="primary" destructive>
+    Primary
+  </Button>
+  <Button variant="outline" destructive>
+    Outline
+  </Button>
+  <Button variant="ghost" destructive>
+    Ghost
+  </Button>
+  <Button variant="text" destructive>
+    Text
+  </Button>
+  <div slot="code">
+    ```jsx
+    <Button
+      variant="primary" // or outline, ghost, text
+      destructive
+    >
+      Primary
+    </Button>
+    ```
+  </div>
 </CodePreview>
 
 ## Icons
@@ -124,13 +150,13 @@ You can place icons within a button by passing it as a child
 If you use an icon without text, make sure to include a hidden label for accessibility purposes
 
 <CodePreview client:load>
-  <Button variant="destructive">
+  <Button variant="primary" destructive>
     <span className="sr-only">Delete</span>
     <Trash01Icon />
   </Button>
   <div slot="code">
     ```jsx
-    <Button variant="destructive">
+    <Button variant="primary" destructive>
       <span className="sr-only">Delete</span>
       <Trash01Icon />
     </Button>
@@ -141,27 +167,23 @@ If you use an icon without text, make sure to include a hidden label for accessi
 SVG Icons will automatically be resized based on the button size
 
 <CodePreview client:load>
-  <Button variant="destructive" size="xs">
+  <Button variant="primary" destructive size="xs">
     <span className="sr-only">Delete</span>
     <Trash01Icon />
   </Button>
-  <Button variant="destructive" size="sm">
+  <Button variant="primary" destructive size="sm">
     <span className="sr-only">Delete</span>
     <Trash01Icon />
   </Button>
-  <Button variant="destructive" size="md">
+  <Button variant="primary" destructive size="md">
     <span className="sr-only">Delete</span>
     <Trash01Icon />
   </Button>
-  <Button variant="destructive" size="lg">
+  <Button variant="primary" destructive size="lg">
     <span className="sr-only">Delete</span>
     <Trash01Icon />
   </Button>
-  <Button variant="destructive" size="xl">
-    <span className="sr-only">Delete</span>
-    <Trash01Icon />
-  </Button>
-  <Button variant="destructive" size="2xl">
+  <Button variant="primary" destructive size="xl">
     <span className="sr-only">Delete</span>
     <Trash01Icon />
   </Button>
@@ -210,7 +232,7 @@ You can pass an `onClick` prop to a button to make it interactive, just like you
   <Button variant="text" data-button client:load>
     Text
   </Button>
-  <Button variant="destructive" data-button client:load>
+  <Button variant="primary" destructive data-button client:load>
     Destructive
   </Button>
 </CodePreview>
@@ -230,16 +252,18 @@ You can customize individual buttons by passing a `className` prop. If this clas
 
 <CodePreview client:load>
   <Button
-    variant="destructive"
-    className="bg-amber-500 hover:bg-amber-400 focus:bg-amber-400 border-amber-500"
+    variant="primary"
+    destructive
+    className="border-amber-500 bg-amber-500 hover:bg-amber-400 focus:bg-amber-400"
   >
     Warning
   </Button>
   <div slot="code">
     ```jsx
     <Button
-      variant="destructive"
-      className="bg-amber-500 hover:bg-amber-400 focus:bg-amber-400 border-amber-500"
+      variant="primary"
+      destructive
+      className="border-amber-500 bg-amber-500 hover:bg-amber-400 focus:bg-amber-400"
     >
       Warning
     </Button>
@@ -252,7 +276,45 @@ Due to how `tailwind-merge` works, you won't need to worry about conflicting sty
 Make sure you override all the states to ensure a consistent experience, or you'll end up with something like this
 
 <CodePreview>
-  <Button variant="destructive" className="bg-amber-500">
+  <Button variant="primary" destructive className="bg-amber-500">
     Warning
   </Button>
 </CodePreview>
+
+## API Reference
+
+### Button
+
+The `Button` component extends the `HTMLButtonElement` or `HTMLAnchorElement` interface, so you can pass any prop that you would to a regular button or link. There are a few additional props that you can pass to customize the button
+
+<Table>
+  <thead>
+    <TableRow>
+      <TableHeaderCell>Prop</TableHeaderCell>
+      <TableHeaderCell>Type</TableHeaderCell>
+      <TableHeaderCell>Default</TableHeaderCell>
+    </TableRow>
+  </thead>
+  <tbody>
+    <TableRow>
+      <TableCell>variant</TableCell>
+      <TableCell>primary | outline | ghost | text</TableCell>
+      <TableCell>primary</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>size</TableCell>
+      <TableCell>xs | sm | md | lg | xl</TableCell>
+      <TableCell>md</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>destructive</TableCell>
+      <TableCell>boolean</TableCell>
+      <TableCell>false</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>children</TableCell>
+      <TableCell>React.ReactNode</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+  </tbody>
+</Table>

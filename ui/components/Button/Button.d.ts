@@ -1,6 +1,7 @@
 export type ButtonBaseProps = {
-  variant?: "primary" | "outline" | "ghost" | "text" | "destructive"
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl"
+  variant?: "primary" | "outline" | "ghost" | "text"
+  size?: "xs" | "sm" | "md" | "lg" | "xl"
+  destructive?: boolean
   className?: string
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
 }
