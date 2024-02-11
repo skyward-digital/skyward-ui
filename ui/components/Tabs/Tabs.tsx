@@ -32,11 +32,14 @@ export const TabsList = ({ className, ...props }: any) => (
 export const TabsTrigger = ({ className, ...props }: any) => {
   return (
     <TabsPrimitive.Trigger
-      className={cn(
-        "rounded-md px-3 py-2 text-sm font-medium border border-transparent duration-150 mb-2 text-gray-500 hover:text-gray-700 hover:bg-gray-50/50 dark:hover:text-gray-200 dark:hover:bg-gray-200/10",
-        "data-[state=active]:bg-gray-100/80 data-[state=active]:text-gray-700 data-[state=active]:border-gray-100 data-[state=active]:dark:bg-gray-100/10 data-[state=active]:dark:text-gray-100 data-[state=active]:dark:border-gray-100/10",
-        className
-      )}
+      className={
+        !props.asChild &&
+        cn(
+          "rounded-md px-3 py-2 text-sm font-medium border border-transparent duration-150 mb-2 text-gray-500 hover:text-gray-700 hover:bg-gray-50/50 dark:hover:text-gray-200 dark:hover:bg-gray-200/10",
+          "data-[state=active]:bg-gray-100/80 data-[state=active]:text-gray-700 data-[state=active]:border-gray-100 data-[state=active]:dark:bg-gray-100/10 data-[state=active]:dark:text-gray-100 data-[state=active]:dark:border-gray-100/10",
+          className
+        )
+      }
       {...props}
     />
   )

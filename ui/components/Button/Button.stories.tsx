@@ -39,8 +39,9 @@ export default meta
 const args = {
   children: "Button CTA",
   variant: "primary",
+  size: "md",
+  destructive: false,
   onClick: undefined,
-  // size: 'md',
 }
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
@@ -73,10 +74,34 @@ export const Text = {
   play: testButtonLink,
 }
 
-export const Destructive = {
+export const DestructivePrimary = {
   args: {
     ...args,
-    variant: "destructive",
+    destructive: true,
+  },
+}
+
+export const DestructiveOutline = {
+  args: {
+    ...args,
+    variant: "outline",
+    destructive: true,
+  },
+}
+
+export const DestructiveGhost = {
+  args: {
+    ...args,
+    variant: "ghost",
+    destructive: true,
+  },
+}
+
+export const DestructiveText = {
+  args: {
+    ...args,
+    variant: "text",
+    destructive: true,
   },
 }
 
@@ -147,12 +172,5 @@ export const XLarge = {
   args: {
     ...args,
     size: "xl",
-  },
-}
-
-export const XXLarge = {
-  args: {
-    ...args,
-    size: "2xl",
   },
 }
