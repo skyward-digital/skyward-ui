@@ -1,7 +1,7 @@
 import { Link } from "#/ui/components/Link"
 import { cn } from "#/utils"
 
-import type { ButtonBaseProps, ButtonElementProps, ButtonLinkProps } from "./Button.d"
+import type { ButtonElementProps, ButtonLinkProps, ButtonProps } from "./Button.d"
 
 export const Button = ({
   variant = "primary",
@@ -10,12 +10,8 @@ export const Button = ({
   className,
   children,
   ...props
-}: ButtonBaseProps) => {
-  const { href } = props as ButtonLinkProps
-  const { type, disabled } = props as ButtonElementProps
-
+}: ButtonProps) => {
   const classes = cn(
-    // layout
     "rounded h-fit tracking-normal relative outline-offset-0 outline-4 outline-none transition-all duration-200 no-underline inline-flex items-center justify-center overflow-hidden whitespace-nowrap font-semibold ease-in-out disabled:pointer-events-none [&>*]:inline-flex [&>*]:items-center focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:outline-transparent",
 
     // variants
@@ -66,17 +62,19 @@ export const Button = ({
     className
   )
 
-  if (!href) {
+  if (props.href) {
+    const { href, ...linkProps } = props as ButtonLinkProps
     return (
-      <button className={classes} type={type} disabled={disabled} {...props}>
+      <Link className={classes} href={href} {...linkProps}>
         {children}
-      </button>
+      </Link>
     )
   }
 
+  const buttonProps = props as ButtonElementProps
   return (
-    <Link className={classes} href={href} {...props}>
+    <button className={classes} {...buttonProps}>
       {children}
-    </Link>
+    </button>
   )
 }
