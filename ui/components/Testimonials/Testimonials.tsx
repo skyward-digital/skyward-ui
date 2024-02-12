@@ -32,7 +32,11 @@ export const Testimonials = ({ authors, rating, totalCustomers }: TestimonialsPr
           <p className="text-sm font-semibold text-slate-700 ml-1 mt-px">{rating.toFixed(1)}</p>
         </div>
         <p className="text-xs font-semibold text-slate-500">
-          From {totalCustomers.toLocaleString("en-US")}+ customers
+          From{" "}
+          {typeof totalCustomers === "number"
+            ? totalCustomers.toLocaleString("en-US")
+            : totalCustomers}
+          + customers
         </p>
       </div>
     </div>
