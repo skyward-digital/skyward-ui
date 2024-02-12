@@ -23,6 +23,22 @@ module.exports = {
       padding: "1rem",
     },
     extend: {
+      colors: {
+        // Our primary color palette is Slate, Red & Cyan
+        red: {
+          50: "#FFEBEE",
+          100: "#FFCDD2",
+          200: "#EF9A9A",
+          300: "#E57373",
+          400: "#EF5350",
+          500: "#F44336",
+          600: "#DB2B39",
+          700: "#C8102E",
+          800: "#A4161A",
+          900: "#8A0E0F",
+          950: "#6F0D0D",
+        },
+      },
       fontFamily: {
         sans: [
           `Geist, ${fontFamily.sans}`,
@@ -77,6 +93,7 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
+    require("@tailwindcss/container-queries"),
     require("./plugins/fontVariationSettings"),
   ],
 } satisfies Config

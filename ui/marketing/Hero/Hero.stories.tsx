@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Default as testimonials } from "#/ui/components/Testimonials/Testimonials.stories"
+import { TextHighlight } from "#/ui/components/TextHighlight"
 
 import { Hero, type HeroProps } from "."
 
@@ -28,11 +29,8 @@ type Story = StoryObj<typeof Hero>
 const args: HeroProps = {
   title: (
     <h1>
-      Lorem ipsum{" "}
-      <span className="relative before:absolute before:bg-sky-300 before:skew-y-2 before:skew-x-1 before:h-full before:w-[104%] before:-z-10 before:top-0 before:left-1/2 before:-translate-x-1/2">
-        dolor sit
-      </span>{" "}
-      amet, <strong>consectetur adipiscing elit</strong>
+      Lorem ipsum <TextHighlight className="px-2 -mx-2">dolor sit</TextHighlight> amet,{" "}
+      <strong>consectetur adipiscing elit</strong>
     </h1>
   ),
   description:

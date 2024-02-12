@@ -18,7 +18,7 @@ export const Hero = ({
   return (
     <section
       className={cn(
-        "relative flex flex-col items-center justify-center overflow-hidden",
+        "@container w-full relative flex flex-col items-center justify-center overflow-hidden",
         "py-12 sm:py-20",
         // contain && "pb-12 sm:pb-20",
         className
@@ -32,7 +32,13 @@ export const Hero = ({
             // image ? "pt-16 sm:pt-28" : "pt-12 sm:pt-20"
           )}
         >
-          <div className={cn("text-4xl sm:text-8xl tracking-tighter")}>{title}</div>
+          <div
+            className={cn(
+              "text-4xl @lg:text-6xl @2xl:text-7xl @4xl:text-8xl tracking-tighter text-slate-900"
+            )}
+          >
+            {title}
+          </div>
           {description && <div className={cn("prose max-w-4xl sm:text-2xl")}>{description}</div>}
           <div className="grid md:grid-cols-2 gap-3">
             {buttons?.map((button, index) => (

@@ -10,31 +10,493 @@ links:
 ---
 
 import { CodePreview } from "#/src/components/Tabs"
-import { Testimonails } from "#/ui/components/Testimonials"
+import { Table, TableCell, TableHeaderCell, TableRow } from "#/ui/components/Table"
+import { Testimonials } from "#/ui/components/Testimonials"
 
 <CodePreview>
-  <Testimonails />
+  <Testimonials
+    authors={[
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+      {
+        name: "Michael Rodriguez",
+        avatar: {
+          src: "/avatars/Image-4.jpg",
+          alt: "Michael Rodriguez",
+        },
+      },
+      {
+        name: "Olivia Thompson",
+        avatar: {
+          src: "/avatars/Image-5.jpg",
+          alt: "Olivia Thompson",
+        },
+      },
+    ]}
+    rating={5}
+    totalCustomers={1000}
+  />
 </CodePreview>
-
-{/* ## Installation */}
 
 ## Usage
 
 ```jsx
-import { Testimonails } from "#/ui/components/Testimonials"
+import { Testimonials } from "#/ui/components/Testimonials"
 ```
 
 ```jsx
-<Button href="#">Button</Button>
+<Testimonials
+  authors={[
+    {
+      name: "Rian Patel",
+      avatar: {
+        src: "/avatars/Image-1.jpg",
+        alt: "Rian Patel",
+      },
+    },
+    ...
+  ]}
+  rating={5}
+  totalCustomers={1000}
+/>
 ```
 
-<CodePreview client:load>
-  <Testimonails />
+## Authors
+
+Testimonials takes an array of authors, each with a name and an avatar. The avatar displayed is the `Avatar` component.
+
+The array can be as long as you want, though we recommend limiting it to 5-8 authors.
+
+<CodePreview className="grid gap-6" client:load>
+  <Testimonials
+    authors={[
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+    ]}
+    rating={5}
+    totalCustomers={1000}
+  />
+  <Testimonials
+    authors={[
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+      {
+        name: "Michael Rodriguez",
+        avatar: {
+          src: "/avatars/Image-4.jpg",
+          alt: "Michael Rodriguez",
+        },
+      },
+      {
+        name: "Olivia Thompson",
+        avatar: {
+          src: "/avatars/Image-5.jpg",
+          alt: "Olivia Thompson",
+        },
+      },
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+      {
+        name: "Michael Rodriguez",
+        avatar: {
+          src: "/avatars/Image-4.jpg",
+          alt: "Michael Rodriguez",
+        },
+      },
+      {
+        name: "Olivia Thompson",
+        avatar: {
+          src: "/avatars/Image-5.jpg",
+          alt: "Olivia Thompson",
+        },
+      },
+    ]}
+    rating={5}
+    totalCustomers={1000}
+  />
   <div slot="code">
     ```jsx
-    <Button href="#">Button</Button>
+    <Testimonials
+      authors={[
+        {
+          name: "Rian Patel",
+          avatar: {
+            src: "/avatars/Image-1.jpg",
+            alt: "Rian Patel",
+          },
+        },
+        // Add as many author objects as you need
+      ]}
+      rating={5}
+      totalCustomers={1000}
+    />
     ```
   </div>
 </CodePreview>
 
-Your content here
+## Rating
+
+The `rating` prop is a number between 1 and 5, and is used to display the number of stars, as well as a figure next to the star rating. Decimals are allowed, but they round to the next nearest integer.
+
+<CodePreview className="grid gap-6" client:load>
+  <Testimonials
+    authors={[
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+      {
+        name: "Michael Rodriguez",
+        avatar: {
+          src: "/avatars/Image-4.jpg",
+          alt: "Michael Rodriguez",
+        },
+      },
+      {
+        name: "Olivia Thompson",
+        avatar: {
+          src: "/avatars/Image-5.jpg",
+          alt: "Olivia Thompson",
+        },
+      },
+    ]}
+    rating={4.7}
+    totalCustomers={1000}
+  />
+  <Testimonials
+    authors={[
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+      {
+        name: "Michael Rodriguez",
+        avatar: {
+          src: "/avatars/Image-4.jpg",
+          alt: "Michael Rodriguez",
+        },
+      },
+      {
+        name: "Olivia Thompson",
+        avatar: {
+          src: "/avatars/Image-5.jpg",
+          alt: "Olivia Thompson",
+        },
+      },
+    ]}
+    rating={2.45}
+    totalCustomers={1000}
+  />
+  <div slot="code">
+    ```jsx
+    <Testimonials
+      authors={[
+        {
+          name: "Rian Patel",
+          avatar: {
+            src: "/avatars/Image-1.jpg",
+            alt: "Rian Patel",
+          },
+        },
+        ...
+      ]}
+      rating={5} // Any number between 0 and 5 including decimals like 4.5
+      totalCustomers={1000}
+    />
+    ```
+  </div>
+</CodePreview>
+
+## Total Customers
+
+Displays the number of total customers who have left a review.
+
+<CodePreview className="grid gap-6" client:load>
+  <Testimonials
+    authors={[
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+      {
+        name: "Michael Rodriguez",
+        avatar: {
+          src: "/avatars/Image-4.jpg",
+          alt: "Michael Rodriguez",
+        },
+      },
+      {
+        name: "Olivia Thompson",
+        avatar: {
+          src: "/avatars/Image-5.jpg",
+          alt: "Olivia Thompson",
+        },
+      },
+    ]}
+    rating={5}
+    totalCustomers={25}
+  />
+  <Testimonials
+    authors={[
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+      {
+        name: "Michael Rodriguez",
+        avatar: {
+          src: "/avatars/Image-4.jpg",
+          alt: "Michael Rodriguez",
+        },
+      },
+      {
+        name: "Olivia Thompson",
+        avatar: {
+          src: "/avatars/Image-5.jpg",
+          alt: "Olivia Thompson",
+        },
+      },
+    ]}
+    rating={5}
+    totalCustomers={1000000}
+  />
+  <Testimonials
+    authors={[
+      {
+        name: "Rian Patel",
+        avatar: {
+          src: "/avatars/Image-1.jpg",
+          alt: "Rian Patel",
+        },
+      },
+      {
+        name: "Alex Chen",
+        avatar: {
+          src: "/avatars/Image-2.jpg",
+          alt: "Alex Chen",
+        },
+      },
+      {
+        name: "Sarah Johnson",
+        avatar: {
+          src: "/avatars/Image-3.jpg",
+          alt: "Sarah Johnson",
+        },
+      },
+      {
+        name: "Michael Rodriguez",
+        avatar: {
+          src: "/avatars/Image-4.jpg",
+          alt: "Michael Rodriguez",
+        },
+      },
+      {
+        name: "Olivia Thompson",
+        avatar: {
+          src: "/avatars/Image-5.jpg",
+          alt: "Olivia Thompson",
+        },
+      },
+    ]}
+    rating={5}
+    totalCustomers="10 million"
+  />
+  <div slot="code">
+    ```jsx
+    <Testimonials
+      authors={[
+        {
+          name: "Rian Patel",
+          avatar: {
+            src: "/avatars/Image-1.jpg",
+            alt: "Rian Patel",
+          },
+        },
+        ...
+      ]}
+      rating={5}
+      totalCustomers={1000} // Any number with no limit, or a string "10 million"
+    />
+    ```
+  </div>
+</CodePreview>
+
+## API Reference
+
+### Testimonaials
+
+<Table>
+  <thead>
+    <TableRow>
+      <TableHeaderCell>Prop</TableHeaderCell>
+      <TableHeaderCell>Type</TableHeaderCell>
+      <TableHeaderCell>Default</TableHeaderCell>
+    </TableRow>
+  </thead>
+  <tbody>
+    {/* <TableRow>
+      <TableCell>variant</TableCell>
+      <TableCell>primary | outline | ghost | text</TableCell>
+      <TableCell>primary</TableCell>
+    </TableRow> */}
+    <TableRow>
+      <TableCell>authors</TableCell>
+      <TableCell>AuthorProps[]</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>rating</TableCell>
+      <TableCell>number</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>totalCustomers</TableCell>
+      <TableCell>number</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+  </tbody>
+</Table>

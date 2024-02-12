@@ -7,11 +7,69 @@ pro: true
 
 import { CodePreview } from "#/src/components/Tabs"
 import { Table, TableCell, TableHeaderCell, TableRow } from "#/ui/components/Table"
+import { TextHighlight } from "#/ui/components/TextHighlight"
 import { Hero } from "#/ui/marketing/Hero"
-import { cn } from "#/utils"
 
 <CodePreview>
-  <Hero />
+  <Hero
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    buttons={[
+      {
+        children: "Get started",
+        href: "#",
+      },
+      {
+        children: "See the benefits",
+        href: "#",
+      },
+    ]}
+    testimonials={{
+      authors: [
+        {
+          name: "Rian Patel",
+          avatar: {
+            src: "/avatars/Image-1.jpg",
+            alt: "Rian Patel",
+          },
+        },
+        {
+          name: "Alex Chen",
+          avatar: {
+            src: "/avatars/Image-2.jpg",
+            alt: "Alex Chen",
+          },
+        },
+        {
+          name: "Sarah Johnson",
+          avatar: {
+            src: "/avatars/Image-3.jpg",
+            alt: "Sarah Johnson",
+          },
+        },
+        {
+          name: "Michael Rodriguez",
+          avatar: {
+            src: "/avatars/Image-4.jpg",
+            alt: "Michael Rodriguez",
+          },
+        },
+        {
+          name: "Olivia Thompson",
+          avatar: {
+            src: "/avatars/Image-5.jpg",
+            alt: "Olivia Thompson",
+          },
+        },
+      ],
+      rating: 5,
+      totalCustomers: 1000,
+    }}
+  >
+    <h1 slot="title">
+      Lorem ipsum <TextHighlight>dolor sit</TextHighlight> amet,{" "}
+      <strong>consectetur adipiscing elit</strong>
+    </h1>
+  </Hero>
 </CodePreview>
 
 {/* ## Installation */}

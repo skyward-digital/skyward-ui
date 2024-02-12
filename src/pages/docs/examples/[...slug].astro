@@ -1,5 +1,5 @@
 ---
-import Layout from "#/src/layouts/Layout.astro"
+import Layout from "#/src/layouts/Docs.astro"
 import { getCollection } from "astro:content"
 
 export async function getStaticPaths() {
@@ -20,7 +20,7 @@ const { Content, headings } = await entry.render()
 ---
 
 <Layout headings={headings} next={next} prev={prev} {...entry.data}>
-  <div class="prose dark:prose-invert max-w-none mt-6">
+  <div class="prose mt-6 max-w-none dark:prose-invert">
     <Content />
   </div>
 </Layout>
